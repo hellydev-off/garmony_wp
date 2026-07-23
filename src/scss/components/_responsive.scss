@@ -554,6 +554,9 @@
       display: none;
     }
   }
+  .vb-hero {
+    margin-bottom: 28px;
+  }
   // Screening slider overlays: same principle
   .vb-screening-slider__overlay {
     bottom: 8px;
@@ -579,8 +582,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .vb-specialist-card__photo {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
   }
   .vb-doctors-row--3 .vb-doctor-card,
   .vb-doctors-row--2 .vb-doctor-card {
@@ -588,7 +591,30 @@
   }
   .vb-section-title,
   .vb-title {
-    font-size: 24px;
+    font-size: 22px;
+  }
+  // Сжимаем внутренние паддинги белых блоков на телефоне
+  .vb-specialists {
+    padding: 20px;
+    margin-bottom: 28px;
+  }
+  .vb-benefits__box {
+    padding: 20px 20px 28px;
+  }
+  // Уменьшаем вертикальные отступы между секциями
+  .vb-section,
+  .vb-benefits,
+  .vb-screening {
+    margin-bottom: 28px;
+  }
+  // Аккордеон чуть компактнее
+  .vb-accordion__toggle {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+  // Цитата врача — мельче на мобильном
+  .vb-doctor-card__quote {
+    font-size: 12px;
   }
 
   // Reviews slider
@@ -698,16 +724,46 @@
   // Specialists (ведение) 2 → 2 (keep 2-col so cards stay visible)
   .vb-specialists-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px 12px;
   }
   .vb-specialist-card__photo {
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
   }
   .vb-benefits-grid {
     grid-template-columns: 1fr;
   }
   .vb-benefit-item__text {
     max-width: 100%;
+  }
+  // Дальнейшее уменьшение шрифтов и паддингов на малых экранах
+  .vb-section-title,
+  .vb-title {
+    font-size: 19px;
+    margin-bottom: 18px;
+  }
+  .vb-section,
+  .vb-benefits,
+  .vb-screening {
+    margin-bottom: 20px;
+  }
+  .vb-specialists {
+    padding: 14px;
+    margin-bottom: 20px;
+  }
+  .vb-benefits__box {
+    padding: 14px 14px 20px;
+  }
+  .vb-hero {
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+  .vb-doctors-row {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .vb-accordion__toggle {
+    padding: 12px 14px;
   }
 
   // Partner cards smaller
