@@ -177,6 +177,31 @@ $text-dark: #1a1a1a;
     height: 16px;
     color: #aaa;
   }
+
+  // Кнопка «Специальности» переиспользует JS/разметку .doctor-select (см.
+  // _appointment-modal.scss), но должна выглядеть как часть общей строки поиска,
+  // а не как отдельное поле формы — сбрасываем стили модалки для этого контекста.
+  .doctor-select__trigger {
+    width: auto;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+
+    &:hover {
+      .doctor-select__trigger-text {
+        color: $navy;
+      }
+    }
+  }
+
+  .doctor-select__panel {
+    min-width: 280px;
+  }
+}
+
+.doctors-filter .doctor-select.is-open .doctors-filter__chevron {
+  transform: rotate(180deg);
 }
 
 // ─── Doctors grid ─────────────────────────────────────────────────────────────

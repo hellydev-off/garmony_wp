@@ -1,0 +1,56 @@
+{# ─── Поиск по сайту: врачи + услуги ─────────────────────────────────────────── #}
+<div class="harmony-modal-overlay" id="siteSearchOverlay">
+  <div class="harmony-modal harmony-modal--search" role="dialog" aria-modal="true" aria-labelledby="siteSearchTitle">
+    <button type="button" class="harmony-modal__close" id="siteSearchClose" aria-label="Закрыть">&times;</button>
+    <h2 class="harmony-modal__title" id="siteSearchTitle">Поиск по сайту</h2>
+
+    <div class="harmony-modal__field">
+      <input type="text" id="siteSearchInput" placeholder="Врач или услуга..." autocomplete="off">
+    </div>
+
+    <ul class="site-search__results" id="siteSearchResults">
+      {% for doctor in all_doctors %}
+      <li class="site-search__item" data-title="{{ doctor.title|lower }} {{ doctor.meta('specialization')|lower }}">
+        <a href="{{ doctor.link }}">
+          <span class="site-search__item-badge">Врач</span>
+          <span class="site-search__item-text">
+            <span class="site-search__item-name">{{ doctor.title }}</span>
+            {% if doctor.meta('specialization') %}<span class="site-search__item-sub">{{ doctor.meta('specialization') }}</span>{% endif %}
+          </span>
+        </a>
+      </li>
+      {% endfor %}
+
+      {% set search_services = [
+        { name: 'Акушерство и гинекология', href: site_url ~ '/gynecology/' },
+        { name: 'Индивидуальное ведение беременности', href: site_url ~ '/vedenie-beremennosti/' },
+        { name: 'Урология и андрология' },
+        { name: 'Общая врачебная практика' },
+        { name: 'Педиатрическое отделение' },
+        { name: 'УЗИ' },
+        { name: 'Эндоскопия' },
+        { name: 'Лабораторные исследования' },
+        { name: 'Функциональная диагностика' },
+        { name: 'Физиотерапия / Озонотерапия' },
+        { name: 'Массаж' },
+        { name: 'Дневной стационар' }
+      ] %}
+      {% for service in search_services %}
+      <li class="site-search__item" data-title="{{ service.name|lower }}">
+        {% if service.href %}
+          <a href="{{ service.href }}">
+        {% else %}
+          <a href="#" class="js-open-appointment-modal" data-request-type="Вопрос по услуге «{{ service.name }}»">
+        {% endif %}
+          <span class="site-search__item-badge site-search__item-badge--service">Услуга</span>
+          <span class="site-search__item-text">
+            <span class="site-search__item-name">{{ service.name }}</span>
+          </span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <p class="site-search__empty" id="siteSearchEmpty" style="display:none;">Ничего не найдено</p>
+  </div>
+</div>

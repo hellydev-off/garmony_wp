@@ -1,0 +1,63 @@
+{# ─── Модалка «Записаться на приём» / «Вызвать врача» ─────────────────────────── #}
+<div class="harmony-modal-overlay" id="appointmentModalOverlay">
+  <div class="harmony-modal" role="dialog" aria-modal="true" aria-labelledby="appointmentModalTitle">
+    <button type="button" class="harmony-modal__close" id="appointmentModalClose" aria-label="Закрыть">&times;</button>
+    <h2 class="harmony-modal__title" id="appointmentModalTitle">Записаться на приём</h2>
+    <p class="harmony-modal__subtitle">Оставьте контакты — мы перезвоним и всё согласуем</p>
+
+    <form id="appointmentForm" novalidate>
+      <div class="harmony-modal__field">
+        <label for="appointmentName">Имя</label>
+        <input type="text" id="appointmentName" name="name" required>
+      </div>
+      <div class="harmony-modal__field">
+        <label for="appointmentPhone">Телефон</label>
+        <input type="tel" id="appointmentPhone" name="phone" placeholder="+7 (___) ___-__-__" required>
+      </div>
+      <div class="harmony-modal__field">
+        <label>Врач</label>
+
+        {# Кастомный дропдаун поверх скрытого <select> — select остаётся источником значения для отправки формы #}
+        <div class="doctor-select" id="doctorSelectWrap">
+          <button type="button" class="doctor-select__trigger" id="doctorSelectTrigger" aria-haspopup="listbox">
+            <span class="doctor-select__trigger-text">Любой врач</span>
+            <svg class="doctor-select__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+
+          <div class="doctor-select__panel" id="doctorSelectPanel">
+            <input type="text" class="doctor-select__search" id="doctorSelectSearch" placeholder="Найти врача...">
+            <ul class="doctor-select__list" id="doctorSelectList" role="listbox">
+              <li class="doctor-select__option doctor-select__option--any is-selected" data-value="" data-label="Любой врач">Любой врач</li>
+              {% for doctor in all_doctors %}
+              <li class="doctor-select__option" data-value="{{ doctor.id }}" data-label="{{ doctor.title }}" data-search="{{ doctor.title|lower }} {{ doctor.meta('specialization')|lower }}">
+                {% if doctor.meta('photo') %}
+                  <img class="doctor-select__option-avatar" src="{{ doctor.meta('photo').url }}" alt="">
+                {% else %}
+                  <span class="doctor-select__option-avatar-placeholder"></span>
+                {% endif %}
+                <span class="doctor-select__option-info">
+                  <strong>{{ doctor.title }}</strong>
+                  {% if doctor.meta('specialization') %}<small>{{ doctor.meta('specialization') }}</small>{% endif %}
+                </span>
+              </li>
+              {% endfor %}
+            </ul>
+            <div class="doctor-select__empty" id="doctorSelectEmpty" style="display:none;">Врач не найден</div>
+          </div>
+
+          <select id="appointmentDoctor" name="doctor_id" class="doctor-select__native">
+            <option value="">Любой врач</option>
+            {% for doctor in all_doctors %}
+              <option value="{{ doctor.id }}">{{ doctor.title }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <input type="hidden" name="request_type" id="appointmentRequestType" value="Запись на приём">
+
+      <button type="submit" class="harmony-modal__submit">Отправить</button>
+      <div class="harmony-modal__message" id="appointmentFormMessage"></div>
+    </form>
+  </div>
+</div>

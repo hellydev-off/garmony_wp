@@ -2,3 +2,15 @@ node_modules/
 dist/
 .DS_Store
 *.log
+
+# Local Docker env
+.env
+
+# WordPress core (lives in the wp_data docker volume, not in this repo)
+wp-content/upgrade/
+wp-content/plugins/akismet/
+wp-content/plugins/advanced-custom-fields/
+wp-content/themes/twentytwentyfour/
+
+# Composer deps for the theme — restored via `composer install` in wp-content/themes/harmony
+wp-content/themes/harmony/vendor/

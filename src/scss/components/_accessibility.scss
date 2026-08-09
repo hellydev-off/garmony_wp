@@ -1,0 +1,51 @@
+// ─── Версия для слабовидящих ────────────────────────────────────────────────────
+// Переключается кнопкой в шапке (js-toggle-accessibility), состояние хранится
+// в localStorage и применяется классом .accessibility-mode на <html>.
+html.accessibility-mode {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  // Пропорционально увеличиваем текст через em, а не переопределяем каждый px-размер —
+  // работает независимо от того, где в вёрстке использованы px, а где rem/em.
+  body,
+  p,
+  span,
+  a,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  label,
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 1.15em !important;
+    line-height: 1.6 !important;
+  }
+
+  a {
+    color: #0000ee !important;
+    text-decoration: underline !important;
+  }
+
+  img {
+    filter: grayscale(1) contrast(1.05);
+  }
+
+  .service-card,
+  .doctor-card,
+  .dr-card,
+  .review-card,
+  .news-card,
+  .enc-card {
+    background: #fff !important;
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+  }
+}

@@ -1,0 +1,60 @@
+{#
+  Переиспользуемый слайдер отзывов.
+  Переменные (все необязательные):
+    title      — заголовок секции (default: 'Отзывы об услуге')
+    section_id — id для якорной ссылки (default: 'otzyvy')
+    reviews    — массив объектов { author, rating, date, text }
+#}
+
+{% set title = title|default('Отзывы об услуге') %}
+{% set section_id = section_id|default('otzyvy') %}
+{% set reviews = reviews|default(latest_reviews) %}
+
+<section class="reviews-slider" id="{{ section_id }}">
+  <div class="container">
+    <h2 class="reviews-slider__title">{{ title }}</h2>
+
+    <div class="reviews-slider__wrap">
+      <button class="reviews-slider__arrow reviews-slider__prev" aria-label="Назад">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+
+      <div class="reviews-slider__clip">
+        <div class="swiper reviews-slider__swiper">
+          <div class="swiper-wrapper">
+            {% for review in reviews %}
+            <div class="swiper-slide">
+              <div class="review-card">
+                <div class="review-card__header">
+                  <span class="review-card__author">{{ review.meta('author_name') }}</span>
+                  <span class="review-card__stars">
+                    {% for i in 1..5 %}
+                      <span class="review-card__star{% if i > review.meta('rating') %} review-card__star--empty{% endif %}">★</span>
+                    {% endfor %}
+                  </span>
+                  <span class="review-card__date">от {{ review.meta('review_date') }}</span>
+                </div>
+                <hr class="review-card__divider">
+                <p class="review-card__text">{{ review.meta('review_text') }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <button class="reviews-slider__arrow reviews-slider__next" aria-label="Вперёд">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="reviews-slider__actions">
+      <a href="#" class="reviews-slider__btn reviews-slider__btn--primary js-open-review-modal">Добавить отзыв</a>
+      <a href="{{ site_url }}/reviews/" class="reviews-slider__btn reviews-slider__btn--outline">Все отзывы</a>
+    </div>
+  </div>
+</section>

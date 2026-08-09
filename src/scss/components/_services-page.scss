@@ -1,0 +1,30 @@
+// ─── Страница «Услуги» ──────────────────────────────────────────────────────
+.services-page__intro {
+  max-width: 640px;
+  margin: 0 0 32px;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  padding-bottom: 48px;
+}
+
+// .service-card используется и в свайпере на главной (components/_index.scss),
+// и здесь в CSS-гриде — карточка самодостаточна, но кнопка требует сброса стилей.
+.service-card {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+
+  &--modal {
+    border: none;
+    text-align: left;
+    font-family: inherit;
+    appearance: none;
+  }
+}

@@ -1,0 +1,50 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}{{ post.title }} — Новости — {{ siteName }}{% endblock %}
+
+{% block content %}
+
+<div class="cont-border-bottom">
+  <div class="container">
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="{{ site_url }}/">Главная</a> /
+      <a href="{{ site_url }}/news/">Новости</a> /
+      {{ post.title }}
+    </nav>
+
+    <h1 class="page-title">{{ post.title }}</h1>
+
+    <div class="news-article">
+
+      {% if post.thumbnail %}
+      <img
+        src="{{ post.thumbnail.src }}"
+        alt="{{ post.title }}"
+        class="news-article__banner"
+      >
+      {% else %}
+      <img
+        src="{{ theme_uri }}/assets/images/doctors/d_kaleidoscope.svg"
+        alt=""
+        class="news-article__banner news-article__banner--placeholder"
+      >
+      {% endif %}
+
+      <div class="news-article__body">
+        {% if post.content %}
+          {{ post.content }}
+        {% else %}
+          <p>{{ post.post_excerpt }}</p>
+          {# TODO: у этой новости нет полного текста статьи — контента для неё не было в исходной вёрстке, добавьте текст через редактор. #}
+        {% endif %}
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% include 'partials/contact-cta.twig' %}
+
+{% endblock %}

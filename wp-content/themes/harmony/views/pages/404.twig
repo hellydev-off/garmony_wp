@@ -1,0 +1,11 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}Страница не найдена — {{ siteName }}{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 100px 0; text-align: center;">
+  <h1>404</h1>
+  <p>Страница не найдена.</p>
+  <a href="{{ site_url }}/">На главную</a>
+</div>
+{% endblock %}

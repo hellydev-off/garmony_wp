@@ -1,0 +1,58 @@
+<header class="site-header">
+  {% include 'partials/topbard.twig' %}
+
+  <div class="header-main">
+    <div class="container">
+      <div class="header-main__inner">
+
+        <a class="header-logo" href="{{ site_url }}/">
+          <img src="{{ theme_uri }}/assets/images/header/logo.png" alt="Тармония" class="header-logo__icon" />
+          <div class="header-logo__text">
+            <!-- <img src="{{ theme_uri }}/assets/images/header/logo.png" alt="Тармония" class="header-logo__icon" /> -->
+            <!-- <img src="{{ theme_uri }}/assets/images/header/h_logotext.svg" alt="Тармония" /> -->
+            <!-- <span>Клиника мужского и женского здоровья</span> -->
+          </div>
+        </a>
+        
+        <nav class="header-nav">
+          <ul class="header-nav__list">
+            {% for item in primary_menu.items %}
+              <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+            {% endfor %}
+            <li class="header-nav__icon-item">
+              <button type="button" class="header-nav__icon-btn js-open-site-search" aria-label="Поиск"><img src="{{ theme_uri }}/assets/images/header/h_search.svg" alt="" /></button>
+            </li>
+            <li class="header-nav__icon-item">
+              <button type="button" class="header-nav__icon-btn js-toggle-accessibility" aria-label="Версия для слабовидящих" aria-pressed="false"><img src="{{ theme_uri }}/assets/images/header/h_eye.svg" alt="" /></button>
+            </li>
+          </ul>
+        </nav>
+
+        <button type="button" class="header-burger" id="headerBurger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  {# ── Мобильное меню ──────────────────────────────────────────────────────── #}
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__nav">
+      {% for item in primary_menu.items %}
+        <a href="{{ item.link }}">{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+    <div class="mobile-menu__contacts">
+      <a href="tel:+74822368433" class="mobile-menu__phone">+7 (4822) 36 84 33</a>
+      <span class="mobile-menu__addr">г. Тверь, ул. Желябова, 75</span>
+    </div>
+    <div class="mobile-menu__actions">
+      <a href="#" class="btn-appointment js-open-appointment-modal" data-request-type="Запись на приём">Записаться на прием</a>
+      <a href="#" class="btn-call js-open-appointment-modal" data-request-type="Вызов врача">Вызвать врача</a>
+    </div>
+  </div>
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+</header>

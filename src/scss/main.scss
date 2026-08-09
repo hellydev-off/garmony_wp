@@ -19,11 +19,20 @@
 @import "components/reviews-slider";
 @import "components/vedenie";
 @import "components/alerts";
+@import "components/appointment-modal";
+@import "components/services-page";
 
 // ─── Responsive layer (must stay LAST so breakpoint overrides win) ─────────────
 @import "components/responsive";
 
+// ─── Accessibility mode (после responsive — должна перебивать всё) ────────────
+@import "components/accessibility";
+
 // ─── Global overflow fix ───────────────────────────────────────────────────────
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   overflow-x: hidden;

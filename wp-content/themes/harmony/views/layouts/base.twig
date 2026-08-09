@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ siteName }}{% endblock %}</title>
+
+  {# Применяем режим «для слабовидящих» до отрисовки страницы, чтобы не было мигания темы #}
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('harmonyAccessibilityMode') === '1') {
+          document.documentElement.classList.add('accessibility-mode');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  {# Стили подключены через wp_enqueue_style() в functions.php #}
+  {{ function('wp_head') }}
+  {% block head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+  {# Контейнер для AJAX-уведомлений OpenCart (корзина / сравнение / избранное) #}
+  <div id="alert"></div>
+
+  {% include 'partials/header.twig' %}
+
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include 'partials/footer.twig' %}
+
+  {% include 'partials/appointment-modal.twig' %}
+  {% include 'partials/review-modal.twig' %}
+  {% include 'partials/search-modal.twig' %}
+
+  {# Скрипты подключены через wp_enqueue_script() в functions.php — должны загрузиться до инициализации Swiper ниже #}
+  {{ function('wp_footer') }}
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>

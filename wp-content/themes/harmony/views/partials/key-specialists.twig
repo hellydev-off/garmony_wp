@@ -1,0 +1,21 @@
+{# ─── Ключевые специалисты клиники ───────────────────────────────────────────── #}
+<section class="key-specialists section">
+  <div class="container">
+    <h2 class="section-title">Ключевые специалисты клиники:</h2>
+    <div class="featured-doctors__grid">
+      {% for doctor in featured_doctors %}
+      <div class="doctor-featured" data-doctor-url="{{ doctor.link }}">
+        <div class="doctor-featured__photo">
+          {% if doctor.meta('photo') %}
+            <img src="{{ doctor.meta('photo').url }}" alt="{{ doctor.title }}" />
+          {% endif %}
+        </div>
+        <div class="doctor-featured__info">
+          <p class="doctor-featured__name">{{ doctor.title }}</p>
+          <p class="doctor-featured__role">{{ doctor.meta('specialization') }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

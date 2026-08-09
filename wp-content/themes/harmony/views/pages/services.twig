@@ -1,0 +1,59 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}Услуги и цены — {{ siteName }}{% endblock %}
+
+{% block content %}
+
+<div class="cont-border-bottom">
+  <div class="container">
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="{{ site_url }}/">Главная</a> / Услуги
+    </nav>
+
+    <h1 class="page-title">Услуги и цены</h1>
+    <p class="services-page__intro">Выберите направление, чтобы узнать подробности, цены и врачей — или сразу оставьте заявку, и мы подскажем, что подойдёт именно вам.</p>
+
+    <div class="services-grid">
+
+      <a href="{{ site_url }}/gynecology/" class="service-card">
+        <img src="{{ theme_uri }}/assets/images/index/services/1.svg" alt="" class="service-card__icon">
+        <p class="service-card__name">Акушерство и гинекология</p>
+        <span class="service-card__link">Подробнее и цены</span>
+      </a>
+
+      <a href="{{ site_url }}/vedenie-beremennosti/" class="service-card">
+        <img src="{{ theme_uri }}/assets/images/index/services/2.svg" alt="" class="service-card__icon">
+        <p class="service-card__name">Индивидуальное ведение беременности</p>
+        <span class="service-card__link">Подробнее</span>
+      </a>
+
+      {% set other_services = [
+        { name: 'Урология и андрология', icon: '3.svg' },
+        { name: 'Общая врачебная практика', icon: '4.svg' },
+        { name: 'Педиатрическое отделение', icon: '1.svg' },
+        { name: 'УЗИ', icon: '2.svg' },
+        { name: 'Эндоскопия', icon: '3.svg' },
+        { name: 'Лабораторные исследования', icon: '4.svg' },
+        { name: 'Функциональная диагностика', icon: '1.svg' },
+        { name: 'Физиотерапия / Озонотерапия', icon: '2.svg' },
+        { name: 'Массаж', icon: '3.svg' },
+        { name: 'Дневной стационар', icon: '4.svg' }
+      ] %}
+
+      {% for service in other_services %}
+      <button type="button" class="service-card service-card--modal js-open-appointment-modal" data-request-type="Вопрос по услуге «{{ service.name }}»">
+        <img src="{{ theme_uri }}/assets/images/index/services/{{ service.icon }}" alt="" class="service-card__icon">
+        <p class="service-card__name">{{ service.name }}</p>
+        <span class="service-card__link">Задать вопрос</span>
+      </button>
+      {% endfor %}
+
+    </div>
+
+  </div>
+</div>
+
+{% include 'partials/contact-cta.twig' %}
+
+{% endblock %}

@@ -1,0 +1,504 @@
+// ─── Модалка заявки + форма отзыва у врача ─────────────────────────────────────
+$modal-navy: #274878;
+$modal-navy-light: #3a5f96;
+$modal-gold: #c8a84b;
+
+.harmony-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  &.is-open {
+    display: flex;
+    animation: harmonyModalFadeIn 0.18s ease-out;
+  }
+}
+
+@keyframes harmonyModalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes harmonyModalRise {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.harmony-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 32px 32px;
+  width: 100%;
+  max-width: 440px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.35);
+  animation: harmonyModalRise 0.22s ease-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    border-radius: 16px 16px 0 0;
+    background: linear-gradient(90deg, $modal-navy, $modal-navy-light);
+  }
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: #f2f4f7;
+    cursor: pointer;
+    color: #888;
+    font-size: 20px;
+    line-height: 1;
+    transition: background 0.15s, color 0.15s;
+
+    &:hover {
+      background: #e6ebf3;
+      color: $modal-navy;
+    }
+  }
+
+  &__title {
+    margin: 0 0 6px;
+    font-size: 23px;
+    font-weight: 700;
+    color: $modal-navy;
+  }
+
+  &__subtitle {
+    margin: 0 0 22px;
+    font-size: 14px;
+    color: #8a93a3;
+  }
+
+  &__field {
+    margin-bottom: 18px;
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #5a6472;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #e3e6ec;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: inherit;
+      background: #fbfbfd;
+      transition: border-color 0.15s, background 0.15s;
+
+      &:focus {
+        outline: none;
+        border-color: $modal-navy-light;
+        background: #fff;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    padding: 13px;
+    background: $modal-navy;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+
+    &:hover {
+      background: darken($modal-navy, 8%);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: default;
+      transform: none;
+    }
+  }
+
+  &__message {
+    margin-top: 14px;
+    padding: 11px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    display: none;
+
+    &.is-visible {
+      display: block;
+    }
+
+    &--success {
+      background: #e6f4ea;
+      color: #256029;
+    }
+
+    &--error {
+      background: #fdecea;
+      color: #a02824;
+    }
+  }
+}
+
+// ─── Кастомный выпадающий список врачей (вместо нативного <select>) ────────────
+.doctor-select {
+  position: relative;
+
+  &__native {
+    display: none;
+  }
+
+  &__trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 1.5px solid #e3e6ec;
+    border-radius: 10px;
+    background: #fbfbfd;
+    font-size: 15px;
+    font-family: inherit;
+    color: #222;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.15s;
+
+    &-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .doctor-select__chevron {
+      flex: none;
+      width: 16px;
+      height: 16px;
+      color: #99a2b1;
+      transition: transform 0.15s;
+    }
+  }
+
+  &.is-open &__trigger {
+    border-color: $modal-navy-light;
+
+    .doctor-select__chevron {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__panel {
+    // position: fixed + инлайновые top/left/width, выставленные из JS (initDoctorSelect) —
+    // так панель не обрезается overflow-y: auto у .harmony-modal и всегда попадает в вьюпорт.
+    display: none;
+    position: fixed;
+    background: #fff;
+    border: 1px solid #e3e6ec;
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+    z-index: 1100;
+    overflow: hidden;
+  }
+
+  &.is-open &__panel {
+    display: block;
+  }
+
+  &__search {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #eef0f4;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-family: inherit;
+
+    &:focus {
+      outline: none;
+      background: #fafbfd;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 6px;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.12s;
+
+    &:hover,
+    &.is-active {
+      background: #f2f5fa;
+    }
+
+    &.is-selected {
+      background: #eaf0fa;
+    }
+
+    &--any {
+      font-weight: 600;
+      color: $modal-navy;
+      border-bottom: 1px solid #eef0f4;
+      border-radius: 0;
+      margin-bottom: 4px;
+      padding-bottom: 10px;
+    }
+
+    &-avatar {
+      flex: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #e6ebf3;
+    }
+
+    &-avatar-placeholder {
+      flex: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #e6ebf3;
+    }
+
+    &-info {
+      overflow: hidden;
+
+      strong {
+        display: block;
+        font-size: 14px;
+        color: #222;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      small {
+        display: block;
+        font-size: 12px;
+        color: #8a93a3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    &.is-hidden {
+      display: none;
+    }
+  }
+
+  &__empty {
+    padding: 14px;
+    text-align: center;
+    font-size: 13px;
+    color: #99a2b1;
+  }
+}
+
+// ─── Звёздный выбор рейтинга в форме отзыва ────────────────────────────────────
+.star-rating-input {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 4px;
+
+  input {
+    display: none;
+  }
+
+  label {
+    font-size: 30px;
+    line-height: 1;
+    color: #d9d9d9;
+    cursor: pointer;
+    margin: 0;
+    transition: color 0.1s, transform 0.1s;
+
+    &:hover,
+    &:hover ~ label {
+      color: $modal-gold;
+    }
+  }
+
+  input:checked ~ label {
+    color: $modal-gold;
+  }
+}
+
+// ─── Средний рейтинг врача на его странице ─────────────────────────────────────
+.dp-hero__rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+
+  .stars svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &-value {
+    font-weight: 600;
+    color: $modal-navy;
+  }
+
+  &-count {
+    color: #888;
+    font-size: 14px;
+  }
+}
+
+.dp-review-form {
+  margin-top: 20px;
+  padding: 24px;
+  background: #f7f8fa;
+  border: 1px solid #eef0f4;
+  border-radius: 14px;
+  display: none;
+
+  &.is-open {
+    display: block;
+    animation: harmonyModalRise 0.18s ease-out;
+  }
+
+  .harmony-modal__field label {
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .harmony-modal__submit {
+    width: auto;
+    padding: 12px 28px;
+  }
+}
+
+// ─── Поиск по сайту (врачи + услуги) ────────────────────────────────────────────
+.harmony-modal--search {
+  max-width: 480px;
+}
+
+.site-search {
+  &__results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+
+  &__item {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 8px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.12s;
+
+      &:hover {
+        background: #f2f5fa;
+      }
+    }
+
+    &.is-hidden {
+      display: none;
+    }
+  }
+
+  &__item-badge {
+    flex: none;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: $modal-navy;
+    background: #eaf0fa;
+    border-radius: 6px;
+    padding: 4px 8px;
+
+    &--service {
+      color: #7a5b17;
+      background: #fbf1dc;
+    }
+  }
+
+  &__item-text {
+    overflow: hidden;
+  }
+
+  &__item-name {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__item-sub {
+    display: block;
+    font-size: 13px;
+    color: #8a93a3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__empty {
+    text-align: center;
+    color: #99a2b1;
+    padding: 20px 0 4px;
+  }
+}

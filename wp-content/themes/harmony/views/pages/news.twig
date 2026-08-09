@@ -1,0 +1,66 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}Новости — {{ siteName }}{% endblock %}
+
+{% block content %}
+
+<div class="cont-border-bottom">
+  <div class="container">
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="{{ site_url }}/">Главная</a> / Новости
+    </nav>
+
+    <h1 class="page-title">Новости</h1>
+
+    <div class="news-list">
+
+      {% for item in posts %}
+      <div class="news-list-item">
+        <div class="news-list-item__thumb">
+          {% if item.thumbnail %}
+            <img src="{{ item.thumbnail.src }}" alt="{{ item.title }}">
+          {% else %}
+            <img src="{{ theme_uri }}/assets/images/doctors/d_kaleidoscope.svg" alt="">
+          {% endif %}
+        </div>
+        <div class="news-list-item__body">
+          <a href="{{ item.link }}" class="news-list-item__title">{{ item.title }}</a>
+          <span class="news-list-item__date-badge">{{ item.date('d.m.Y') }}</span>
+          <p class="news-list-item__excerpt">{{ item.post_excerpt }}</p>
+          <a href="{{ item.link }}" class="news-list-item__link">Читать подробнее</a>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+    <div class="list-footer">
+      <a href="#" class="btn-show-more">Показать еще</a>
+
+      <nav class="pg" aria-label="Пагинация">
+        <a href="#" class="pg__item" aria-label="Назад">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </a>
+        <a href="#" class="pg__item pg__item--active">1</a>
+        <a href="#" class="pg__item">2</a>
+        <a href="#" class="pg__item">3</a>
+        <a href="#" class="pg__item">4</a>
+        <span class="pg__item pg__item--dots">...</span>
+        <a href="#" class="pg__item">12</a>
+        <a href="#" class="pg__item pg__item--filled" aria-label="Вперёд">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </nav>
+    </div>
+
+  </div>
+</div>
+
+{% include 'partials/contact-cta.twig' %}
+
+{% endblock %}

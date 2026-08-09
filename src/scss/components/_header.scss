@@ -170,11 +170,19 @@ $topbar-bg: #f9f3ed;
     }
   }
 
-  &__icon-item > a {
+  &__icon-item > a,
+  &__icon-item > button {
     padding: 8px 10px;
   }
 
-  &__icon-item:last-child > a {
+  &__icon-item > button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &__icon-item:last-child > a,
+  &__icon-item:last-child > button {
     padding-right: 0;
 
     img {

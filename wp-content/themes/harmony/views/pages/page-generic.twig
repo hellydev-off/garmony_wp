@@ -1,0 +1,10 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}{{ post.title }} — {{ siteName }}{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 60px 0;">
+  <h1>{{ post.title }}</h1>
+  <div>{{ post.content }}</div>
+</div>
+{% endblock %}
