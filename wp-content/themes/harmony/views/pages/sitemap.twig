@@ -1,0 +1,34 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}Карта сайта — {{ siteName }}{% endblock %}
+
+{% block content %}
+
+<div class="cont-border-bottom">
+  <div class="container">
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="{{ site_url }}/">Главная</a> / Карта сайта
+    </nav>
+
+    <h1 class="page-title">Карта сайта</h1>
+
+    <ul class="sitemap-list">
+      <li><a href="{{ site_url }}/">Главная</a></li>
+      <li><a href="{{ site_url }}/about/">О клинике</a></li>
+      <li><a href="{{ site_url }}/services/">Услуги</a></li>
+      <li><a href="{{ site_url }}/gynecology/">Акушерство и гинекология</a></li>
+      <li><a href="{{ site_url }}/vedenie-beremennosti/">Индивидуальное ведение беременности</a></li>
+      <li><a href="{{ site_url }}/doctors/">Врачи</a></li>
+      <li><a href="{{ site_url }}/encyclopedia/">Энциклопедия здоровья</a></li>
+      <li><a href="{{ site_url }}/news/">Новости и акции</a></li>
+      <li><a href="{{ site_url }}/reviews/">Отзывы</a></li>
+      <li><a href="{{ site_url }}/contacts/">Контакты</a></li>
+    </ul>
+
+  </div>
+</div>
+
+{% include 'partials/contact-cta.twig' %}
+
+{% endblock %}

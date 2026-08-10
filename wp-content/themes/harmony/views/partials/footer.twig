@@ -8,7 +8,7 @@
           <img src="{{ theme_uri }}/assets/images/footer/logo.png" alt="Гармония">
         </a>
         <div class="site-footer__contacts">
-          <a href="#" class="site-footer__contact-btn">
+          <a href="{{ site_url }}/contacts/" class="site-footer__contact-btn">
             <img src="{{ theme_uri }}/assets/images/header/h_map.svg" alt="">
             г. Тверь, ул. Желябова, 75
           </a>
@@ -31,23 +31,22 @@
         <div class="site-footer__services-col">
           <a href="{{ site_url }}/gynecology/">Акушерство и гинекология</a>
           <a href="{{ site_url }}/vedenie-beremennosti/">Индивидуальное ведение беременности</a>
-          {# TODO: страницы «Урология и андрология» нет в исходной вёрстке — уточнить, куда должна вести ссылка #}
-          <a href="#">Урология и андрология</a>
+          <a href="#" class="js-open-appointment-modal" data-request-type="Вопрос по услуге «Урология и андрология»">Урология и андрология</a>
         </div>
         <div class="site-footer__services-col">
-          <a href="#">Общая врачебная практика</a>
-          <a href="#">Педиатрическое отделение</a>
-          <a href="#">УЗИ</a>
+          <a href="#" class="js-open-appointment-modal" data-request-type="Вопрос по услуге «Общая врачебная практика»">Общая врачебная практика</a>
+          <a href="#" class="js-open-appointment-modal" data-request-type="Вопрос по услуге «Педиатрическое отделение»">Педиатрическое отделение</a>
+          <a href="#" class="js-open-appointment-modal" data-request-type="Вопрос по услуге «УЗИ»">УЗИ</a>
         </div>
         <div class="site-footer__services-col">
-          <a href="#">Эндоскопия</a>
-          <a href="#">Лабораторные исследования</a>
-          <a href="#">Функциональная диагностика</a>
+          <a href="#" class="js-open-appointment-modal" data-request-type="Вопрос по услуге «Эндоскопия»">Эндоскопия</a>
+          <a href="#" class="js-open-appointment-modal" data-request-type="Вопрос по услуге «Лабораторные исследования»">Лабораторные исследования</a>
+          <a href="#" class="js-open-appointment-modal" data-request-type="Вопрос по услуге «Функциональная диагностика»">Функциональная диагностика</a>
         </div>
         <div class="site-footer__services-col">
-          <a href="#">Физиотерапия / Озонотерапия</a>
-          <a href="#">Массаж</a>
-          <a href="#">Дневной стационар</a>
+          <a href="#" class="js-open-appointment-modal" data-request-type="Вопрос по услуге «Физиотерапия / Озонотерапия»">Физиотерапия / Озонотерапия</a>
+          <a href="#" class="js-open-appointment-modal" data-request-type="Вопрос по услуге «Массаж»">Массаж</a>
+          <a href="#" class="js-open-appointment-modal" data-request-type="Вопрос по услуге «Дневной стационар»">Дневной стационар</a>
         </div>
       </div>
     </div>
@@ -73,8 +72,8 @@
           Лицензия №ЛО-69-01-001044 от 23.05.2013
         </p>
         <div class="site-footer__legal">
-          <a href="#">Политика конфиденциальности</a>
-          <a href="#">Карта сайта</a>
+          <a href="{{ site_url }}/privacy-policy/">Политика конфиденциальности</a>
+          <a href="{{ site_url }}/sitemap/">Карта сайта</a>
         </div>
         <a href="https://seometrika.pro" class="site-footer__seo" target="_blank" rel="noopener">
           <img src="{{ theme_uri }}/assets/images/footer/seologo.svg" alt="Сеометрика">

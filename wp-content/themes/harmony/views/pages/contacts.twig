@@ -1,0 +1,51 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}Контакты — {{ siteName }}{% endblock %}
+
+{% block content %}
+
+<div class="cont-border-bottom">
+  <div class="container">
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="{{ site_url }}/">Главная</a> / Контакты
+    </nav>
+
+    <h1 class="page-title">Контакты</h1>
+
+    <div class="contacts-info">
+      <div class="contacts-info__item">
+        <img src="{{ theme_uri }}/assets/images/header/h_map.svg" alt="" class="contacts-info__icon">
+        <div>
+          <p class="contacts-info__label">Адрес</p>
+          <p class="contacts-info__value">г. Тверь, ул. Желябова, 75</p>
+        </div>
+      </div>
+      <div class="contacts-info__item">
+        <img src="{{ theme_uri }}/assets/images/header/h_phone.svg" alt="" class="contacts-info__icon">
+        <div>
+          <p class="contacts-info__label">Телефон</p>
+          <a href="tel:+74822368433" class="contacts-info__value contacts-info__value--link">+7 (4822) 36 84 33</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contacts-map">
+      <iframe
+        src="https://yandex.ru/map-widget/v1/?text={{ 'г. Тверь, ул. Желябова, 75'|url_encode }}&z=16"
+        width="100%"
+        height="420"
+        frameborder="0"
+        loading="lazy"
+        title="Клиника «Гармония» на карте"
+      ></iframe>
+    </div>
+
+  </div>
+</div>
+
+{% include 'partials/clinic-legal.twig' %}
+
+{% include 'partials/contact-cta.twig' %}
+
+{% endblock %}
