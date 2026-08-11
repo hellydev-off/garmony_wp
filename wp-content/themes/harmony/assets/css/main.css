@@ -8621,6 +8621,7 @@ body.menu-open {
 .about-center {
   background-color: #f9f3ed;
   padding: 20px 0 16px;
+  margin-bottom: 40px;
   position: relative;
   overflow: hidden;
   min-height: 0;

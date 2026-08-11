@@ -21,6 +21,7 @@ $context['specialist_doctors'] = Timber::get_posts( [
 		'relation' => 'AND',
 		[ 'key' => 'is_featured', 'value' => '1', 'compare' => '!=' ],
 		[ 'key' => 'is_new', 'value' => '1', 'compare' => '!=' ],
+		[ 'key' => 'photo', 'compare' => 'EXISTS' ],
 	],
 ] );
 
