@@ -550,6 +550,8 @@ $text-dark: #333333;
       object-fit: cover;
       object-position: top center;
       display: block;
+      -webkit-mask-image: linear-gradient(to bottom, transparent, black 40px);
+      mask-image: linear-gradient(to bottom, transparent, black 40px);
     }
   }
 
