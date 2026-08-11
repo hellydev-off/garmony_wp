@@ -14,7 +14,12 @@ switch ( $post->post_name ) {
 		$context['featured_doctors'] = Timber::get_posts( [
 			'post_type'      => 'doctor',
 			'posts_per_page' => -1,
-			'meta_query'     => [ [ 'key' => 'is_featured', 'value' => '1' ] ],
+			'meta_query'     => [
+				'relation' => 'AND',
+				[ 'key' => 'is_featured', 'value' => '1' ],
+				// Фотосессия «Ведение беременности» показывается только на своей странице.
+				[ 'key' => 'quote', 'value' => '', 'compare' => '=' ],
+			],
 		] );
 		break;
 
@@ -24,6 +29,9 @@ switch ( $post->post_name ) {
 			'posts_per_page' => -1,
 			'orderby'        => 'title',
 			'order'          => 'ASC',
+			'meta_query'     => [
+				[ 'key' => 'quote', 'value' => '', 'compare' => '=' ],
+			],
 		] );
 
 		// Только по врачам из фильтруемой сетки (без «Ключевых специалистов» наверху) —
@@ -47,7 +55,9 @@ switch ( $post->post_name ) {
 			'orderby'        => 'title',
 			'order'          => 'ASC',
 			'meta_query'     => [
+				'relation' => 'AND',
 				[ 'key' => 'is_gynecologist', 'value' => '1' ],
+				[ 'key' => 'quote', 'value' => '', 'compare' => '=' ],
 			],
 		] );
 		break;
