@@ -745,75 +745,41 @@ $text-dark: #333333;
   }
 }
 
-// ─── Children clinic banner ────────────────────────────────────────────────────
-.children-banner {
-  position: relative;
-  overflow: hidden;
+// ─── Banner grid (направления) ─────────────────────────────────────────────────
+.banner-grid {
+  padding: 12px 0;
 
-  .swiper-slide {
-    background: #f0e8d8;
-    display: block;
-    position: relative;
-  }
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 
-  &__img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  &__overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-  }
-
-  &__title {
-    font-size: 30px;
-    font-weight: 700;
-    color: $gold;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 28px;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
-  }
-
-  &__link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    position: absolute;
-    bottom: 24px;
-    right: 40px;
-    background: rgba(255, 255, 255, 0.92);
-    color: $navy;
-    padding: 10px 22px;
-    border-radius: 50px;
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.2s;
-
-    svg {
-      width: 16px;
-      height: 16px;
+    &:not(:last-child) {
+      margin-bottom: 20px;
     }
+  }
+
+  &__item {
+    display: block;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    line-height: 0;
+    transition: transform 0.2s ease;
 
     &:hover,
     &:focus {
-      background: #fff;
-      color: $navy;
-      text-decoration: none;
+      transform: translateY(-2px);
     }
-  }
 
-  .swiper-pagination-bullet {
-    background: $navy;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   }
 }
 

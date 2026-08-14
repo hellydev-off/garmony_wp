@@ -8949,66 +8949,35 @@ body.menu-open {
   text-decoration: none;
 }
 
-.children-banner {
-  position: relative;
-  overflow: hidden;
+.banner-grid {
+  padding: 12px 0;
 }
-.children-banner .swiper-slide {
-  background: #f0e8d8;
+.banner-grid__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.banner-grid__row:not(:last-child) {
+  margin-bottom: 20px;
+}
+.banner-grid__item {
   display: block;
-  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  line-height: 0;
+  transition: transform 0.2s ease;
 }
-.children-banner__img {
+.banner-grid__item:hover, .banner-grid__item:focus {
+  transform: translateY(-2px);
+}
+.banner-grid__item img {
   display: block;
   width: 100%;
   height: auto;
-}
-.children-banner__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-}
-.children-banner__title {
-  font-size: 30px;
-  font-weight: 700;
-  color: #c8a84b;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 28px;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
-}
-.children-banner__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  position: absolute;
-  bottom: 24px;
-  right: 40px;
-  background: rgba(255, 255, 255, 0.92);
-  color: #274878;
-  padding: 10px 22px;
-  border-radius: 50px;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.children-banner__link svg {
-  width: 16px;
-  height: 16px;
-}
-.children-banner__link:hover, .children-banner__link:focus {
-  background: #fff;
-  color: #274878;
-  text-decoration: none;
-}
-.children-banner .swiper-pagination-bullet {
-  background: #274878;
 }
 
 .news-section {
@@ -11990,16 +11959,14 @@ body.menu-open {
     -o-object-position: top center;
        object-position: top center;
   }
-  .children-banner__title {
-    font-size: 18px;
-    letter-spacing: 1.5px;
-    margin-bottom: 0;
+  .banner-grid__row {
+    grid-template-columns: 1fr;
   }
-  .children-banner__link {
-    right: 16px;
-    bottom: 16px;
-    padding: 8px 16px;
-    font-size: 13px;
+  .banner-grid__row:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  .banner-grid__item:not(:last-child) {
+    margin-bottom: 12px;
   }
   .spec-grid {
     grid-template-columns: 1fr;
@@ -12221,13 +12188,6 @@ body.menu-open {
     text-align: center;
     font-size: 16px;
     padding: 11px 20px;
-  }
-  .children-banner__link {
-    padding: 8px 10px;
-    gap: 0;
-  }
-  .children-banner__link-text {
-    display: none;
   }
   .section-title,
   .page-title {

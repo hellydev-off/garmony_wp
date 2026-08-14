@@ -1,21 +1,21 @@
-{# ─── Клиника женского и детского здоровья ───────────────────────────────────── #}
-<section class="children-banner">
-  <div class="swiper js-children-swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="{{ theme_uri }}/assets/images/banner/ИВБ.jpg" alt="ИВБ" class="children-banner__img">
-      </div>
-      <div class="swiper-slide">
-        <img src="{{ theme_uri }}/assets/images/banner/2 Женское и детское здоровье.jpg" alt="Женское и детское здоровье" class="children-banner__img">
-      </div>
-      <div class="swiper-slide">
-        <img src="{{ theme_uri }}/assets/images/banner/2 Гастроэнтеролог.jpg" alt="Гастроэнтеролог" class="children-banner__img">
-      </div>
-      <div class="swiper-slide">
-        <img src="{{ theme_uri }}/assets/images/banner/2-1 Педиатрическое отделение — копия.jpg" alt="Педиатрическое отделение" class="children-banner__img">
-      </div>
-
+{# ─── Баннеры направлений ───────────────────────────────────────────────────── #}
+<section class="banner-grid">
+  <div class="container">
+    <div class="banner-grid__row">
+      <button type="button" class="banner-grid__item js-open-appointment-modal" data-request-type="Вопрос по услуге «Гастроэнтерология»">
+        <img src="{{ theme_uri }}/assets/images/banner/gastro-card.png" alt="Хороший доктор гастроэнтеролог">
+      </button>
+      <a href="{{ site_url }}/services/" class="banner-grid__item">
+        <img src="{{ theme_uri }}/assets/images/banner/kids-clinic-card.png" alt="Клиника женского и детского здоровья">
+      </a>
     </div>
-    <div class="swiper-pagination"></div>
+    <div class="banner-grid__row">
+      <a href="{{ site_url }}/vedenie-beremennosti/" class="banner-grid__item">
+        <img src="{{ theme_uri }}/assets/images/banner/ivb-card.png" alt="Индивидуальное ведение беременности">
+      </a>
+      <button type="button" class="banner-grid__item js-open-appointment-modal" data-request-type="Вопрос по услуге «Педиатрическое отделение»">
+        <img src="{{ theme_uri }}/assets/images/banner/pediatric-card.png" alt="Педиатрическое отделение клиники Гармония">
+      </button>
+    </div>
   </div>
 </section>
