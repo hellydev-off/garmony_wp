@@ -25,13 +25,11 @@
   }
 
   .stat-item__number {
-    font-size: 60px;
+    font-size: 96px;
   }
-  .stat-item--2 {
-    margin-left: 120px;
-  }
-  .stat-item--3 {
-    margin-left: 250px;
+  .about-center__card {
+    padding: 40px 48px;
+    min-height: 400px;
   }
 
   // Reduce padded wrapper on laptops
@@ -114,22 +112,19 @@
     justify-content: center;
   }
 
-  // ── About center: reset the staircase offsets ────────────────────────────────
-  .about-center {
+  // ── About center: stack content, hide the building illustration ───────────────
+  .about-center__card {
     min-height: 0;
-    padding: 40px 0;
-    margin-bottom: 40px;
+    padding: 36px;
   }
-  .about-center__bg-text,
-  .about-center__stethoscope,
-  .about-center__mask {
+  .about-center__content {
+    max-width: 100%;
+  }
+  .about-center__building {
     display: none;
   }
-  .stat-item {
-    margin-left: 0 !important;
-  }
   .stat-item__number {
-    font-size: 96px;
+    font-size: 84px;
   }
 
   // Reduce padded wrapper on tablet
@@ -354,27 +349,24 @@
   }
 
   // About center — stats in a row
-  .about-center {
-    padding: 28px 0;
+  .about-center__card {
+    padding: 28px 24px;
   }
   .about-center__title {
-    font-size: 32px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+  }
+  .about-center__text {
+    font-size: 18px;
     margin-bottom: 24px;
   }
   .about-center__stats {
     flex-direction: row;
     justify-content: space-between;
-    gap: 0;
-  }
-  .stat-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    margin-bottom: 0;
+    gap: 12px;
   }
   .stat-item__number {
-    font-size: 96px;
-    letter-spacing: -3px;
+    font-size: 64px;
   }
   .stat-item__label {
     font-size: 13px;
@@ -685,8 +677,7 @@
   }
 
   .stat-item__number {
-    font-size: 64px;
-    letter-spacing: -2px;
+    font-size: 60px;
   }
   .stat-item__label {
     font-size: 11px;
@@ -697,8 +688,12 @@
     padding: 12px;
     border-radius: 16px;
   }
-  .about-center {
-    padding: 20px 0;
+  .about-center__card {
+    padding: 20px;
+    border-radius: 28px;
+  }
+  .stat-item__number {
+    font-size: 48px;
   }
 
   // Doctors grid 2 → 1

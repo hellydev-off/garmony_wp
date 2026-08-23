@@ -2,6 +2,14 @@
 // Пример:
 // @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+@font-face {
+  font-family: 'Felidae';
+  src: url('/fonts/Felidae.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   font-family: $font-family-base;
   color: $text-color;
