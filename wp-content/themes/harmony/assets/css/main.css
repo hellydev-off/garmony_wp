@@ -7025,6 +7025,13 @@ button.close {
     display: none !important;
   }
 }
+@font-face {
+  font-family: "Felidae";
+  src: url("../fonts/Felidae.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 body {
   font-family: "Inter", Arial, sans-serif;
   color: #333333;
@@ -8619,84 +8626,73 @@ body.menu-open {
 }
 
 .about-center {
-  background-color: #f9f3ed;
-  padding: 20px 0 16px;
   margin-bottom: 40px;
+}
+.about-center__card {
   position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #f9f3ed;
+  border-radius: 40px;
   overflow: hidden;
-  min-height: 0;
+  min-height: 480px;
+  padding: 56px 64px;
 }
-.about-center__bg-text {
-  position: absolute;
-  top: 4%;
-  right: 4%;
-  font-size: 120px;
-  font-weight: 900;
-  color: transparent;
-  -webkit-text-stroke: 2px rgba(0, 0, 0, 0.055);
-  white-space: nowrap;
-  text-transform: uppercase;
-  pointer-events: none;
-  letter-spacing: 8px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-.about-center__stethoscope {
-  position: absolute;
-  right: -40px;
-  top: -50px;
-  width: 400px;
-  pointer-events: none;
-}
-.about-center__mask {
-  position: absolute;
-  left: -60px;
-  bottom: -250px;
-  width: 460px;
-  pointer-events: none;
-}
-.about-center__inner {
+.about-center__content {
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 .about-center__title {
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 34px;
+  font-weight: 800;
+  color: #274878;
+  margin: 0 0 14px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #274878;
+  display: inline-block;
+}
+.about-center__text {
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.5;
   color: #333333;
-  margin-bottom: 8px;
+  opacity: 0.8;
+  margin: 0 0 40px;
+  max-width: 460px;
 }
 .about-center__stats {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.about-center__building {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 58%;
+  height: auto;
+  pointer-events: none;
 }
 
 .stat-item {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
-  margin-bottom: 4px;
-}
-.stat-item--1 {
-  margin-left: 0;
-}
-.stat-item--2 {
-  margin-left: 160px;
-}
-.stat-item--3 {
-  margin-left: 330px;
+  flex-direction: column;
 }
 .stat-item__number {
-  font-size: 72px;
-  font-weight: 900;
-  color: #333333;
-  line-height: 0.88;
-  letter-spacing: -3px;
+  font-family: "Felidae", serif;
+  font-weight: 400;
+  font-size: 130px;
+  line-height: 0.9;
+  color: #274878;
 }
 .stat-item__label {
-  font-size: 14px;
+  font-size: 21px;
+  font-weight: 300;
   color: #333333;
-  line-height: 1.3;
+  opacity: 0.8;
+  line-height: 1.5;
+  margin-top: 6px;
 }
 
 .about-text-section {
@@ -11652,13 +11648,11 @@ body.menu-open {
     font-size: 34px;
   }
   .stat-item__number {
-    font-size: 60px;
+    font-size: 96px;
   }
-  .stat-item--2 {
-    margin-left: 120px;
-  }
-  .stat-item--3 {
-    margin-left: 250px;
+  .about-center__card {
+    padding: 40px 48px;
+    min-height: 400px;
   }
   .cont-border {
     padding: 28px;
@@ -11719,21 +11713,18 @@ body.menu-open {
   .hero-banner__price {
     justify-content: center;
   }
-  .about-center {
+  .about-center__card {
     min-height: 0;
-    padding: 40px 0;
-    margin-bottom: 40px;
+    padding: 36px;
   }
-  .about-center__bg-text,
-  .about-center__stethoscope,
-  .about-center__mask {
+  .about-center__content {
+    max-width: 100%;
+  }
+  .about-center__building {
     display: none;
   }
-  .stat-item {
-    margin-left: 0 !important;
-  }
   .stat-item__number {
-    font-size: 96px;
+    font-size: 84px;
   }
   .cont-border {
     padding: 20px;
@@ -11916,27 +11907,24 @@ body.menu-open {
   .doctors-filter__specialty {
     width: 100%;
   }
-  .about-center {
-    padding: 28px 0;
+  .about-center__card {
+    padding: 28px 24px;
   }
   .about-center__title {
-    font-size: 32px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+  }
+  .about-center__text {
+    font-size: 18px;
     margin-bottom: 24px;
   }
   .about-center__stats {
     flex-direction: row;
     justify-content: space-between;
-    gap: 0;
-  }
-  .stat-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    margin-bottom: 0;
+    gap: 12px;
   }
   .stat-item__number {
-    font-size: 96px;
-    letter-spacing: -3px;
+    font-size: 64px;
   }
   .stat-item__label {
     font-size: 13px;
@@ -12194,8 +12182,7 @@ body.menu-open {
     font-size: 22px;
   }
   .stat-item__number {
-    font-size: 64px;
-    letter-spacing: -2px;
+    font-size: 60px;
   }
   .stat-item__label {
     font-size: 11px;
@@ -12204,8 +12191,12 @@ body.menu-open {
     padding: 12px;
     border-radius: 16px;
   }
-  .about-center {
-    padding: 20px 0;
+  .about-center__card {
+    padding: 20px;
+    border-radius: 28px;
+  }
+  .stat-item__number {
+    font-size: 48px;
   }
   .doctors-grid {
     grid-template-columns: 1fr;
