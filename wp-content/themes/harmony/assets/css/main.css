@@ -7040,6 +7040,7 @@ body {
 button,
 [data-doctor-url],
 [data-service-url],
+[data-article-url],
 .js-open-appointment-modal,
 .js-open-review-modal,
 .js-open-site-search,

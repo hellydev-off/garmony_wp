@@ -1,0 +1,47 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}{{ post.title }} — Энциклопедия здоровья — {{ siteName }}{% endblock %}
+
+{% block content %}
+
+<div class="cont-border-bottom">
+  <div class="container">
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="{{ site_url }}/">Главная</a> /
+      <a href="{{ site_url }}/encyclopedia/">Энциклопедия</a> /
+      {{ post.title }}
+    </nav>
+
+    <h1 class="page-title">{{ post.title }}</h1>
+
+    {% if category %}
+      <span class="enc-card__category">{{ category }}</span>
+    {% endif %}
+
+    <div class="news-article">
+
+      {% if post.thumbnail %}
+      <img
+        src="{{ post.thumbnail.src }}"
+        alt="{{ post.title }}"
+        class="news-article__banner"
+      >
+      {% endif %}
+
+      <div class="news-article__body">
+        {% if post.content %}
+          {{ post.content }}
+        {% else %}
+          <p>{{ post.post_excerpt }}</p>
+        {% endif %}
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% include 'partials/contact-cta.twig' %}
+
+{% endblock %}

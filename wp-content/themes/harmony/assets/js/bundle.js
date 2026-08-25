@@ -756,6 +756,15 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
       }
     });
 
+    // Encyclopedia article card → its page
+    $(document).on('click', '[data-article-url]', function (e) {
+      var url = $(this).data('article-url');
+      if (url) {
+        e.preventDefault();
+        window.location.href = url;
+      }
+    });
+
     // Paginate news list (8 per page)
     initPagination('.news-list', '.news-list-item', 8);
 

@@ -91,6 +91,15 @@ switch ( $post->post_name ) {
 			'order'          => 'DESC',
 		] );
 		break;
+
+	case 'encyclopedia':
+		$context['articles'] = Timber::get_posts( [
+			'post_type'      => 'enc_article',
+			'posts_per_page' => -1,
+			'orderby'        => 'date',
+			'order'          => 'ASC',
+		] );
+		break;
 }
 
 /**

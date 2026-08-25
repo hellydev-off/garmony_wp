@@ -54,6 +54,46 @@ add_action( 'init', function () {
 		'rewrite'      => [ 'slug' => 'review' ],
 	] );
 
+	register_post_type( 'enc_article', [
+		'labels' => [
+			'name'                  => 'Энциклопедия',
+			'singular_name'         => 'Статья энциклопедии',
+			'add_new'               => 'Добавить статью',
+			'add_new_item'          => 'Добавить статью',
+			'edit_item'             => 'Редактировать статью',
+			'new_item'              => 'Новая статья',
+			'view_item'             => 'Смотреть статью',
+			'search_items'          => 'Искать статьи',
+			'not_found'             => 'Статьи не найдены',
+			'not_found_in_trash'    => 'В корзине статей не найдено',
+			'all_items'             => 'Все статьи',
+			'menu_name'             => 'Энциклопедия',
+		],
+		'public'       => true,
+		'show_in_menu' => true,
+		'show_in_rest' => true,
+		'menu_icon'    => 'dashicons-book-alt',
+		'supports'     => [ 'title', 'editor', 'thumbnail', 'excerpt' ],
+		'has_archive'  => false,
+		'rewrite'      => [ 'slug' => 'enc' ],
+	] );
+
+	register_taxonomy( 'enc_category', 'enc_article', [
+		'labels' => [
+			'name'          => 'Категории энциклопедии',
+			'singular_name' => 'Категория',
+			'add_new_item'  => 'Добавить категорию',
+			'edit_item'     => 'Редактировать категорию',
+			'search_items'  => 'Искать категории',
+			'all_items'     => 'Все категории',
+			'menu_name'     => 'Категории',
+		],
+		'public'       => true,
+		'show_in_rest' => true,
+		'hierarchical' => true,
+		'rewrite'      => [ 'slug' => 'enc-category' ],
+	] );
+
 	register_post_type( 'appointment_request', [
 		'labels' => [
 			'name'               => 'Заявки',
