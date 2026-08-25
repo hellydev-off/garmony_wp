@@ -562,6 +562,25 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
     });
   }
 
+  // ─── Кнопка «наверх» — появляется после прокрутки, плавный скролл к началу ──
+  function initScrollTopButton() {
+    var btn = document.querySelector('.js-scroll-top');
+    if (!btn) return;
+
+    var THRESHOLD = 400;
+
+    function update() {
+      btn.classList.toggle('is-visible', window.scrollY > THRESHOLD);
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   // ─── Версия для слабовидящих (крупный шрифт/контраст, запоминается) ─────────
   function initAccessibilityToggle() {
     var btn = document.querySelector('.js-toggle-accessibility');
@@ -711,6 +730,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
     initAppointmentModal();
     initReviewModal();
     initSiteSearch();
+    initScrollTopButton();
     initAccessibilityToggle();
     initDoctorSelects();
     initDoctorsPageFilter();

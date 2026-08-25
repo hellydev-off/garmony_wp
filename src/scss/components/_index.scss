@@ -1032,3 +1032,55 @@ $text-dark: #333333;
     }
   }
 }
+
+// ─── Scroll-to-top button ───────────────────────────────────────────────────────
+.scroll-top-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: $navy;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 900;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    background: darken($navy, 8%);
+  }
+}
+
+@media (max-width: 575px) {
+  .scroll-top-btn {
+    right: 16px;
+    bottom: 16px;
+    width: 42px;
+    height: 42px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

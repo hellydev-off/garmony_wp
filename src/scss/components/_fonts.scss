@@ -14,3 +14,21 @@ body {
   font-family: $font-family-base;
   color: $text-color;
 }
+
+// ─── Cursor ──────────────────────────────────────────────────────────────────
+// Links get pointer from the browser by default; buttons don't, and neither do
+// the div/span-based cards and controls this site clicks via JS.
+button,
+[data-doctor-url],
+[data-service-url],
+.js-open-appointment-modal,
+.js-open-review-modal,
+.js-open-site-search,
+.js-toggle-accessibility,
+.js-toggle-review-form {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
