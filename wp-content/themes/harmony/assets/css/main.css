@@ -9006,22 +9006,16 @@ body.menu-open {
 .news-card__image {
   width: 100%;
   height: 220px;
-  -o-object-fit: contain;
-     object-fit: contain;
   border-radius: 8px;
   display: block;
-  background: #d8dde8;
+  background: #f0ebe1;
   flex-shrink: 0;
 }
 .news-card__image--placeholder {
-  width: 56px;
-  height: 56px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  padding: 82px;
-  box-sizing: content-box;
-  background: #f0ebe1;
-  opacity: 0.6;
+  -o-object-fit: none;
+     object-fit: none;
+  -o-object-position: center;
+     object-position: center;
 }
 .news-card__body {
   padding: 18px 0 0;

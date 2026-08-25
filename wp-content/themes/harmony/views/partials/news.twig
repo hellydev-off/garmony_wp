@@ -25,11 +25,7 @@
         {% for item in latest_news %}
         <div class="swiper-slide">
           <div class="news-card">
-            {% if item.thumbnail %}
-              <img src="{{ item.thumbnail.src }}" alt="{{ item.title }}" class="news-card__image">
-            {% else %}
-              <img src="{{ theme_uri }}/assets/images/doctors/d_kaleidoscope.svg" alt="" class="news-card__image news-card__image--placeholder">
-            {% endif %}
+            <img src="{{ theme_uri }}/assets/images/news/n_stethoscope.svg" alt="" class="news-card__image news-card__image--placeholder">
             <div class="news-card__body">
               <h3 class="news-card__title">{{ item.title }}</h3>
               <p class="news-card__excerpt">{{ item.post_excerpt }}</p>
