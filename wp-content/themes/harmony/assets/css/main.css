@@ -8344,6 +8344,7 @@ body.menu-open {
 }
 .cont-border-bottom__index {
   margin-bottom: 0px;
+  border-radius: 0px;
 }
 
 .cont-border {

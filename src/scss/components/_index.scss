@@ -26,6 +26,10 @@ $text-dark: #333333;
 
   &__index {
     margin-bottom: 0px;
+    // Sits flush against the (now white) about-center section below — no bottom
+    // rounding needed here, and the curve was revealing the page's cream background
+    // in the corners, creating a visible seam against the white section.
+    border-radius: 0px;
   }
 }
 
