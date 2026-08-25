@@ -8774,16 +8774,13 @@ body.menu-open {
   padding: 50px 0;
 }
 
-.doctor-card {
-  text-align: center;
-}
 .doctor-card__photo {
   width: 100%;
   aspect-ratio: 3/4;
   background-color: #f0ebe1;
   border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -8796,16 +8793,18 @@ body.menu-open {
   display: block;
 }
 .doctor-card__name {
-  font-size: 22px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 600;
   color: #333333;
   margin-bottom: 6px;
+  line-height: 1.4;
 }
 .doctor-card__specialty {
-  font-size: 16px;
-  color: #010102;
-  font-weight: 800;
-  line-height: 1.4;
+  font-size: 13px;
+  color: #666;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .specializations-section {

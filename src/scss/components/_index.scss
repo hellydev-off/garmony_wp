@@ -543,15 +543,13 @@ $text-dark: #333333;
 }
 
 .doctor-card {
-  text-align: center;
-
   &__photo {
     width: 100%;
     aspect-ratio: 3 / 4;
     background-color: $doctor-bg;
     border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -565,17 +563,19 @@ $text-dark: #333333;
   }
 
   &__name {
-    font-size: 22px;
-    font-weight: 800;
+    font-size: 14px;
+    font-weight: 600;
     color: $text-dark;
     margin-bottom: 6px;
+    line-height: 1.4;
   }
 
   &__specialty {
-    font-size: 16px;
-    color: $blue-link;
-    font-weight: 800;
-    line-height: 1.4;
+    font-size: 13px;
+    color: #666;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
   }
 }
 
