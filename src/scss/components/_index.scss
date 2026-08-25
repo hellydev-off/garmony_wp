@@ -37,6 +37,14 @@ $text-dark: #333333;
   border-radius: 60px;
   padding: 40px;
   background-color: white;
+
+  // Sits directly below the (white) about-center section on the homepage — no
+  // top rounding needed there, since the curve was revealing the page's cream
+  // background rather than the white section right above it.
+  &--flush-top {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
 }
 
 .bg {

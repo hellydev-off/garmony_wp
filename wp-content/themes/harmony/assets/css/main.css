@@ -8352,6 +8352,10 @@ body.menu-open {
   padding: 40px;
   background-color: white;
 }
+.cont-border--flush-top {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
 
 .bg {
   background-color: white;
