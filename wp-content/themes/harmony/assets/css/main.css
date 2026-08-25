@@ -7049,7 +7049,7 @@ body {
 .topbar__contacts {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 80px;
 }
 .topbar__contact {
   display: flex;
