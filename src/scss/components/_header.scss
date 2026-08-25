@@ -10,6 +10,11 @@ $topbar-bg: #f9f3ed;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    // .topbar__contacts is flex: 1 (fills the row so the phone can hug the
+    // button via margin-left: auto), which leaves justify-content nothing
+    // to distribute — this gap is what keeps the phone from touching the
+    // button.
+    gap: 24px;
   }
 
   &__contacts {
