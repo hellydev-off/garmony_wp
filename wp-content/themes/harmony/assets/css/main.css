@@ -8626,6 +8626,7 @@ body.menu-open {
 }
 
 .about-center {
+  background-color: #fff;
   margin-bottom: 40px;
 }
 .about-center__card {
