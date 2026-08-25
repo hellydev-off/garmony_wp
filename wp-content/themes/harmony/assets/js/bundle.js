@@ -726,6 +726,16 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
       }
     });
 
+    // Service card → its page (the appointment-modal cards are handled by
+    // .js-open-appointment-modal above)
+    $(document).on('click', '[data-service-url]', function (e) {
+      var url = $(this).data('service-url');
+      if (url) {
+        e.preventDefault();
+        window.location.href = url;
+      }
+    });
+
     // Paginate news list (8 per page)
     initPagination('.news-list', '.news-list-item', 8);
 
