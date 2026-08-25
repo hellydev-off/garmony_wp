@@ -7049,7 +7049,8 @@ body {
 .topbar__contacts {
   display: flex;
   align-items: center;
-  gap: 80px;
+  gap: 32px;
+  flex: 1;
 }
 .topbar__contact {
   display: flex;
@@ -7062,6 +7063,9 @@ body {
 .topbar__contact:hover, .topbar__contact:focus {
   color: #1b3a5c;
   text-decoration: none;
+}
+.topbar__contact--phone {
+  margin-left: auto;
 }
 .topbar__icon {
   width: 18px;
@@ -11708,6 +11712,9 @@ body.menu-open {
   .topbar__contacts {
     gap: 18px;
     flex-wrap: wrap;
+  }
+  .topbar__contact--phone {
+    margin-left: 0;
   }
   .section {
     padding: 40px 0;

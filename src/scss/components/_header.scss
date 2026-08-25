@@ -15,7 +15,10 @@ $topbar-bg: #f9f3ed;
   &__contacts {
     display: flex;
     align-items: center;
-    gap: 80px;
+    gap: 32px;
+    // Grows to fill the space up to the appointment button, so the phone
+    // (pushed to its own right edge below) sits right next to it.
+    flex: 1;
   }
 
   &__contact {
@@ -30,6 +33,10 @@ $topbar-bg: #f9f3ed;
     &:focus {
       color: $header-btn-color;
       text-decoration: none;
+    }
+
+    &--phone {
+      margin-left: auto;
     }
   }
 
