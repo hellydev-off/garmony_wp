@@ -370,7 +370,10 @@ $text-dark: #333333;
 // ─── About center ──────────────────────────────────────────────────────────────
 .about-center {
   background-color: #fff;
-  margin-bottom: 40px;
+  // padding, not margin: keeps the same visual gap before the next (white)
+  // section, but fills it with white instead of letting the cream page
+  // background show through underneath the card's rounded corner.
+  padding-bottom: 40px;
 
   &__card {
     position: relative;
