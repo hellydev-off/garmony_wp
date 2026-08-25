@@ -42,6 +42,13 @@ $topbar-bg: #f9f3ed;
 
     &--phone {
       margin-left: auto;
+      font-size: 20px;
+      font-weight: 700;
+
+      .topbar__icon {
+        width: 22px;
+        height: 22px;
+      }
     }
   }
 
