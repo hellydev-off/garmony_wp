@@ -24,11 +24,16 @@ $text-dark: #333333;
   padding: 10px 0px;
   margin-bottom: 40px;
 
+  // Sits flush against the (now white) about-center section below — no bottom
+  // rounding needed here, and the curve was revealing the page's cream background
+  // in the corners, creating a visible seam against the white section.
+  &--flush-bottom {
+    margin-bottom: 0px;
+    border-radius: 0px;
+  }
+
   &__index {
     margin-bottom: 0px;
-    // Sits flush against the (now white) about-center section below — no bottom
-    // rounding needed here, and the curve was revealing the page's cream background
-    // in the corners, creating a visible seam against the white section.
     border-radius: 0px;
   }
 }

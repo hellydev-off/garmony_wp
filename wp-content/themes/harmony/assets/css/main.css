@@ -8342,6 +8342,10 @@ body.menu-open {
   padding: 10px 0px;
   margin-bottom: 40px;
 }
+.cont-border-bottom--flush-bottom {
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
 .cont-border-bottom__index {
   margin-bottom: 0px;
   border-radius: 0px;

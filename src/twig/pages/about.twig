@@ -3,7 +3,7 @@
 {% block title %}О клинике — {{ siteName }}{% endblock %}
 
 {% block content %}
-<div class="cont-border-bottom">
+<div class="cont-border-bottom cont-border-bottom--flush-bottom">
   <div class="container">
     <nav class="breadcrumb-nav">
       <a href="index.html">Главная</a>
@@ -18,7 +18,7 @@
 
 {% include 'partials/about-center.twig' %}
 
-<div class="cont-border">
+<div class="cont-border cont-border--flush-top">
   {% include 'partials/clinic-legal.twig' %}
   {% include 'partials/key-specialists.twig' %}
   {% include 'partials/care-text.twig' %}
