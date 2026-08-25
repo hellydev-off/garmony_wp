@@ -21,14 +21,6 @@
 
     <div class="news-article">
 
-      {% if post.thumbnail %}
-      <img
-        src="{{ post.thumbnail.src }}"
-        alt="{{ post.title }}"
-        class="news-article__banner"
-      >
-      {% endif %}
-
       <div class="news-article__body">
         {% if post.content %}
           {{ post.content }}
