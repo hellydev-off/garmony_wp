@@ -76,6 +76,23 @@ switch ( $post->post_name ) {
 		] );
 		break;
 
+	// ─── "Услуги и цены" category pages ────────────────────────────────────────────
+	// Each queries doctor posts by the service_category taxonomy term matching
+	// this page. hide_general isn't applied here — a doctor visible only on their
+	// category page (and not the general /doctors/ list) is a legitimate case,
+	// unlike being hidden everywhere.
+	case 'urologiya':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'tax_query'      => [
+				[ 'taxonomy' => 'service_category', 'field' => 'slug', 'terms' => 'urologiya' ],
+			],
+		] );
+		break;
+
 	case 'vedenie-beremennosti':
 		// Врачи этого блока определяются наличием заполненной цитаты (поле quote),
 		// а не отдельным флагом — так же, как этот список был curated вручную в исходной вёрстке.
