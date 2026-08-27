@@ -558,6 +558,49 @@
     });
   }
 
+  // ─── Sticky quick-nav bar on service-category pages (gynecology, etc.) ──────
+  // position: sticky alone only holds within its own (short) parent section,
+  // so it scrolls away with that section instead of following the whole page.
+  // Swap to position: fixed once scrolled past its natural spot instead, with
+  // a placeholder to keep the layout from jumping.
+  function initStickySubnav() {
+    var nav = document.querySelector('.js-sticky-subnav');
+    var placeholder = document.querySelector('.js-sticky-subnav-placeholder');
+    if (!nav || !placeholder) return;
+
+    var PINNED_TOP = 16;
+    var naturalTop = 0;
+
+    function measure() {
+      if (!nav.classList.contains('is-pinned')) {
+        naturalTop = nav.getBoundingClientRect().top + window.scrollY;
+      }
+    }
+
+    function update() {
+      var shouldPin = window.scrollY > naturalTop - PINNED_TOP;
+      if (shouldPin === nav.classList.contains('is-pinned')) return;
+
+      if (shouldPin) {
+        placeholder.style.height = nav.offsetHeight + 'px';
+        placeholder.classList.add('is-active');
+        nav.classList.add('is-pinned');
+      } else {
+        nav.classList.remove('is-pinned');
+        placeholder.classList.remove('is-active');
+        placeholder.style.height = '';
+      }
+    }
+
+    measure();
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', function () {
+      measure();
+      update();
+    });
+  }
+
   // ─── Версия для слабовидящих (крупный шрифт/контраст, запоминается) ─────────
   function initAccessibilityToggle() {
     var btn = document.querySelector('.js-toggle-accessibility');
@@ -708,6 +751,7 @@
     initReviewModal();
     initSiteSearch();
     initScrollTopButton();
+    initStickySubnav();
     initAccessibilityToggle();
     initDoctorSelects();
     initDoctorsPageFilter();

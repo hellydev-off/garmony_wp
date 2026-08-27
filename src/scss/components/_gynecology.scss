@@ -41,10 +41,31 @@ $g-green: #4caf50;
     padding: 6px;
     margin-bottom: 8px;
     flex-wrap: wrap;
-    position: sticky;
-    top: 16px;
-    z-index: 50;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+    // position: sticky only holds within its own parent's box (the small
+    // cream intro section) — once that scrolls past, it leaves with it.
+    // To follow the user down the whole page instead, JS (initStickySubnav)
+    // swaps this to position: fixed once scrolled past its natural spot.
+    &.is-pinned {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 200;
+      width: calc(100% - 32px);
+      max-width: 1140px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  // Keeps the intro box from collapsing by the nav's height once it's
+  // pulled out of flow into position: fixed.
+  &__placeholder {
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
   }
 
   &__link {

@@ -9788,10 +9788,22 @@ body.menu-open {
   padding: 6px;
   margin-bottom: 8px;
   flex-wrap: wrap;
-  position: sticky;
+}
+.gyno-subnav__inner.is-pinned {
+  position: fixed;
   top: 16px;
-  z-index: 50;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  width: calc(100% - 32px);
+  max-width: 1140px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+.gyno-subnav__placeholder {
+  display: none;
+}
+.gyno-subnav__placeholder.is-active {
+  display: block;
 }
 .gyno-subnav__link {
   display: inline-block;
