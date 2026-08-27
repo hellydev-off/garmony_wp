@@ -76,6 +76,16 @@
         </div>
       </div>
 
+      {# ─── О враче ─────────────────────────────────────────────────────────────── #}
+      {% if post.content %}
+      <section class="dp-section">
+        <h2 class="dp-section__title">О враче:</h2>
+        <div class="news-article__body">
+          {{ post.content }}
+        </div>
+      </section>
+      {% endif %}
+
       {# ─── Дипломы и сертификаты ──────────────────────────────────────────────── #}
       {% if post.meta('diplomas') or post.meta('accreditations') %}
       <section class="dp-section">
