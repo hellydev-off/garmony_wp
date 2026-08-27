@@ -20,7 +20,11 @@ switch ( $post->post_name ) {
 				// Отдельный флаг «Скрыть из общих списков» — например, для врачей,
 				// которых показывают только на своей отдельной странице (см. «Ведение
 				// беременности» ниже), не завязано на заполненность поля «Цитата».
-				[ 'key' => 'hide_general', 'value' => '1', 'compare' => '!=' ],
+				[
+					'relation' => 'OR',
+					[ 'key' => 'hide_general', 'compare' => 'NOT EXISTS' ],
+					[ 'key' => 'hide_general', 'value' => '1', 'compare' => '!=' ],
+				],
 			],
 		] );
 		break;
@@ -32,7 +36,11 @@ switch ( $post->post_name ) {
 			'orderby'        => 'title',
 			'order'          => 'ASC',
 			'meta_query'     => [
-				[ 'key' => 'hide_general', 'value' => '1', 'compare' => '!=' ],
+				[
+					'relation' => 'OR',
+					[ 'key' => 'hide_general', 'compare' => 'NOT EXISTS' ],
+					[ 'key' => 'hide_general', 'value' => '1', 'compare' => '!=' ],
+				],
 			],
 		] );
 
@@ -59,7 +67,11 @@ switch ( $post->post_name ) {
 			'meta_query'     => [
 				'relation' => 'AND',
 				[ 'key' => 'is_gynecologist', 'value' => '1' ],
-				[ 'key' => 'hide_general', 'value' => '1', 'compare' => '!=' ],
+				[
+					'relation' => 'OR',
+					[ 'key' => 'hide_general', 'compare' => 'NOT EXISTS' ],
+					[ 'key' => 'hide_general', 'value' => '1', 'compare' => '!=' ],
+				],
 			],
 		] );
 		break;

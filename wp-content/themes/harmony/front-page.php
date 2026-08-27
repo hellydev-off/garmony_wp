@@ -12,7 +12,11 @@ $context['new_doctors'] = Timber::get_posts( [
 		// Отдельный флаг «Скрыть из общих списков» — не завязано на заполненность
 		// поля «Цитата», так что врач может иметь цитату (для «Ведение беременности»)
 		// и всё равно оставаться в общих подборках.
-		[ 'key' => 'hide_general', 'value' => '1', 'compare' => '!=' ],
+		[
+					'relation' => 'OR',
+					[ 'key' => 'hide_general', 'compare' => 'NOT EXISTS' ],
+					[ 'key' => 'hide_general', 'value' => '1', 'compare' => '!=' ],
+				],
 	],
 ] );
 
@@ -29,7 +33,11 @@ $context['specialist_doctors'] = Timber::get_posts( [
 		[ 'key' => 'is_featured', 'value' => '1', 'compare' => '!=' ],
 		[ 'key' => 'is_new', 'value' => '1', 'compare' => '!=' ],
 		[ 'key' => 'photo', 'compare' => 'EXISTS' ],
-		[ 'key' => 'hide_general', 'value' => '1', 'compare' => '!=' ],
+		[
+					'relation' => 'OR',
+					[ 'key' => 'hide_general', 'compare' => 'NOT EXISTS' ],
+					[ 'key' => 'hide_general', 'value' => '1', 'compare' => '!=' ],
+				],
 	],
 ] );
 
