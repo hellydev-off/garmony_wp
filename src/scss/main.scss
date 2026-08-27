@@ -35,6 +35,10 @@ html {
 
 html,
 body {
-  overflow-x: hidden;
+  // clip, not hidden: hidden pairs with an implicit overflow-y: auto per spec
+  // (since only one axis is non-visible), which creates a scroll container
+  // that breaks position: sticky for every descendant. clip has the same
+  // "don't let content bleed out" effect without that side effect.
+  overflow-x: clip;
   background-color: #f9f3ed;
 }
