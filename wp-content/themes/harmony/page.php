@@ -17,8 +17,10 @@ switch ( $post->post_name ) {
 			'meta_query'     => [
 				'relation' => 'AND',
 				[ 'key' => 'is_featured', 'value' => '1' ],
-				// Фотосессия «Ведение беременности» показывается только на своей странице.
-				[ 'key' => 'quote', 'value' => '', 'compare' => '=' ],
+				// Отдельный флаг «Скрыть из общих списков» — например, для врачей,
+				// которых показывают только на своей отдельной странице (см. «Ведение
+				// беременности» ниже), не завязано на заполненность поля «Цитата».
+				[ 'key' => 'hide_general', 'value' => '1', 'compare' => '!=' ],
 			],
 		] );
 		break;
@@ -30,7 +32,7 @@ switch ( $post->post_name ) {
 			'orderby'        => 'title',
 			'order'          => 'ASC',
 			'meta_query'     => [
-				[ 'key' => 'quote', 'value' => '', 'compare' => '=' ],
+				[ 'key' => 'hide_general', 'value' => '1', 'compare' => '!=' ],
 			],
 		] );
 
@@ -57,7 +59,7 @@ switch ( $post->post_name ) {
 			'meta_query'     => [
 				'relation' => 'AND',
 				[ 'key' => 'is_gynecologist', 'value' => '1' ],
-				[ 'key' => 'quote', 'value' => '', 'compare' => '=' ],
+				[ 'key' => 'hide_general', 'value' => '1', 'compare' => '!=' ],
 			],
 		] );
 		break;
