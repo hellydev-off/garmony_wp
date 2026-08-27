@@ -9788,6 +9788,10 @@ body.menu-open {
   padding: 6px;
   margin-bottom: 8px;
   flex-wrap: wrap;
+  position: sticky;
+  top: 16px;
+  z-index: 50;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 .gyno-subnav__link {
   display: inline-block;
