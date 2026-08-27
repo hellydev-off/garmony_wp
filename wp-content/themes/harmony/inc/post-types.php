@@ -30,6 +30,22 @@ add_action( 'init', function () {
 		'rewrite'      => [ 'slug' => 'doctor' ],
 	] );
 
+	register_taxonomy( 'service_category', 'doctor', [
+		'labels' => [
+			'name'          => 'Категории услуг',
+			'singular_name' => 'Категория услуги',
+			'add_new_item'  => 'Добавить категорию',
+			'edit_item'     => 'Редактировать категорию',
+			'search_items'  => 'Искать категории',
+			'all_items'     => 'Все категории',
+			'menu_name'     => 'Категории услуг',
+		],
+		'public'       => true,
+		'show_in_rest' => true,
+		'hierarchical' => true,
+		'rewrite'      => [ 'slug' => 'service-category' ],
+	] );
+
 	register_post_type( 'review', [
 		'labels' => [
 			'name'                  => 'Отзывы',
