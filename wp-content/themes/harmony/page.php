@@ -141,6 +141,18 @@ switch ( $post->post_name ) {
 		] );
 		break;
 
+	case 'funkcionalnaya-diagnostika':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'tax_query'      => [
+				[ 'taxonomy' => 'service_category', 'field' => 'slug', 'terms' => 'funkcionalnaya-diagnostika' ],
+			],
+		] );
+		break;
+
 	// Лабораторные исследования: не привязаны к конкретному врачу-специалисту
 	// (анализы выполняет лаборатория, а не приём одного врача) — без category_doctors.
 	case 'laboratoria':
