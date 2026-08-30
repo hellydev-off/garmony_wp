@@ -173,6 +173,10 @@ switch ( $post->post_name ) {
 	case 'dnevnoy-stacionar':
 		break;
 
+	// Онкоскрининг: акция, не привязана к конкретному врачу — без category_doctors.
+	case 'onkoskrining':
+		break;
+
 	// Лабораторные исследования: не привязаны к конкретному врачу-специалисту
 	// (анализы выполняет лаборатория, а не приём одного врача) — без category_doctors.
 	case 'laboratoria':
