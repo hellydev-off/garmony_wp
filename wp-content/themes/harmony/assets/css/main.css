@@ -7147,7 +7147,7 @@ button:disabled {
 .header-main__inner {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .header-logo {
