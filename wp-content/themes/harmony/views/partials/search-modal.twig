@@ -24,16 +24,17 @@
       {% set search_services = [
         { name: 'Акушерство и гинекология', href: site_url ~ '/gynecology/' },
         { name: 'Индивидуальное ведение беременности', href: site_url ~ '/vedenie-beremennosti/' },
-        { name: 'Урология и андрология' },
-        { name: 'Общая врачебная практика' },
-        { name: 'Педиатрическое отделение' },
-        { name: 'УЗИ' },
-        { name: 'Эндоскопия' },
-        { name: 'Лабораторные исследования' },
-        { name: 'Функциональная диагностика' },
-        { name: 'Физиотерапия / Озонотерапия' },
-        { name: 'Массаж' },
-        { name: 'Дневной стационар' }
+        { name: 'Урология и андрология', href: site_url ~ '/urologiya/' },
+        { name: 'Общая врачебная практика', href: site_url ~ '/obshchaya-praktika/' },
+        { name: 'Педиатрическое отделение', href: site_url ~ '/pediatriya/' },
+        { name: 'УЗИ', href: site_url ~ '/uzi/' },
+        { name: 'Эндоскопия', href: site_url ~ '/endoskopiya/' },
+        { name: 'Лабораторные исследования', href: site_url ~ '/laboratoria/' },
+        { name: 'Функциональная диагностика', href: site_url ~ '/funkcionalnaya-diagnostika/' },
+        { name: 'Физиотерапия / Озонотерапия', href: site_url ~ '/fizioterapiya/' },
+        { name: 'Массаж', href: site_url ~ '/massazh/' },
+        { name: 'Дневной стационар', href: site_url ~ '/dnevnoy-stacionar/' },
+        { name: 'Акция, онкоскрининг', href: site_url ~ '/onkoskrining/' }
       ] %}
       {% for service in search_services %}
       <li class="site-search__item" data-title="{{ service.name|lower }}">
