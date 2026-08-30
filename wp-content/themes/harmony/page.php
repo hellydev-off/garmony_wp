@@ -153,6 +153,18 @@ switch ( $post->post_name ) {
 		] );
 		break;
 
+	case 'massazh':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'tax_query'      => [
+				[ 'taxonomy' => 'service_category', 'field' => 'slug', 'terms' => 'massazh' ],
+			],
+		] );
+		break;
+
 	// Физиотерапия/озонотерапия: не привязана к конкретному врачу в штате — без category_doctors.
 	case 'fizioterapiya':
 		break;
