@@ -118,7 +118,7 @@ $topbar-bg: #f9f3ed;
   &__inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 }
 

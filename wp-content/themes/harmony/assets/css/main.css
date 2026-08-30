@@ -7147,7 +7147,7 @@ button:disabled {
 .header-main__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .header-logo {
@@ -10335,12 +10335,12 @@ body.menu-open {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 18px 0;
+  padding: 18px 0 18px 14px;
   background: transparent;
   border: none;
   cursor: pointer;
   text-align: left;
-  font-size: 17px;
+  font-size: 20px;
   color: #1a1a1a;
 }
 .gyno-faq__question span {
