@@ -8482,6 +8482,10 @@ body.menu-open {
 .hero-banner .swiper-slide {
   padding: 40px 0;
 }
+.hero-banner__link {
+  display: block;
+  padding: 40px 0;
+}
 .hero-banner__inner {
   display: flex;
   align-items: center;

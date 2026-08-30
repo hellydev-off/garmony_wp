@@ -151,6 +151,11 @@ $text-dark: #333333;
     padding: 40px 0;
   }
 
+  &__link {
+    display: block;
+    padding: 40px 0;
+  }
+
   &__inner {
     display: flex;
     align-items: center;
