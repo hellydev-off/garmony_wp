@@ -169,6 +169,10 @@ switch ( $post->post_name ) {
 	case 'fizioterapiya':
 		break;
 
+	// Дневной стационар: без привязки к конкретному врачу — без category_doctors.
+	case 'dnevnoy-stacionar':
+		break;
+
 	// Лабораторные исследования: не привязаны к конкретному врачу-специалисту
 	// (анализы выполняет лаборатория, а не приём одного врача) — без category_doctors.
 	case 'laboratoria':
