@@ -105,6 +105,156 @@ switch ( $post->post_name ) {
 		] );
 		break;
 
+	// ─── "Общая врачебная практика" — подкатегории (страницы по специализации врача) ─────
+	// Доктора этих страниц отбираются не по таксономии service_category, а по совпадению
+	// ключевого слова в свободном текстовом поле specialization — так подкатегории могут
+	// показывать врачей без необходимости заводить ещё одну таксономию поверх основных 13 категорий.
+	case 'allergologiya':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'meta_query'     => [
+				[ 'key' => 'specialization', 'value' => 'Аллерголог', 'compare' => 'LIKE' ],
+			],
+		] );
+		break;
+
+	case 'nevrologiya':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'meta_query'     => [
+				[ 'key' => 'specialization', 'value' => 'Невролог', 'compare' => 'LIKE' ],
+			],
+		] );
+		break;
+
+	case 'gematologiya':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'meta_query'     => [
+				[ 'key' => 'specialization', 'value' => 'Гематолог', 'compare' => 'LIKE' ],
+			],
+		] );
+		break;
+
+	case 'kardiologiya':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'meta_query'     => [
+				[ 'key' => 'specialization', 'value' => 'Кардиолог', 'compare' => 'LIKE' ],
+			],
+		] );
+		break;
+
+	case 'onkologiya-mammologiya':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'meta_query'     => [
+				[ 'key' => 'specialization', 'value' => 'Онколог-маммолог', 'compare' => 'LIKE' ],
+			],
+		] );
+		break;
+
+	case 'travmatologiya-ortopediya':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'meta_query'     => [
+				[ 'key' => 'specialization', 'value' => 'Травматолог', 'compare' => 'LIKE' ],
+			],
+		] );
+		break;
+
+	case 'otorinolaringologiya':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'meta_query'     => [
+				[ 'key' => 'specialization', 'value' => 'ЛОР', 'compare' => 'LIKE' ],
+			],
+		] );
+		break;
+
+	case 'pediatr':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'meta_query'     => [
+				[ 'key' => 'specialization', 'value' => 'Педиатр', 'compare' => 'LIKE' ],
+			],
+		] );
+		break;
+
+	case 'pulmonologiya':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'meta_query'     => [
+				[ 'key' => 'specialization', 'value' => 'Пульмонолог', 'compare' => 'LIKE' ],
+			],
+		] );
+		break;
+
+	case 'terapiya':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'meta_query'     => [
+				[ 'key' => 'specialization', 'value' => 'Терапевт', 'compare' => 'LIKE' ],
+			],
+		] );
+		break;
+
+	case 'flebologiya':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'meta_query'     => [
+				[ 'key' => 'specialization', 'value' => 'Флеболог', 'compare' => 'LIKE' ],
+			],
+		] );
+		break;
+
+	case 'hirurgiya-endokrinologiya':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'meta_query'     => [
+				'relation' => 'OR',
+				[ 'key' => 'specialization', 'value' => 'Хирург', 'compare' => 'LIKE' ],
+				[ 'key' => 'specialization', 'value' => 'Эндокринолог', 'compare' => 'LIKE' ],
+			],
+		] );
+		break;
+
 	case 'pediatriya':
 		$context['category_doctors'] = Timber::get_posts( [
 			'post_type'      => 'doctor',

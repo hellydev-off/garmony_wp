@@ -9926,6 +9926,10 @@ body.menu-open {
   gap: 12px;
 }
 
+.gyno-subcats {
+  margin-bottom: 80px;
+}
+
 .gyno-reason-card {
   display: flex;
   align-items: flex-start;
