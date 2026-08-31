@@ -8657,6 +8657,8 @@ body.menu-open {
   height: 52px;
   margin-bottom: 16px;
   display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .service-card__name {
   font-size: 18px;
