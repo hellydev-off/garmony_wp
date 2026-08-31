@@ -1,0 +1,54 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}Добровольное медицинское страхование — {{ siteName }}{% endblock %}
+
+{% block content %}
+
+<div class="cont-border-bottom">
+  <div class="container">
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="{{ site_url }}/">Главная</a> / Добровольное медицинское страхование
+    </nav>
+
+    <h1 class="page-title">Добровольное медицинское страхование</h1>
+    <p class="services-page__intro">В клинике «Гармония» вы можете пройти диспансеризацию по полису добровольного медицинского страхования. Мы работаем со следующими страховыми компаниями:</p>
+
+    <div class="dms-partners-grid">
+      <div class="partner-card">
+        <img src="{{ theme_uri }}/assets/images/dms/metlife.jpg" alt="МетЛайф" class="partner-img">
+      </div>
+      <div class="partner-card">
+        <img src="{{ theme_uri }}/assets/images/dms/renessans.jpg" alt="Ренессанс Страхование" class="partner-img">
+      </div>
+      <div class="partner-card">
+        <img src="{{ theme_uri }}/assets/images/dms/reso-garantiya.jpg" alt="Ресо-Гарантия" class="partner-img">
+      </div>
+      <div class="partner-card">
+        <img src="{{ theme_uri }}/assets/images/dms/vsk.jpg" alt="ВСК" class="partner-img">
+      </div>
+      <div class="partner-card">
+        <img src="{{ theme_uri }}/assets/images/dms/alfastrahovanie.jpg" alt="Альфастрахование" class="partner-img">
+      </div>
+      <div class="partner-card">
+        <img src="{{ theme_uri }}/assets/images/dms/medekspress.jpg" alt="МедЭкспресс" class="partner-img">
+      </div>
+      <div class="partner-card">
+        <img src="{{ theme_uri }}/assets/images/dms/alyans.jpg" alt="Альянс" class="partner-img">
+      </div>
+      <div class="partner-card">
+        <img src="{{ theme_uri }}/assets/images/dms/vtb.jpg" alt="ВТБ Страхование" class="partner-img">
+      </div>
+      <div class="partner-card dms-partners-grid__text-card">
+        <span>Энергогарант</span>
+      </div>
+    </div>
+
+    <p class="dms-partners-note">Приглашаем к сотрудничеству всех юридических лиц, которые готовы оплачивать полис добровольного медицинского страхования для сотрудников своей компании.</p>
+
+  </div>
+</div>
+
+{% include 'partials/contact-cta.twig' %}
+
+{% endblock %}
