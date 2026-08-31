@@ -332,13 +332,10 @@ $vb-banner-bg: linear-gradient(135deg, #eae7f3 0%, #f0e8f5 50%, #fce8d8 100%);
 .vb-screening-slider {
   margin-bottom: 16px;
 
-  &__swiper {
-    border-radius: 16px;
-    overflow: hidden;
-  }
-
   &__banner {
     position: relative;
+    border-radius: 16px;
+    overflow: hidden;
 
     img {
       width: 100%;
@@ -374,63 +371,6 @@ $vb-banner-bg: linear-gradient(135deg, #eae7f3 0%, #f0e8f5 50%, #fce8d8 100%);
     }
   }
 
-  &__overlay-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: #fff;
-    padding: 10px 10px 10px 18px;
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 500;
-    color: $vb-navy;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
-  }
-
-  &__overlay-phone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: $vb-navy;
-    border-radius: 50%;
-    flex-shrink: 0;
-    transition: background 0.2s;
-
-    &:hover {
-      background: darken($vb-navy, 8%);
-    }
-
-    svg {
-      width: 18px;
-      height: 18px;
-    }
-  }
-
-  &__pagination {
-    display: flex;
-    gap: 6px;
-    justify-content: center;
-    margin-top: 10px;
-
-    &.swiper-pagination-bullets {
-      position: static;
-    }
-
-    .swiper-pagination-bullet {
-      width: 22px;
-      height: 4px;
-      border-radius: 2px;
-      background: $vb-border;
-      opacity: 1;
-      margin: 0;
-
-      &-active {
-        background: $vb-navy;
-      }
-    }
-  }
 }
 
 // ─── Accordion ────────────────────────────────────────────────────────────────
@@ -456,7 +396,8 @@ $vb-banner-bg: linear-gradient(135deg, #eae7f3 0%, #f0e8f5 50%, #fce8d8 100%);
     background: transparent;
     border: none;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 19px;
+    font-weight: 600;
     color: $vb-dark;
     text-align: left;
     gap: 12px;
@@ -495,7 +436,7 @@ $vb-banner-bg: linear-gradient(135deg, #eae7f3 0%, #f0e8f5 50%, #fce8d8 100%);
     line-height: 1.65;
 
     &.is-open {
-      max-height: 400px;
+      max-height: 4000px;
       padding-bottom: 18px;
     }
   }

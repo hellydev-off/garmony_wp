@@ -10932,12 +10932,10 @@ body.menu-open {
 .vb-screening-slider {
   margin-bottom: 16px;
 }
-.vb-screening-slider__swiper {
-  border-radius: 16px;
-  overflow: hidden;
-}
 .vb-screening-slider__banner {
   position: relative;
+  border-radius: 16px;
+  overflow: hidden;
 }
 .vb-screening-slider__banner img {
   width: 100%;
@@ -10968,56 +10966,6 @@ body.menu-open {
   border-color: #1d3461;
   text-decoration: none;
 }
-.vb-screening-slider__overlay-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: #fff;
-  padding: 10px 10px 10px 18px;
-  border-radius: 50px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #1d3461;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
-}
-.vb-screening-slider__overlay-phone {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: #1d3461;
-  border-radius: 50%;
-  flex-shrink: 0;
-  transition: background 0.2s;
-}
-.vb-screening-slider__overlay-phone:hover {
-  background: rgb(19.6095238095, 35.1619047619, 65.5904761905);
-}
-.vb-screening-slider__overlay-phone svg {
-  width: 18px;
-  height: 18px;
-}
-.vb-screening-slider__pagination {
-  display: flex;
-  gap: 6px;
-  justify-content: center;
-  margin-top: 10px;
-}
-.vb-screening-slider__pagination.swiper-pagination-bullets {
-  position: static;
-}
-.vb-screening-slider__pagination .swiper-pagination-bullet {
-  width: 22px;
-  height: 4px;
-  border-radius: 2px;
-  background: #e8ddd6;
-  opacity: 1;
-  margin: 0;
-}
-.vb-screening-slider__pagination .swiper-pagination-bullet-active {
-  background: #1d3461;
-}
 
 .vb-accordion {
   display: flex;
@@ -11040,7 +10988,8 @@ body.menu-open {
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 19px;
+  font-weight: 600;
   color: #1a1a1a;
   text-align: left;
   gap: 12px;
@@ -11072,7 +11021,7 @@ body.menu-open {
   line-height: 1.65;
 }
 .vb-accordion__body.is-open {
-  max-height: 400px;
+  max-height: 4000px;
   padding-bottom: 18px;
 }
 
@@ -12238,7 +12187,7 @@ body.menu-open {
   }
   .vb-accordion__toggle {
     padding: 14px 16px;
-    font-size: 14px;
+    font-size: 16px;
   }
   .vb-doctor-card__quote {
     font-size: 12px;
