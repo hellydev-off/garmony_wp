@@ -1,6 +1,6 @@
 {% extends 'layouts/base.twig' %}
 
-{% block title %}Общая врачебная практика — {{ siteName }}{% endblock %}
+{% block title %}Гастроэнтерология — {{ siteName }}{% endblock %}
 
 {% block content %}
 <div class="gyno-page">
@@ -14,9 +14,11 @@
         <span class="breadcrumb-nav__sep">/</span>
         <a href="{{ site_url }}/services/">Услуги</a>
         <span class="breadcrumb-nav__sep">/</span>
-        <span>Общая врачебная практика</span>
+        <a href="{{ site_url }}/obshchaya-praktika/">Общая врачебная практика</a>
+        <span class="breadcrumb-nav__sep">/</span>
+        <span>Гастроэнтерология</span>
       </nav>
-      <h1 class="page-title">Общая врачебная практика</h1>
+      <h1 class="page-title">Гастроэнтерология</h1>
     </div>
   </div>
 
@@ -39,33 +41,33 @@
           </div>
         </div>
         <div class="gyno-intro__text">
-          <p>В отделении общей врачебной практики клиники «Гармония» принимают специалисты широкого профиля: терапевт, невролог, кардиолог, эндокринолог, гастроэнтеролог, аллерголог-иммунолог, отоларинголог (ЛОР), травматолог-ортопед, флеболог, хирург, пульмонолог, онколог-маммолог, гематолог и офтальмолог. Вы можете обратиться напрямую к нужному специалисту или начать с приёма терапевта, который при необходимости направит к профильному врачу.</p>
+          <p>Гастроэнтеролог — врач, который занимается диагностикой и лечением заболеваний желудочно-кишечного тракта, печени и желчевыводящих путей. Стандартное обследование в клинике «Гармония» включает первичный осмотр, лабораторные анализы, гастроскопию и УЗИ.</p>
         </div>
       </div>
       </div>
     </div>
   </section>
 
-  {# ── Когда стоит обратиться ───────────────────────────────────────────────────── #}
+  {# ── Повод обратиться ─────────────────────────────────────────────────────────── #}
   <section class="gyno-reasons" id="povod">
     <div class="container">
-      <h2 class="gyno-section-title">Когда стоит обратиться к врачу общей практики:</h2>
+      <h2 class="gyno-section-title">Когда стоит обратиться к гастроэнтерологу:</h2>
       <div class="gyno-reasons__grid">
         <div class="gyno-reason-card">
           <span class="gyno-reason-card__num">1</span>
-          <p>Плохое самочувствие, повышенная температура или недомогание неясной причины.</p>
+          <p>Боли в эпигастрии и других отделах живота.</p>
         </div>
         <div class="gyno-reason-card">
           <span class="gyno-reason-card__num">2</span>
-          <p>Плановый профилактический осмотр.</p>
+          <p>Изжога, тошнота, рвота, отрыжка, неприятный привкус во рту.</p>
         </div>
         <div class="gyno-reason-card">
           <span class="gyno-reason-card__num">3</span>
-          <p>Необходимость наблюдения при хроническом заболевании.</p>
+          <p>Расстройства стула, вздутие живота.</p>
         </div>
         <div class="gyno-reason-card">
           <span class="gyno-reason-card__num">4</span>
-          <p>Нужно понять, к какому узкому специалисту обратиться дальше.</p>
+          <p>Резкий набор или снижение веса, изменение аппетита без видимой причины.</p>
         </div>
       </div>
     </div>
@@ -84,7 +86,7 @@
 </svg>
           </div>
           <h3>0% осуждения,<br>100% понимания</h3>
-          <p>Доверие и уважение — основа нашей работы. Мы здесь, чтобы поддержать вас сейчас и вместе наметить путь к лучшему самочувствию.</p>
+          <p>Доверие и уважение — основа нашей работы. Врачи Клиники не осуждают выбор пациентов, их состояние здоровья. Мы здесь, чтобы поддержать вас сейчас и вместе наметить путь к лучшему самочувствию.</p>
         </div>
         <div class="gyno-care__item">
           <div class="gyno-care__icon">
@@ -93,7 +95,7 @@
 </svg>
           </div>
           <h3>Не назначаем лишнего</h3>
-          <p>Наша практика исключает постановку сомнительных диагнозов и назначение лекарств без чётких показаний. Все решения врачей опираются на самые свежие клинические рекомендации.</p>
+          <p>Наша практика исключает постановку сомнительных диагнозов и назначение лекарств без чётких показаний. Все решения врачей опираются на самые свежие клинические рекомендации — как отечественные, так и зарубежные.</p>
         </div>
         <div class="gyno-care__item">
           <div class="gyno-care__icon">
@@ -111,148 +113,37 @@
 </svg>
           </div>
           <h3>Всё в одном месте</h3>
-          <p>Проведём все необходимые обследования: от первичного осмотра и анализов до консультаций профильных врачей. Вам не нужно ходить по разным учреждениям.</p>
+          <p>Проведём все необходимые обследования: от первичного осмотра и анализов до УЗИ и консультаций профильных врачей. Вам не нужно ходить по разным учреждениям.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  {# ── Подкатегории общей врачебной практики ───────────────────────────────────── #}
-  <section class="gyno-subcats">
-    <div class="container">
-      <h2 class="gyno-section-title">Направления общей врачебной практики:</h2>
-      <div class="services-grid">
-
-        <a href="{{ site_url }}/allergologiya/" class="service-card">
-          <p class="service-card__name">Аллергология-иммунология</p>
-          <span class="service-card__link">Подробнее и цены</span>
-        </a>
-
-        <a href="{{ site_url }}/nevrologiya/" class="service-card">
-          <p class="service-card__name">Неврология</p>
-          <span class="service-card__link">Подробнее и цены</span>
-        </a>
-
-        <a href="{{ site_url }}/gematologiya/" class="service-card">
-          <p class="service-card__name">Гематология</p>
-          <span class="service-card__link">Подробнее и цены</span>
-        </a>
-
-        <a href="{{ site_url }}/kardiologiya/" class="service-card">
-          <p class="service-card__name">Кардиология</p>
-          <span class="service-card__link">Подробнее и цены</span>
-        </a>
-
-        <a href="{{ site_url }}/onkologiya-mammologiya/" class="service-card">
-          <p class="service-card__name">Онкология-маммология</p>
-          <span class="service-card__link">Подробнее и цены</span>
-        </a>
-
-        <a href="{{ site_url }}/travmatologiya-ortopediya/" class="service-card">
-          <p class="service-card__name">Травматология-ортопедия</p>
-          <span class="service-card__link">Подробнее и цены</span>
-        </a>
-
-        <a href="{{ site_url }}/otorinolaringologiya/" class="service-card">
-          <p class="service-card__name">Оториноларингология</p>
-          <span class="service-card__link">Подробнее и цены</span>
-        </a>
-
-        <a href="{{ site_url }}/pediatr/" class="service-card">
-          <p class="service-card__name">Педиатрия</p>
-          <span class="service-card__link">Подробнее и цены</span>
-        </a>
-
-        <a href="{{ site_url }}/pulmonologiya/" class="service-card">
-          <p class="service-card__name">Пульмонология</p>
-          <span class="service-card__link">Подробнее и цены</span>
-        </a>
-
-        <a href="{{ site_url }}/terapiya/" class="service-card">
-          <p class="service-card__name">Терапия</p>
-          <span class="service-card__link">Подробнее и цены</span>
-        </a>
-
-        <a href="{{ site_url }}/flebologiya/" class="service-card">
-          <p class="service-card__name">Флебология</p>
-          <span class="service-card__link">Подробнее и цены</span>
-        </a>
-
-        <a href="{{ site_url }}/hirurgiya-endokrinologiya/" class="service-card">
-          <p class="service-card__name">Хирургия и эндокринология</p>
-          <span class="service-card__link">Подробнее и цены</span>
-        </a>
-
-        <a href="{{ site_url }}/gastroenterologiya/" class="service-card">
-          <p class="service-card__name">Гастроэнтерология</p>
-          <span class="service-card__link">Подробнее и цены</span>
-        </a>
-
       </div>
     </div>
   </section>
 
   <div class="cont-border">
-    {# ── Кто ведёт приём ──────────────────────────────────────────────────────────── #}
+    {# ── Что предложат врачи ──────────────────────────────────────────────────────── #}
   <section class="gyno-offer">
     <div class="container">
-      <h2 class="gyno-section-title">В отделении общей практики ведут приём:</h2>
+      <h2 class="gyno-section-title">Гастроэнтерологи нашей клиники помогут вылечить:</h2>
       <div class="gyno-offer__grid">
         <div class="gyno-offer__item">
           <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="">
-          <span>Терапевт;</span>
+          <span>Гастриты и язвенную болезнь;</span>
         </div>
         <div class="gyno-offer__item">
           <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="">
-          <span>Невролог;</span>
+          <span>Гепатиты B, C, D, E, включая хронические формы;</span>
         </div>
         <div class="gyno-offer__item">
           <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="">
-          <span>Кардиолог;</span>
+          <span>Желчнокаменную болезнь и холецистит;</span>
         </div>
         <div class="gyno-offer__item">
           <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="">
-          <span>Эндокринолог;</span>
+          <span>Цирроз печени;</span>
         </div>
-        <div class="gyno-offer__item">
+        <div class="gyno-offer__item gyno-offer__item--full">
           <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="">
-          <span>Гастроэнтеролог;</span>
-        </div>
-        <div class="gyno-offer__item">
-          <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="">
-          <span>Аллерголог-иммунолог;</span>
-        </div>
-        <div class="gyno-offer__item">
-          <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="">
-          <span>Отоларинголог (ЛОР);</span>
-        </div>
-        <div class="gyno-offer__item">
-          <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="">
-          <span>Травматолог-ортопед;</span>
-        </div>
-        <div class="gyno-offer__item">
-          <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="">
-          <span>Флеболог;</span>
-        </div>
-        <div class="gyno-offer__item">
-          <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="">
-          <span>Хирург;</span>
-        </div>
-        <div class="gyno-offer__item">
-          <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="">
-          <span>Пульмонолог;</span>
-        </div>
-        <div class="gyno-offer__item">
-          <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="">
-          <span>Онколог-маммолог;</span>
-        </div>
-        <div class="gyno-offer__item">
-          <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="">
-          <span>Гематолог;</span>
-        </div>
-        <div class="gyno-offer__item">
-          <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="">
-          <span>Офтальмолог.</span>
+          <span>Другие заболевания желудочно-кишечного тракта и печени.</span>
         </div>
       </div>
     </div>
@@ -293,7 +184,7 @@
   {# ── Врачи ────────────────────────────────────────────────────────────────────── #}
   <section class="gyno-doctors" id="vrachi">
     <div class="container">
-      <h2 class="gyno-section-title">Специалисты клиники «Гармония»:</h2>
+      <h2 class="gyno-section-title">Гастроэнтерологи клиники «Гармония»:</h2>
       <div class="doctors-grid">
 
         {% for doctor in category_doctors %}
@@ -323,45 +214,45 @@
   {# ── Как проходит приём ───────────────────────────────────────────────────────── #}
   <section class="gyno-examinations">
     <div class="container">
-      <h2 class="gyno-section-title">Как проходит приём</h2>
-      <p>Приём начинается с беседы — врач собирает анамнез, слушает жалобы, уточняет, когда впервые появились симптомы и что им предшествовало. Также врача интересуют перенесённые заболевания, операции и наличие хронических состояний.</p>
-      <p>Далее проводится осмотр, при необходимости — с использованием дополнительных инструментальных методов. Если требуется консультация другого специалиста, врач направит вас к нужному профильному коллеге прямо в клинике.</p>
+      <h2 class="gyno-section-title">Как проходит приём гастроэнтеролога</h2>
+      <p>В комплекс стандартного обследования входят первичный клинический осмотр и сбор анамнеза, а также лабораторные тесты — общий и биохимический анализ крови, анализ мочи.</p>
+      <p>При необходимости проводятся фиброэзофагогастроскопия и УЗИ органов брюшной полости.</p>
 
-      <h3 class="gyno-subsection-title">Приём может включать:</h3>
+      <h3 class="gyno-subsection-title">Обследование может включать:</h3>
       <div class="gyno-steps">
         <div class="gyno-step">
           <div class="gyno-step__header">
             <div class="gyno-step__num">1</div>
             <div class="gyno-step__line"></div>
           </div>
-          <p class="gyno-step__text">Сбор анамнеза и жалоб;</p>
+          <p class="gyno-step__text">Осмотр и сбор анамнеза;</p>
         </div>
         <div class="gyno-step">
           <div class="gyno-step__header">
             <div class="gyno-step__num">2</div>
             <div class="gyno-step__line"></div>
           </div>
-          <p class="gyno-step__text">Осмотр;</p>
+          <p class="gyno-step__text">Лабораторные анализы;</p>
         </div>
         <div class="gyno-step">
           <div class="gyno-step__header">
             <div class="gyno-step__num">3</div>
             <div class="gyno-step__line"></div>
           </div>
-          <p class="gyno-step__text">При необходимости — лабораторные и инструментальные исследования;</p>
+          <p class="gyno-step__text">Фиброэзофагогастроскопия (при необходимости);</p>
         </div>
         <div class="gyno-step">
           <div class="gyno-step__header">
             <div class="gyno-step__num">4</div>
             <div class="gyno-step__line"></div>
           </div>
-          <p class="gyno-step__text">Назначение лечения или направление к профильному специалисту.</p>
+          <p class="gyno-step__text">УЗИ органов брюшной полости (при необходимости);</p>
         </div>
       </div>
 
       <div class="gyno-alert">
         <div class="gyno-alert__icon">!</div>
-        <p>Если не уверены, к какому врачу обратиться — начните с приёма терапевта: он поможет определить дальнейшее направление.</p>
+        <p>Из-за отсутствия в печени нервных окончаний многие не замечают проблему, пока заболевание не станет серьёзным — не откладывайте визит к врачу при первых симптомах.</p>
       </div>
     </div>
   </section>
@@ -372,21 +263,21 @@
       <h2 class="gyno-section-title">Вопросы и ответы:</h2>
       <div class="gyno-faq__list">
         <div class="gyno-faq__item">
-          <button class="gyno-faq__question collapsed" data-toggle="collapse" data-target="#op-faq-1" aria-expanded="false">
-            <span>Как понять, к какому специалисту записаться?</span>
+          <button class="gyno-faq__question collapsed" data-toggle="collapse" data-target="#gas-faq-1" aria-expanded="false">
+            <span>Почему стоит выбрать гастроэнтеролога именно в Клинике «Гармония»?</span>
             <svg class="gyno-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
-          <div class="collapse" id="op-faq-1">
-            <p class="gyno-faq__answer">Если сомневаетесь — запишитесь на приём к терапевту. Он оценит жалобы и, если потребуется, направит к нужному профильному врачу клиники.</p>
+          <div class="collapse" id="gas-faq-1">
+            <p class="gyno-faq__answer">Приём ведут опытные гастроэнтерологи, включая кандидатов и докторов медицинских наук — мы проводим полное обследование ЖКТ и печени в одной клинике.</p>
           </div>
         </div>
         <div class="gyno-faq__item">
-          <button class="gyno-faq__question collapsed" data-toggle="collapse" data-target="#op-faq-2" aria-expanded="false">
-            <span>Можно ли пройти нескольких специалистов за один визит?</span>
+          <button class="gyno-faq__question collapsed" data-toggle="collapse" data-target="#gas-faq-2" aria-expanded="false">
+            <span>Когда стоит обратиться к гастроэнтерологу?</span>
             <svg class="gyno-faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
-          <div class="collapse" id="op-faq-2">
-            <p class="gyno-faq__answer">Да, в клинике «Гармония» работают специалисты разного профиля — при необходимости можно записаться на приём сразу к нескольким врачам в один день.</p>
+          <div class="collapse" id="gas-faq-2">
+            <p class="gyno-faq__answer">При болях в животе, изжоге, расстройствах стула, а также при тяжести в правом подреберье или горечи во рту — эти симптомы могут говорить о заболеваниях ЖКТ или печени.</p>
           </div>
         </div>
       </div>
@@ -435,129 +326,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ─── Prices: data ─────────────────────────────────────────────────────────────
   var PRICES = [
-    {name: 'Выдача справки', price: '1 000'},
-    {name: 'Консультативный приём', price: '1 100'},
-    {name: 'Оформление листка нетрудоспособности', price: '650'},
-    {name: 'Оформление санаторно-курортной карты', price: '1 400'},
-    {name: 'Прием врача нутрициолога', price: '2 500'},
-    {name: 'Прием врача-терапевта', price: '2 000'},
-    {name: 'Прием врача-терапевта ДМН', price: '2 900'},
-    {name: 'Прием врача-терапевта понедельник-пятница с 8.00 до 15.00', price: '1 700'},
-    {name: 'Лечебная блокада (с учетом стоимости препарата)', price: '700'},
-    {name: 'Прием врача-невролога', price: '2 100'},
-    {name: 'Прием врача-невролога Досужевой ЕА', price: '2 500'},
-    {name: 'Прием врача-невролога Дульнев ВВ', price: '2 800'},
-    {name: 'Мониторирование АД', price: '1 500'},
-    {name: 'Прием врача-кардиолога (без ЭКГ)', price: '2 100'},
-    {name: 'Прием врача-кардиолога (без ЭКГ) КМН', price: '2 900'},
-    {name: 'Холтеровское мониторирование', price: '1 800'},
-    {name: 'Электрокардиография с нагрузкой', price: '1 200'},
-    {name: 'Электрокардиография с расшифровкой', price: '750'},
-    {name: 'Электрокардиография с расшифровкой детям', price: '450'},
-    {name: 'Диагностическая биопсия лимфатического узла', price: '2 100'},
-    {name: 'Прием врача эндокринолога', price: '2 000'},
-    {name: 'Прием врача эндокринолога КМН', price: '2 600'},
-    {name: 'Прием врача эндокринолога детского', price: '2 600'},
-    {name: 'Прием врача эндокринолога детского КМН', price: '3 000'},
-    {name: 'Прием врача эндокринолога детского КМН Дианов', price: '3 000'},
-    {name: 'Прием врача- эндокринолога с экспресс- анализатором глюкозы крови', price: '2 750'},
-    {name: 'Прием врача- эндокринолога с экспресс- анализатором глюкозы крови КМН', price: '2 250'},
-    {name: 'Пункционная биопсия щитовидной железы', price: '2 300'},
     {name: 'Прием врача-гастроэнтеролога', price: '2 100'},
     {name: 'Прием врача-гастроэнтеролога ДМН Фомина ЛА', price: '2 350'},
     {name: 'Прием врача-гастроэнтеролога КМН', price: '2 350'},
     {name: 'Прием врача-гастроэнтеролога детского', price: '2 100'},
     {name: 'Прием врача-гастроэнтеролога детского КМН', price: '2 350'},
-    {name: 'Выдача справки-заключения врачом аллергологом-иммунологом', price: '650'},
-    {name: 'Прием врача аллерголога-иммунолога', price: '2 250'},
-    {name: 'Прием врача аллерголога-иммунолога', price: '2 100'},
-    {name: 'Прием врача аллерголога-иммунолога КМН', price: '1 900'},
-    {name: 'Прием врача аллерголога-иммунолога детского', price: '2 100'},
-    {name: 'Прием врача аллерголога-иммунолога детского КМН', price: '2 250'},
-    {name: 'Анемизация слизистой оболочки полости носа', price: '350'},
-    {name: 'Анестезия аппликационная', price: '200'},
-    {name: 'Аппликация лекарственных препаратов на слизистую полости носа', price: '300'},
-    {name: 'Введение лекарственных препаратов в наружный слуховой проход', price: '350'},
-    {name: 'Взятие мазка', price: '300'},
-    {name: 'Вливание лекарственных препаратов в гортань', price: '700'},
-    {name: 'Вскрытие абсцесса ЛОР-локализации', price: '3 000'},
-    {name: 'Вскрытие фурункула носа', price: '1 500'},
-    {name: 'Катетеризация евстахиевой трубы и введение лекарственных препаратов (с одной стороны)', price: '1 500'},
-    {name: 'Ларингоскопия', price: '1 100'},
-    {name: 'Ларингоскопия + консультация', price: '1 600'},
-    {name: 'Парацентез', price: '2 500'},
-    {name: 'Пневмомассаж барабанной перепонки', price: '300'},
-    {name: 'Прием врача отоневролога', price: '2 100'},
-    {name: 'Прием врача отоларинголога', price: '2 000'},
-    {name: 'Продувание ЕТ по Политцеру', price: '350'},
-    {name: 'Промывание лакун миндалин инструментальное', price: '700'},
-    {name: 'Промывание лакун миндалин на аппарате "Тонзиллор"', price: '800'},
-    {name: 'Промывание носа методом перемещения (1 процедура)', price: '700'},
-    {name: 'Промывание оперированной в/челюстной пазухи (с 1 стороны)', price: '1 000'},
-    {name: 'Промывание уха лекарственными препаратами', price: '350'},
-    {name: 'Радиоволновая вазодеструкция нижних носовых раковин "Сургитрон"', price: '9 600'},
-    {name: 'Туалет носа и пазух (одна процедура)', price: '350'},
-    {name: 'Туалет уха (одна процедура)', price: '300'},
-    {name: 'УЗ озвучивание миндалин на аппарате "Тонзиллор"', price: '600'},
-    {name: 'Удаление доброкачественных новообразований глотки, носа', price: '2 500'},
-    {name: 'Удаление инородного тела глотки', price: '1 000'},
-    {name: 'Удаление инородного тела из гортани', price: '2 500'},
-    {name: 'Удаление инородного тела из носа', price: '1 500'},
-    {name: 'Удаление инородного тела из уха (с одной стороны)', price: '1 000'},
-    {name: 'Удаление инородного тела из уха (с одной стороны) повышенной сложности', price: '1 500'},
-    {name: 'Удаление ушной серной пробки (с двух сторон)', price: '1 300'},
-    {name: 'Удаление ушной серной пробки (с одной стороны)', price: '800'},
-    {name: 'Эндоскопия носа', price: '1 100'},
-    {name: 'Эндоскопия носа + консультация', price: '1 600'},
-    {name: 'Эндоскопия ушей', price: '550'},
-    {name: 'Эндоскопия ушей + консультация', price: '1 300'},
-    {name: 'Прием врача травматолога-ортопеда', price: '2 100'},
-    {name: 'Прием врача травматолога-ортопеда КМН взрослые', price: '5 100'},
-    {name: 'Прием врача травматолога-ортопеда детского КМН', price: '4 100'},
-    {name: 'Прием врача флеболога', price: '2 100'},
-    {name: 'Прием врача флеболога КМН', price: '2 250'},
-    {name: 'Анестезия', price: '400'},
-    {name: 'Вскрытие панарициев, абсцессов, флегмон', price: '3 500'},
-    {name: 'Иссечение объемных новообразований кожи различной локализации (папиллом)', price: '3 200'},
-    {name: 'Лечение вросшего ногтя с разрушением матрицы с 1-й стороны', price: '3 500'},
-    {name: 'Лечение вросшего ногтя с разрушением матрицы с 2-х сторон', price: '4 500'},
-    {name: 'Наложение косметического шва (без стоимости шовного материала)', price: '1 400'},
-    {name: 'Новокаиновая блокада (акроспинальная)', price: '1 600'},
-    {name: 'Первичная хирургическая обработка ран', price: '1 400'},
-    {name: 'Перевязка гнойных ран', price: '1 200'},
-    {name: 'Перевязка чистых ран', price: '550'},
-    {name: 'Прием врача хирурга', price: '2 000'},
-    {name: 'Прием врача хирурга КМН', price: '2 000'},
-    {name: 'Снятие швов', price: '250'},
-    {name: 'Удаление атером', price: '2 300'},
-    {name: 'Удаление бородавок аппаратом "Сургитрон" 5-10 шт', price: '4 500'},
-    {name: 'Удаление бородавок аппаратом "Сургитрон", 3-5 шт.', price: '3 500'},
-    {name: 'Удаление инородных тел', price: '900'},
-    {name: 'Удаление новообразований на лице аппаратом "Сургитрон" 1-3 шт.', price: '2 300'},
-    {name: 'Удаление новообразований на лице аппаратом "Сургитрон" 3-5 шт.', price: '3 500'},
-    {name: 'Удаление новообразований на лице аппаратом "Сургитрон" 5-10 шт.', price: '4 500'},
-    {name: 'Удаление новообразований на теле аппаратом "Сургитрон" 1-3 шт.', price: '1 700'},
-    {name: 'Удаление новообразований на теле аппаратом "Сургитрон" 3-5 шт', price: '2 300'},
-    {name: 'Удаление новообразований на теле аппаратом "Сургитрон" 5-10 шт.', price: '4 500'},
-    {name: 'Удаление ногтевых пластинок', price: '2 000'},
-    {name: 'Удаление подкожных новообразований до 1 см', price: '2 500'},
-    {name: 'Удаление подкожных новообразований от 1,0 см до 5,0 мм с разрезом кожи', price: '3 500'},
-    {name: 'Удаление подкожных новоообразований более 5,0 см', price: '5 000'},
-    {name: 'Прием врача-пульмонолога', price: '2 100'},
-    {name: 'Прием врача-пульмонолога детского', price: '2 100'},
-    {name: 'Прием врача-пульмонолога детского КМН', price: '2 250'},
-    {name: 'Прием пульмонолога с проведением спирометрии', price: '3 500'},
-    {name: 'Проведение спирометрии', price: '1 500'},
-    {name: 'Аспирация лимфы в послеоперационной области', price: '1 000'},
-    {name: 'Введение жидкости в экспандер', price: '950'},
-    {name: 'Диагностическая пункционная биопсия молочной железы', price: '2 100'},
-    {name: 'Прием врача онколога-маммолога', price: '2 100'},
-    {name: 'Соскоб с опухоли кожи (без стоимости цитологического исследования материала)', price: '900'},
-    {name: 'Тонкоигольная аспирационная биопсия лимфатического узла/молочной железы', price: '1 500'},
-    {name: 'Тонкоигольная аспирационная биопсия под контролем УЗИ', price: '1 800'},
-    {name: 'Прием врача гематолога', price: '2 350'},
-    {name: 'Прием гематолога детского', price: '2 100'},
-    {name: 'Прием врача-офтальмолога', price: '1 800'},
   ];
 
   var PER_PAGE   = 10;

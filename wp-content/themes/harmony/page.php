@@ -255,6 +255,18 @@ switch ( $post->post_name ) {
 		] );
 		break;
 
+	case 'gastroenterologiya':
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+			'meta_query'     => [
+				[ 'key' => 'specialization', 'value' => 'Гастроэнтеролог', 'compare' => 'LIKE' ],
+			],
+		] );
+		break;
+
 	case 'pediatriya':
 		$context['category_doctors'] = Timber::get_posts( [
 			'post_type'      => 'doctor',
