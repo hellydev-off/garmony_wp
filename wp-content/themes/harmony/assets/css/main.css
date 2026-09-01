@@ -7917,10 +7917,15 @@ body.menu-open {
 }
 
 .dr-card {
-  background: #fff;
+  background: #f9f3ed;
   border-radius: 16px;
   overflow: hidden;
   text-align: center;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.dr-card:hover {
+  border-color: #274878;
 }
 .dr-card__photo {
   margin: 10px 10px 0;
@@ -8372,18 +8377,15 @@ body.menu-open {
   margin: 0;
 }
 .doc-banner__link {
-  color: #1b5fa8;
+  color: #274878;
   font-size: 22px;
   font-weight: 600;
-  -webkit-text-decoration: underline dotted #1b5fa8;
-          text-decoration: underline dotted #1b5fa8;
-  text-underline-offset: 4px;
+  text-decoration: none;
   line-height: 1.6;
   align-self: center;
 }
 .doc-banner__link:hover {
-  color: rgb(19.9384615385, 70.1538461538, 124.0615384615);
-  text-decoration-color: rgb(19.9384615385, 70.1538461538, 124.0615384615);
+  text-decoration: underline;
 }
 .doc-banner__btn {
   width: 58px;
@@ -8953,10 +8955,15 @@ body.menu-open {
 }
 
 .doctor-card {
-  background: #fff;
+  background: #f9f3ed;
   border-radius: 16px;
   overflow: hidden;
   text-align: center;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.doctor-card:hover {
+  border-color: #274878;
 }
 .doctor-card__photo {
   margin: 10px 10px 0;
@@ -9093,11 +9100,16 @@ body.menu-open {
 .new-doctor-card {
   display: flex;
   gap: 20px;
-  background: #f0ebe1;
+  background: #f9f3ed;
   border-radius: 12px;
   padding: 20px;
   align-items: flex-start;
   height: 100%;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.new-doctor-card:hover {
+  border-color: #274878;
 }
 .new-doctor-card__photo {
   width: 160px;
@@ -9188,6 +9200,7 @@ body.menu-open {
   height: 100%;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 .news-card__image {
   width: 100%;
@@ -9234,15 +9247,13 @@ body.menu-open {
   color: #aab4c3;
 }
 .news-card__link {
-  color: #010102;
+  color: #274878;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
-  border-bottom: 1px dotted #010102;
-  padding-bottom: 1px;
 }
 .news-card__link:hover {
-  border-bottom-style: solid;
+  text-decoration: underline;
 }
 
 .news-card__image--promo {
@@ -10019,10 +10030,15 @@ body.menu-open {
 }
 
 .s_dr-card {
-  background: #fff;
+  background: #f9f3ed;
   border-radius: 16px;
   overflow: hidden;
   text-align: center;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.s_dr-card:hover {
+  border-color: #274878;
 }
 .s_dr-card__photo {
   margin: 10px 10px 0;

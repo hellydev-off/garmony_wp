@@ -55,13 +55,18 @@
     new Swiper('.js-partners-swiper', {
       slidesPerView: 2,
       spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
       navigation: {
         prevEl: '.js-partners-prev',
         nextEl: '.js-partners-next',
       },
       breakpoints: {
         768: { slidesPerView: 3 },
-        992: { slidesPerView: 4 },
+        992: { slidesPerView: 3 },
       },
     });
   })();

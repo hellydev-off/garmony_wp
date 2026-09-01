@@ -800,6 +800,15 @@
       }
     });
 
+    // News card → its page
+    $(document).on('click', '[data-news-url]', function (e) {
+      var url = $(this).data('news-url');
+      if (url) {
+        e.preventDefault();
+        window.location.href = url;
+      }
+    });
+
     // Paginate news list (8 per page)
     initPagination('.news-list', '.news-list-item', 8);
 

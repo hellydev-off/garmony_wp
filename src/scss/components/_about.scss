@@ -242,17 +242,15 @@ $text-dark: #333333;
   }
 
   &__link {
-    color: $blue-link;
+    color: #274878;
     font-size: 22px;
     font-weight: 600;
-    text-decoration: underline dotted $blue-link;
-    text-underline-offset: 4px;
+    text-decoration: none;
     line-height: 1.6;
     align-self: center;
 
     &:hover {
-      color: darken($blue-link, 10%);
-      text-decoration-color: darken($blue-link, 10%);
+      text-decoration: underline;
     }
   }
 

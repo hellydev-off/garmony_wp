@@ -216,10 +216,16 @@ $text-dark: #1a1a1a;
 }
 
 .dr-card {
-  background: #fff;
+  background: #f9f3ed;
   border-radius: 16px;
   overflow: hidden;
   text-align: center;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: #274878;
+  }
 
   &__photo {
     margin: 10px 10px 0;

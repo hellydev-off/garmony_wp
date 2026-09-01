@@ -550,10 +550,16 @@ $text-dark: #333333;
 }
 
 .doctor-card {
-  background: #fff;
+  background: #f9f3ed;
   border-radius: 16px;
   overflow: hidden;
   text-align: center;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: $navy;
+  }
 
   &__photo {
     margin: 10px 10px 0;
@@ -716,11 +722,17 @@ $text-dark: #333333;
 .new-doctor-card {
   display: flex;
   gap: 20px;
-  background: $doctor-bg;
+  background: #f9f3ed;
   border-radius: 12px;
   padding: 20px;
   align-items: flex-start;
   height: 100%;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: $navy;
+  }
 
   &__photo {
     width: 160px;
@@ -827,6 +839,7 @@ $text-dark: #333333;
   height: 100%;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 
   &__image {
     width: 100%;
@@ -881,15 +894,13 @@ $text-dark: #333333;
   }
 
   &__link {
-    color: $blue-link;
+    color: $navy;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
-    border-bottom: 1px dotted $blue-link;
-    padding-bottom: 1px;
 
     &:hover {
-      border-bottom-style: solid;
+      text-decoration: underline;
     }
   }
 }

@@ -24,7 +24,7 @@
       <div class="swiper-wrapper">
         {% for item in latest_news %}
         <div class="swiper-slide">
-          <div class="news-card">
+          <div class="news-card" data-news-url="{{ item.link }}">
             <img src="{{ theme_uri }}/assets/images/news/n_stethoscope.svg" alt="" class="news-card__image news-card__image--placeholder">
             <div class="news-card__body">
               <h3 class="news-card__title">{{ item.title }}</h3>
