@@ -7236,6 +7236,10 @@ button:disabled {
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(27, 58, 92, 0.1), 0 2px 8px rgba(27, 58, 92, 0.06);
+  max-width: calc(100vw - 32px);
+  max-height: 80vh;
+  overflow-y: auto;
+  flex-wrap: wrap;
 }
 .header-services-dropdown__col {
   display: flex;
@@ -7322,7 +7326,7 @@ button:disabled {
   display: flex;
   flex-direction: column;
 }
-.mobile-menu__nav a {
+.mobile-menu__nav > a {
   padding: 14px 0;
   font-size: 17px;
   font-weight: 500;
@@ -7330,9 +7334,66 @@ button:disabled {
   text-decoration: none;
   border-bottom: 1px solid #eee;
 }
-.mobile-menu__nav a:hover, .mobile-menu__nav a:focus {
+.mobile-menu__nav > a:hover, .mobile-menu__nav > a:focus {
   color: #1b3a5c;
   text-decoration: none;
+}
+.mobile-menu__accordion {
+  border-bottom: 1px solid #eee;
+}
+.mobile-menu__accordion-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  color: #333333;
+  text-align: left;
+}
+.mobile-menu__accordion-chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+.mobile-menu__accordion-toggle[aria-expanded=true] .mobile-menu__accordion-chevron {
+  transform: rotate(180deg);
+}
+.mobile-menu__accordion-panel {
+  display: none;
+  padding: 0 0 14px;
+}
+.mobile-menu__accordion-panel .header-services-dropdown__col {
+  min-width: 0;
+  gap: 0;
+}
+.mobile-menu__accordion-panel .header-services-dropdown__col a {
+  padding: 10px 0;
+  font-size: 15px;
+  border-bottom: none;
+}
+.mobile-menu__accordion-panel .header-services-dropdown__col-title {
+  margin-top: 10px;
+}
+.mobile-menu__accordion-toggle[aria-expanded=true] + .mobile-menu__accordion-panel {
+  display: block;
+}
+.mobile-menu__accordion-all {
+  display: block;
+  padding: 10px 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1b3a5c;
+  text-decoration: none;
+}
+.mobile-menu__accordion-all:hover, .mobile-menu__accordion-all:focus {
+  text-decoration: underline;
 }
 .mobile-menu__contacts {
   display: flex;

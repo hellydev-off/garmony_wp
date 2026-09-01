@@ -155,6 +155,19 @@
     });
   }
 
+  // ─── Mobile menu: "Услуги и цены" accordion ────────────────────────────────────
+  function initMobileServicesAccordion() {
+    var toggle = document.querySelector('.js-mobile-services-toggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  }
+
   // ─── Review text truncation (mobile only) ──────────────────────────────────
   function initReviewTruncation() {
     if (window.innerWidth > 767) return;
@@ -746,6 +759,7 @@
     console.log('Harmony theme ready');
 
     initMobileMenu();
+    initMobileServicesAccordion();
     window.setTimeout(initReviewTruncation, 50);
     initAppointmentModal();
     initReviewModal();

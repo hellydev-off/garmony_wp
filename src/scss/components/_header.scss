@@ -234,6 +234,10 @@ $topbar-bg: #f9f3ed;
   box-shadow:
     0 8px 24px rgba(27, 58, 92, 0.1),
     0 2px 8px rgba(27, 58, 92, 0.06);
+  max-width: calc(100vw - 32px);
+  max-height: 80vh;
+  overflow-y: auto;
+  flex-wrap: wrap;
 
   &__col {
     display: flex;
@@ -332,7 +336,7 @@ $topbar-bg: #f9f3ed;
     display: flex;
     flex-direction: column;
 
-    a {
+    > a {
       padding: 14px 0;
       font-size: 17px;
       font-weight: 500;
@@ -345,6 +349,75 @@ $topbar-bg: #f9f3ed;
         color: $header-btn-color;
         text-decoration: none;
       }
+    }
+  }
+
+  &__accordion {
+    border-bottom: 1px solid #eee;
+  }
+
+  &__accordion-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    color: $text-color;
+    text-align: left;
+  }
+
+  &__accordion-chevron {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+  }
+
+  &__accordion-toggle[aria-expanded="true"] &__accordion-chevron {
+    transform: rotate(180deg);
+  }
+
+  &__accordion-panel {
+    display: none;
+    padding: 0 0 14px;
+
+    .header-services-dropdown__col {
+      min-width: 0;
+      gap: 0;
+
+      a {
+        padding: 10px 0;
+        font-size: 15px;
+        border-bottom: none;
+      }
+    }
+
+    .header-services-dropdown__col-title {
+      margin-top: 10px;
+    }
+  }
+
+  &__accordion-toggle[aria-expanded="true"] + &__accordion-panel {
+    display: block;
+  }
+
+  &__accordion-all {
+    display: block;
+    padding: 10px 0 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $header-btn-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
     }
   }
 

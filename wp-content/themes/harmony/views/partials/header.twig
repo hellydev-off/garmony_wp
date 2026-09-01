@@ -14,6 +14,40 @@
           </div>
         </a>
 
+        {% set services_menu_cols %}
+          <div class="header-services-dropdown__col">
+            <a href="{{ site_url }}/gynecology/">Акушерство и гинекология</a>
+            <a href="{{ site_url }}/vedenie-beremennosti/">Индивидуальное ведение беременности</a>
+            <a href="{{ site_url }}/urologiya/">Урология и андрология</a>
+            <a href="{{ site_url }}/obshchaya-praktika/">Общая врачебная практика</a>
+            <a href="{{ site_url }}/gastroenterologiya/">Гастроэнтерология</a>
+            <a href="{{ site_url }}/uzi/">УЗИ</a>
+            <a href="{{ site_url }}/pediatriya/">Педиатрическое отделение</a>
+            <a href="{{ site_url }}/endoskopiya/">Эндоскопия</a>
+            <a href="{{ site_url }}/laboratoria/">Лабораторные исследования</a>
+            <a href="{{ site_url }}/funkcionalnaya-diagnostika/">Функциональная диагностика</a>
+            <a href="{{ site_url }}/fizioterapiya/">Физиотерапия / Озонотерапия</a>
+            <a href="{{ site_url }}/massazh/">Массаж</a>
+            <a href="{{ site_url }}/dnevnoy-stacionar/">Дневной стационар</a>
+            <a href="{{ site_url }}/onkoskrining/">Акция, онкоскрининг</a>
+          </div>
+          <div class="header-services-dropdown__col">
+            <span class="header-services-dropdown__col-title">Общая врачебная практика:</span>
+            <a href="{{ site_url }}/allergologiya/">Аллергология-иммунология</a>
+            <a href="{{ site_url }}/nevrologiya/">Неврология</a>
+            <a href="{{ site_url }}/gematologiya/">Гематология</a>
+            <a href="{{ site_url }}/kardiologiya/">Кардиология</a>
+            <a href="{{ site_url }}/onkologiya-mammologiya/">Онкология-маммология</a>
+            <a href="{{ site_url }}/travmatologiya-ortopediya/">Травматология-ортопедия</a>
+            <a href="{{ site_url }}/otorinolaringologiya/">Оториноларингология</a>
+            <a href="{{ site_url }}/pediatr/">Педиатрия</a>
+            <a href="{{ site_url }}/pulmonologiya/">Пульмонология</a>
+            <a href="{{ site_url }}/terapiya/">Терапия</a>
+            <a href="{{ site_url }}/flebologiya/">Флебология</a>
+            <a href="{{ site_url }}/hirurgiya-endokrinologiya/">Хирургия и эндокринология</a>
+          </div>
+        {% endset %}
+
         <nav class="header-nav">
           <ul class="header-nav__list">
             {% for item in primary_menu.items %}
@@ -21,37 +55,7 @@
                 <li class="header-nav__item header-nav__item--has-dropdown">
                   <a href="{{ item.link }}">{{ item.title }}</a>
                   <div class="header-services-dropdown">
-                    <div class="header-services-dropdown__col">
-                      <a href="{{ site_url }}/gynecology/">Акушерство и гинекология</a>
-                      <a href="{{ site_url }}/vedenie-beremennosti/">Индивидуальное ведение беременности</a>
-                      <a href="{{ site_url }}/urologiya/">Урология и андрология</a>
-                      <a href="{{ site_url }}/obshchaya-praktika/">Общая врачебная практика</a>
-                      <a href="{{ site_url }}/gastroenterologiya/">Гастроэнтерология</a>
-                      <a href="{{ site_url }}/uzi/">УЗИ</a>
-                      <a href="{{ site_url }}/pediatriya/">Педиатрическое отделение</a>
-                      <a href="{{ site_url }}/endoskopiya/">Эндоскопия</a>
-                      <a href="{{ site_url }}/laboratoria/">Лабораторные исследования</a>
-                      <a href="{{ site_url }}/funkcionalnaya-diagnostika/">Функциональная диагностика</a>
-                      <a href="{{ site_url }}/fizioterapiya/">Физиотерапия / Озонотерапия</a>
-                      <a href="{{ site_url }}/massazh/">Массаж</a>
-                      <a href="{{ site_url }}/dnevnoy-stacionar/">Дневной стационар</a>
-                      <a href="{{ site_url }}/onkoskrining/">Акция, онкоскрининг</a>
-                    </div>
-                    <div class="header-services-dropdown__col">
-                      <span class="header-services-dropdown__col-title">Общая врачебная практика:</span>
-                      <a href="{{ site_url }}/allergologiya/">Аллергология-иммунология</a>
-                      <a href="{{ site_url }}/nevrologiya/">Неврология</a>
-                      <a href="{{ site_url }}/gematologiya/">Гематология</a>
-                      <a href="{{ site_url }}/kardiologiya/">Кардиология</a>
-                      <a href="{{ site_url }}/onkologiya-mammologiya/">Онкология-маммология</a>
-                      <a href="{{ site_url }}/travmatologiya-ortopediya/">Травматология-ортопедия</a>
-                      <a href="{{ site_url }}/otorinolaringologiya/">Оториноларингология</a>
-                      <a href="{{ site_url }}/pediatr/">Педиатрия</a>
-                      <a href="{{ site_url }}/pulmonologiya/">Пульмонология</a>
-                      <a href="{{ site_url }}/terapiya/">Терапия</a>
-                      <a href="{{ site_url }}/flebologiya/">Флебология</a>
-                      <a href="{{ site_url }}/hirurgiya-endokrinologiya/">Хирургия и эндокринология</a>
-                    </div>
+                    {{ services_menu_cols }}
                   </div>
                 </li>
               {% else %}
@@ -81,7 +85,20 @@
   <div class="mobile-menu" id="mobileMenu">
     <nav class="mobile-menu__nav">
       {% for item in primary_menu.items %}
-        <a href="{{ item.link }}">{{ item.title }}</a>
+        {% if item.link starts with site_url ~ '/services' %}
+          <div class="mobile-menu__accordion">
+            <button type="button" class="mobile-menu__accordion-toggle js-mobile-services-toggle" aria-expanded="false">
+              <span>{{ item.title }}</span>
+              <svg class="mobile-menu__accordion-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 8 10 12 14 8"></polyline></svg>
+            </button>
+            <div class="mobile-menu__accordion-panel">
+              {{ services_menu_cols }}
+              <a href="{{ item.link }}" class="mobile-menu__accordion-all">Все услуги и цены</a>
+            </div>
+          </div>
+        {% else %}
+          <a href="{{ item.link }}">{{ item.title }}</a>
+        {% endif %}
       {% endfor %}
     </nav>
     <div class="mobile-menu__contacts">
