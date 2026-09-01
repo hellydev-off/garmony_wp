@@ -399,6 +399,60 @@
   }
 
   // ─── Поиск + фильтр по категории + пагинация на странице «Энциклопедия» ────
+  // ─── Custom category dropdown (энциклопедия) ─────────────────────────────────
+  function initEncCustomSelect() {
+    var wrap = document.querySelector('.js-enc-custom-select');
+    if (!wrap) return;
+
+    var trigger = wrap.querySelector('.js-enc-custom-select-trigger');
+    var valueEl = wrap.querySelector('.js-enc-custom-select-value');
+    var nativeSelect = wrap.querySelector('.enc-custom-select__native');
+    var panel = wrap.querySelector('.js-enc-custom-select-panel');
+    var options = Array.prototype.slice.call(panel.querySelectorAll('li'));
+
+    function close() {
+      wrap.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+
+    function open() {
+      wrap.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+
+    trigger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (wrap.classList.contains('is-open')) close(); else open();
+    });
+
+    options.forEach(function (option) {
+      option.addEventListener('click', function () {
+        var val = option.dataset.value || '';
+
+        options.forEach(function (o) {
+          o.classList.remove('is-active');
+          o.setAttribute('aria-selected', 'false');
+        });
+        option.classList.add('is-active');
+        option.setAttribute('aria-selected', 'true');
+
+        valueEl.textContent = option.textContent;
+        nativeSelect.value = val;
+        nativeSelect.dispatchEvent(new Event('change'));
+
+        close();
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!wrap.contains(e.target)) close();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') close();
+    });
+  }
+
   function initEncyclopediaFilter() {
     var grid = document.getElementById('encGrid');
     var searchInput = document.getElementById('encSearchInput');
@@ -817,6 +871,7 @@
 
     // Энциклопедия — поиск + фильтр по категории + пагинация в одном модуле (initEncyclopediaFilter),
     // .enc-grid туда НЕ отдаём через общий initPagination — он не умеет комбинировать с фильтрами.
+    initEncCustomSelect();
     initEncyclopediaFilter();
 
     // Paginate doctors grid (8 per page) — используется и на /doctors/, и на /gynecology/,

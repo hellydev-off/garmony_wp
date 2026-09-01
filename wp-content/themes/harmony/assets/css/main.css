@@ -9773,7 +9773,74 @@ body.menu-open {
 .enc-filters__chevron {
   flex-shrink: 0;
   pointer-events: none;
+  transition: transform 0.2s ease;
 }
+
+.enc-custom-select {
+  position: relative;
+  cursor: pointer;
+}
+.enc-custom-select.is-open .enc-filters__chevron {
+  transform: rotate(180deg);
+}
+.enc-custom-select.is-open .enc-custom-select__panel {
+  display: block;
+}
+.enc-custom-select__trigger {
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: 18px;
+  color: #333333;
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+}
+.enc-custom-select__value {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.enc-custom-select__native {
+  display: none;
+}
+.enc-custom-select__panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(27, 58, 92, 0.12), 0 2px 8px rgba(27, 58, 92, 0.06);
+  max-height: 320px;
+  overflow-y: auto;
+}
+.enc-custom-select__panel li {
+  padding: 11px 14px;
+  border-radius: 9px;
+  font-size: 15px;
+  color: #333333;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.enc-custom-select__panel li:hover {
+  background: #f9f3ed;
+}
+.enc-custom-select__panel li.is-active {
+  background: #f9f3ed;
+  color: #274878;
+  font-weight: 600;
+}
+
 .enc-filters__input {
   border: none;
   outline: none;

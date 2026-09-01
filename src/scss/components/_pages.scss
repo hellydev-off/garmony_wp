@@ -398,20 +398,102 @@
   &__chevron {
     flex-shrink: 0;
     pointer-events: none;
+    transition: transform 0.2s ease;
+  }
+}
+
+// ─── Custom category dropdown (энциклопедия) ───────────────────────────────────
+.enc-custom-select {
+  position: relative;
+  cursor: pointer;
+
+  &.is-open {
+    .enc-filters__chevron {
+      transform: rotate(180deg);
+    }
+
+    .enc-custom-select__panel {
+      display: block;
+    }
   }
 
-  &__input {
+  &__trigger {
     border: none;
     outline: none;
     background: transparent;
+    font: inherit;
     font-size: 18px;
-    color: $text-dark;
+    color: #333333;
     flex: 1;
     min-width: 0;
+    text-align: left;
+    padding: 0;
+    cursor: pointer;
+  }
 
-    &::placeholder {
+  &__value {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__native {
+    display: none;
+  }
+
+  &__panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    z-index: 50;
+    margin: 0;
+    padding: 8px;
+    list-style: none;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow:
+      0 8px 24px rgba(27, 58, 92, 0.12),
+      0 2px 8px rgba(27, 58, 92, 0.06);
+    max-height: 320px;
+    overflow-y: auto;
+
+    li {
+      padding: 11px 14px;
+      border-radius: 9px;
+      font-size: 15px;
       color: #333333;
+      cursor: pointer;
+      transition:
+        background 0.15s,
+        color 0.15s;
+
+      &:hover {
+        background: #f9f3ed;
+      }
+
+      &.is-active {
+        background: #f9f3ed;
+        color: #274878;
+        font-weight: 600;
+      }
     }
+  }
+}
+
+.enc-filters__input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 18px;
+  color: $text-dark;
+  flex: 1;
+  min-width: 0;
+
+  &::placeholder {
+    color: #333333;
   }
 }
 
