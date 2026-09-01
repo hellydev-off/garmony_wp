@@ -20,19 +20,14 @@ $context['new_doctors'] = Timber::get_posts( [
 	],
 ] );
 
-// TODO: в исходной вёрстке этот блок показывал произвольную ручную подборку из 4 врачей,
-// не связанную ни с одним из согласованных флагов (is_featured/is_new/is_gynecologist).
-// Здесь — первые 4 обычных врача (без этих флагов), это best-effort, а не точное 1:1.
+// Слайдер "Наши специалисты" на главной — показывает всех врачей клиники
+// (кроме тех, кто явно скрыт флагом hide_general), а не фиксированную подборку из 4.
 $context['specialist_doctors'] = Timber::get_posts( [
 	'post_type'      => 'doctor',
-	'posts_per_page' => 4,
+	'posts_per_page' => -1,
 	'orderby'        => 'title',
 	'order'          => 'ASC',
 	'meta_query'     => [
-		'relation' => 'AND',
-		[ 'key' => 'is_featured', 'value' => '1', 'compare' => '!=' ],
-		[ 'key' => 'is_new', 'value' => '1', 'compare' => '!=' ],
-		[ 'key' => 'photo', 'compare' => 'EXISTS' ],
 		[
 					'relation' => 'OR',
 					[ 'key' => 'hide_general', 'compare' => 'NOT EXISTS' ],
