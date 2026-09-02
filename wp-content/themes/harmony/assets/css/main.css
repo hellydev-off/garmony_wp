@@ -11265,6 +11265,15 @@ body.menu-open {
   max-height: 4000px;
   padding-bottom: 18px;
 }
+.vb-accordion__list {
+  margin: 0 0 16px;
+  padding-left: 20px;
+}
+.vb-accordion__list li {
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
 
 .vb-screening-submit {
   display: block;

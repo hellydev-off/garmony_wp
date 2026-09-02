@@ -448,6 +448,17 @@ $vb-banner-bg: linear-gradient(135deg, #eae7f3 0%, #f0e8f5 50%, #fce8d8 100%);
       padding-bottom: 18px;
     }
   }
+
+  &__list {
+    margin: 0 0 16px;
+    padding-left: 20px;
+
+    li {
+      font-weight: 700;
+      color: $vb-dark;
+      margin-bottom: 4px;
+    }
+  }
 }
 
 .vb-screening-submit {
