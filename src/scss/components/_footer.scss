@@ -1,12 +1,10 @@
 $footer-border: #e2e6ea;
 $footer-text: #5e6b7e;
-$footer-navy: #1A4BAE;
+$footer-navy: #1b3a5c;
 
 .site-footer {
   background: #fff;
   color: $footer-text;
-  border-top: 5px solid;
-  border-image: linear-gradient(90deg, $footer-navy, lighten($footer-navy, 18%), $footer-navy) 1;
 
   a {
     text-decoration: none;
@@ -50,16 +48,11 @@ $footer-navy: #1A4BAE;
     align-items: center;
     gap: 10px;
     padding: 13px 22px;
-    border: 1.5px solid $footer-navy;
+    border: 1.5px solid $footer-border;
     border-radius: 8px;
     font-size: 15px;
-    font-weight: 600;
-    color: $footer-navy;
+    color: #222;
     white-space: nowrap;
-    transition:
-      background 0.2s,
-      color 0.2s,
-      box-shadow 0.2s;
 
     img,
     svg {
@@ -69,9 +62,6 @@ $footer-navy: #1A4BAE;
     }
 
     &:hover {
-      background: $footer-navy;
-      color: #fff;
-      box-shadow: 0 4px 14px rgba($footer-navy, 0.3);
       border-color: $footer-navy;
       color: $footer-navy;
     }
@@ -85,7 +75,7 @@ $footer-navy: #1A4BAE;
   &__services-title {
     font-size: 22px;
     font-weight: 700;
-    color: $footer-navy;
+    color: #111;
     margin: 0 0 16px;
   }
 
@@ -125,10 +115,10 @@ $footer-navy: #1A4BAE;
     a {
       font-size: 22px;
       font-weight: 700;
-      color: $footer-navy;
+      color: #111;
 
       &:hover {
-        color: lighten($footer-navy, 12%);
+        color: $footer-navy;
       }
     }
   }

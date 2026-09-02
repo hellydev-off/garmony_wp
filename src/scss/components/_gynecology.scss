@@ -1,5 +1,5 @@
 // ─── Gynecology page ──────────────────────────────────────────────────────────
-$g-navy: #1A4BAE;
+$g-navy: #00467a;
 $g-blue: #1b5fa8;
 $g-cream: #f9f3ed;
 $g-dark: #1a1a1a;
@@ -152,7 +152,7 @@ $g-green: #4caf50;
   transition: border-color 0.2s ease;
 
   &:hover {
-    border-color: #1A4BAE;
+    border-color: #274878;
   }
 
   &__photo {
@@ -787,23 +787,18 @@ $g-green: #4caf50;
   transition:
     background 0.18s,
     color 0.18s,
-    border-color 0.18s,
-    box-shadow 0.18s,
-    transform 0.18s;
+    border-color 0.18s;
   border: 1px solid $g-navy;
 
   &--filled {
-    background: linear-gradient(135deg, $g-navy, lighten($g-navy, 12%));
+    background: $g-navy;
     color: #fff;
-    box-shadow: 0 4px 14px rgba($g-navy, 0.28);
 
     &:hover {
-      background: linear-gradient(135deg, darken($g-navy, 6%), $g-navy);
+      background: darken($g-navy, 8%);
       border-color: darken($g-navy, 8%);
       color: #fff;
       text-decoration: none;
-      box-shadow: 0 6px 20px rgba($g-navy, 0.4);
-      transform: translateY(-1px);
     }
   }
 
