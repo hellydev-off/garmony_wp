@@ -1,0 +1,56 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}Инструкция по подключению Макс-бота — {{ siteName }}{% endblock %}
+
+{% block content %}
+
+<div class="cont-border-bottom">
+  <div class="container" style="padding-bottom: 60px;">
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="{{ site_url }}/">Главная</a> / Инструкция по подключению Макс-бота
+    </nav>
+
+    <h1 class="page-title">Инструкция по подключению Макс-бота</h1>
+    <p class="services-page__intro">Подключите бота клиники «Гармония» в мессенджере MAX, чтобы получать автоматические напоминания о ваших записях на приём.</p>
+
+    <div class="gyno-steps" style="margin: 32px 0 40px;">
+      <div class="gyno-step">
+        <div class="gyno-step__header">
+          <div class="gyno-step__num">1</div>
+          <div class="gyno-step__line"></div>
+        </div>
+        <p class="gyno-step__text">Перейдите в нашего бота по ссылке: <a href="https://max.ru/id6950133698_bot" target="_blank" rel="noopener">max.ru/id6950133698_bot</a>.</p>
+      </div>
+      <div class="gyno-step">
+        <div class="gyno-step__header">
+          <div class="gyno-step__num">2</div>
+          <div class="gyno-step__line"></div>
+        </div>
+        <p class="gyno-step__text">Нажмите кнопку «Запустить» (Start) внизу экрана.</p>
+      </div>
+      <div class="gyno-step">
+        <div class="gyno-step__header">
+          <div class="gyno-step__num">3</div>
+          <div class="gyno-step__line"></div>
+        </div>
+        <p class="gyno-step__text">Разрешите доступ к номеру телефона, нажав кнопку «Отправить контакт» — это нужно, чтобы бот мог идентифицировать вас в системе и отправлять персональные уведомления.</p>
+      </div>
+      <div class="gyno-step">
+        <div class="gyno-step__header">
+          <div class="gyno-step__num">4</div>
+        </div>
+        <p class="gyno-step__text">После этих простых шагов все напоминания о ваших записях будут приходить автоматически.</p>
+      </div>
+    </div>
+
+    <p style="color:#666;font-size:15px;margin-bottom:32px;">Спасибо, что остаётесь с нами! Заботясь о вашем здоровье, мы заботимся и о вашем комфорте.<br>С уважением, клиника «Гармония».</p>
+
+    <a href="https://max.ru/id6950133698_bot" target="_blank" rel="noopener" class="gyno-btn gyno-btn--filled" style="display:inline-block;width:auto;padding:16px 40px;">Открыть бота в MAX</a>
+
+  </div>
+</div>
+
+{% include 'partials/contact-cta.twig' %}
+
+{% endblock %}
