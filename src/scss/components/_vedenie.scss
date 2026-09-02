@@ -178,24 +178,24 @@ $vb-banner-bg: linear-gradient(135deg, #eae7f3 0%, #f0e8f5 50%, #fce8d8 100%);
   }
 
   &__quote {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    color: #1A4BAE;
-    padding: 10px 12px 10px 10px;
-    font-size: 14px;
-    font-style: italic;
-    line-height: 1.45;
     display: flex;
     align-items: flex-start;
     gap: 8px;
+    margin: 14px 12px 0;
+    padding: 12px 14px;
+    background: $vb-pink;
+    border-radius: 12px;
+    color: $vb-navy;
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.5;
 
     svg {
       flex-shrink: 0;
-      width: 24px;
+      width: 18px;
       height: auto;
       margin-top: 2px;
+      opacity: 0.7;
     }
   }
 
