@@ -12191,6 +12191,21 @@ body.menu-open {
     flex-wrap: wrap;
     gap: 3px 5px;
   }
+  .doctor-featured {
+    min-height: 0;
+  }
+  .doctor-featured__photo {
+    width: 110px;
+  }
+  .doctor-featured__info {
+    padding: 14px 12px;
+  }
+  .doctor-featured__name {
+    font-size: 15px;
+  }
+  .doctor-featured__role {
+    font-size: 13px;
+  }
   .section-title,
   .page-title,
   .about-center__title,

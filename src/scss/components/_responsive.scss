@@ -305,6 +305,24 @@
     gap: 3px 5px;
   }
 
+  // Featured doctor card: fixed 240px photo left almost no room for the
+  // name/role text on narrow screens, causing it to overflow/clip.
+  .doctor-featured {
+    min-height: 0;
+  }
+  .doctor-featured__photo {
+    width: 110px;
+  }
+  .doctor-featured__info {
+    padding: 14px 12px;
+  }
+  .doctor-featured__name {
+    font-size: 15px;
+  }
+  .doctor-featured__role {
+    font-size: 13px;
+  }
+
   // Display type
   .section-title,
   .page-title,
