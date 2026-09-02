@@ -50,6 +50,16 @@ $topbar-bg: #f9f3ed;
         height: 22px;
       }
     }
+
+    &--max {
+      font-weight: 600;
+      color: $header-btn-color;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
   }
 
   &__icon {

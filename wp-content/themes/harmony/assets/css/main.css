@@ -7090,6 +7090,13 @@ button:disabled {
   width: 22px;
   height: 22px;
 }
+.topbar__contact--max {
+  font-weight: 600;
+  color: #1A4BAE;
+}
+.topbar__contact--max:hover, .topbar__contact--max:focus {
+  text-decoration: underline;
+}
 .topbar__icon {
   width: 18px;
   height: 18px;
@@ -11042,9 +11049,9 @@ body.menu-open {
   gap: 8px;
   margin: 14px 12px 0;
   padding: 12px 14px;
-  background: #eaf0fc;
+  background: #f5ede6;
   border-radius: 12px;
-  color: #1554e6;
+  color: #1A4BAE;
   font-size: 13px;
   font-style: italic;
   line-height: 1.5;
