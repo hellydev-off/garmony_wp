@@ -157,6 +157,12 @@ $vb-banner-bg: linear-gradient(135deg, #eae7f3 0%, #f0e8f5 50%, #fce8d8 100%);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: lighten(#35387D, 15%);
+  }
 
   &__photo-wrap {
     position: relative;
@@ -185,7 +191,7 @@ $vb-banner-bg: linear-gradient(135deg, #eae7f3 0%, #f0e8f5 50%, #fce8d8 100%);
     padding: 12px 14px;
     background: $vb-pink;
     border-radius: 12px;
-    color: #274878;
+    color: #35387D;
     font-size: 13px;
     font-style: italic;
     line-height: 1.5;

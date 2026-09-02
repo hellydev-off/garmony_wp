@@ -11024,6 +11024,11 @@ body.menu-open {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.vb-doctor-card:hover {
+  border-color: rgb(75.7780898876, 80.0674157303, 178.7219101124);
 }
 .vb-doctor-card__photo-wrap {
   position: relative;
@@ -11051,7 +11056,7 @@ body.menu-open {
   padding: 12px 14px;
   background: #f5ede6;
   border-radius: 12px;
-  color: #274878;
+  color: #35387D;
   font-size: 13px;
   font-style: italic;
   line-height: 1.5;
