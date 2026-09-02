@@ -7,9 +7,8 @@
          <h2 class="doc-banner__title">Документы и лицензии</h2>
         
  <div class="doc-banner__text-cont">
-  {# TODO: в исходной вёрстке нет страницы documents.html/twig — уточнить, куда должна вести ссылка (создать WP-страницу «Документы» или указать на #about) #}
-  <a href="#" class="doc-banner__link">Подробнее о наших лицензиях, <br/> сертификатах, документах</a>
-        <button class="doc-banner__btn" aria-label="Подробнее">
+  <a href="{{ site_url }}/dokumenty-i-licenzii/" class="doc-banner__link">Подробнее о наших лицензиях, <br/> сертификатах, документах</a>
+        <a href="{{ site_url }}/dokumenty-i-licenzii/" class="doc-banner__btn" aria-label="Подробнее">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>

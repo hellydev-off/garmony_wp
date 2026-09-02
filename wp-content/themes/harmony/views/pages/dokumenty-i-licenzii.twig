@@ -1,0 +1,49 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}Документы и лицензии — {{ siteName }}{% endblock %}
+
+{% block content %}
+
+<div class="cont-border-bottom">
+  <div class="container" style="padding-bottom: 60px;">
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="{{ site_url }}/">Главная</a> / Документы и лицензии
+    </nav>
+
+    <h1 class="page-title">Лицензии, сертификаты, документы</h1>
+
+    <p class="services-page__intro">ООО медицинский центр «Клиника мужского и женского здоровья» осуществляет деятельность на основании лицензии №ЛО-69-01-001044 от 23.05.2013.</p>
+
+    <div style="max-width: 680px; margin: 32px 0; padding: 24px 28px; background: #f9f3ed; border-radius: 16px;">
+      <p style="margin: 0 0 8px; font-weight: 600;">Лицензирующий орган:</p>
+      <p style="margin: 0; color: #555; line-height: 1.7;">
+        Министерство здравоохранения Тверской области<br>
+        170100, г. Тверь, ул. Советская, д. 23<br>
+        тел. 32-04-82<br>
+        e-mail: dep_zdrav@web.region.tver.ru
+      </p>
+    </div>
+
+    <h2 class="gyno-section-title">В клинике можно ознакомиться со следующими документами:</h2>
+    <ul style="max-width: 680px; padding-left: 20px; color: #333; line-height: 2;">
+      <li>Выписка из реестра лицензий</li>
+      <li>Уведомление о внесении изменений в реестр лицензий на осуществление медицинской деятельности</li>
+      <li>Договор на оказание медицинских услуг</li>
+      <li>Договор на оказание медицинских услуг для несовершеннолетних пациентов</li>
+      <li>Информация о защите прав потребителей</li>
+      <li>Памятка о гарантиях бесплатного оказания медицинской помощи</li>
+      <li>Сводная ведомость результатов проведения специальной оценки условий труда</li>
+      <li>Сведения о профессиональной подготовке специалистов клиники</li>
+      <li>Сведения об условиях предоставления медицинских услуг</li>
+      <li>Соглашение об электронном документообороте</li>
+    </ul>
+
+    <p style="max-width: 680px; color: #666; font-size: 15px; margin-top: 24px;">Копии документов предоставляются по запросу в клинике или по телефону <a href="tel:+74822368433">+7 (4822) 36 84 33</a>.</p>
+
+  </div>
+</div>
+
+{% include 'partials/contact-cta.twig' %}
+
+{% endblock %}

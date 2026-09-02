@@ -399,9 +399,39 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
       });
   }
 
+  // ─── Phone input: digits only, auto-formatted as +7 (___) ___-__-__ ───────────
+  function initPhoneMask(selector) {
+    document.querySelectorAll(selector).forEach(function (input) {
+      input.addEventListener('input', function () {
+        var digits = input.value.replace(/\D/g, '');
+
+        // Drop a leading 7/8 (country code) so it doesn't get double-counted
+        if (digits.charAt(0) === '7' || digits.charAt(0) === '8') {
+          digits = digits.slice(1);
+        }
+        digits = digits.slice(0, 10);
+
+        var formatted = '+7';
+        if (digits.length > 0) formatted += ' (' + digits.slice(0, 3);
+        if (digits.length >= 3) formatted += ')';
+        if (digits.length > 3) formatted += ' ' + digits.slice(3, 6);
+        if (digits.length > 6) formatted += '-' + digits.slice(6, 8);
+        if (digits.length > 8) formatted += '-' + digits.slice(8, 10);
+
+        input.value = formatted;
+      });
+
+      input.addEventListener('keypress', function (e) {
+        if (!/[0-9]/.test(e.key)) e.preventDefault();
+      });
+    });
+  }
+
   function initAppointmentForm() {
     var $form = $('#appointmentForm');
     if (!$form.length) return;
+
+    initPhoneMask('#appointmentPhone');
 
     $form.on('submit', function (e) {
       e.preventDefault();
