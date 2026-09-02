@@ -1,4 +1,4 @@
-$header-btn-color: #1b3a5c;
+$header-btn-color: #1A4BAE;
 $topbar-bg: #f9f3ed;
 
 // ─── Topbar ───────────────────────────────────────────────────────────────────
@@ -67,20 +67,26 @@ $topbar-bg: #f9f3ed;
 
 .btn-appointment {
   display: inline-block;
-  background-color: $header-btn-color;
+  background: linear-gradient(135deg, $header-btn-color, lighten($header-btn-color, 12%));
   color: #fff;
   padding: 12px 28px;
   border-radius: 8px;
   font-size: 15px;
   font-weight: 500;
   text-decoration: none;
-  transition: background-color 0.2s ease;
+  box-shadow: 0 3px 10px rgba($header-btn-color, 0.3);
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 
   &:hover,
   &:focus {
-    background-color: darken($header-btn-color, 8%);
+    background: linear-gradient(135deg, darken($header-btn-color, 6%), $header-btn-color);
     color: #fff;
     text-decoration: none;
+    box-shadow: 0 5px 16px rgba($header-btn-color, 0.42);
+    transform: translateY(-1px);
   }
 }
 

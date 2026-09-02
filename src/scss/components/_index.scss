@@ -1,6 +1,6 @@
 // ─── Index page variables ──────────────────────────────────────────────────────
-$navy: #274878;
-$blue-link: #010102;
+$navy: #1A4BAE;
+$blue-link: #1A4BAE;
 $cream: #f9f3ed;
 $doctor-bg: #f0ebe1;
 $spec-border: #a9c0d5;
@@ -682,21 +682,26 @@ $text-dark: #333333;
     font-size: 17px;
     font-weight: 600;
     text-decoration: none;
-    border: 2px solid #274878;
+    border: 2px solid $navy;
     border-radius: 10px;
     transition:
       background 0.2s,
-      color 0.2s;
+      color 0.2s,
+      box-shadow 0.2s,
+      transform 0.2s;
 
     &--filled {
-      background: $navy;
+      background: linear-gradient(135deg, $navy, lighten($navy, 12%));
       color: #fff;
+      box-shadow: 0 4px 14px rgba($navy, 0.28);
 
       &:hover,
       &:focus {
-        background: darken($navy, 8%);
+        background: linear-gradient(135deg, darken($navy, 6%), $navy);
         color: #fff;
         text-decoration: none;
+        box-shadow: 0 6px 20px rgba($navy, 0.4);
+        transform: translateY(-1px);
       }
     }
 
