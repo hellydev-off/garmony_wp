@@ -41,8 +41,8 @@
   <section class="vb-section container">
     <h2 class="vb-section-title">Врачи и персонал клиники, который сопровождает Вас:</h2>
 
-    {% for row in vb_doctors|batch(3) %}
-    <div class="vb-doctors-row {{ row|length == 3 ? 'vb-doctors-row--3' : 'vb-doctors-row--2' }}">
+    {% for row in vb_doctors|batch(4) %}
+    <div class="vb-doctors-row {{ row|length == 4 ? 'vb-doctors-row--4' : 'vb-doctors-row--1' }}">
       {% for doctor in row %}
       <div class="vb-doctor-card" data-doctor-url="{{ doctor.link }}">
         <div class="vb-doctor-card__photo-wrap">

@@ -269,10 +269,8 @@
   .vb-doctors-row {
     flex-wrap: wrap;
   }
-  .vb-doctors-row--3 .vb-doctor-card {
-    flex: 1 1 calc(50% - 10px);
-  }
-  .vb-doctors-row--2 .vb-doctor-card {
+  .vb-doctors-row--4 .vb-doctor-card,
+  .vb-doctors-row--1 .vb-doctor-card {
     flex: 1 1 calc(50% - 10px);
   }
   .vb-specialists-grid {
@@ -579,8 +577,8 @@
     width: 130px;
     height: 130px;
   }
-  .vb-doctors-row--3 .vb-doctor-card,
-  .vb-doctors-row--2 .vb-doctor-card {
+  .vb-doctors-row--4 .vb-doctor-card,
+  .vb-doctors-row--1 .vb-doctor-card {
     flex: 1 1 100%;
   }
   .vb-section-title,

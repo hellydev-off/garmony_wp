@@ -10993,11 +10993,11 @@ body.menu-open {
   margin-bottom: 16px;
   max-width: 820px;
 }
-.vb-doctors-row--3 .vb-doctor-card {
+.vb-doctors-row--4 .vb-doctor-card {
   flex: 1 1 0;
 }
-.vb-doctors-row--2 .vb-doctor-card {
-  flex: 0 0 calc(33.333% - 7px);
+.vb-doctors-row--1 .vb-doctor-card {
+  flex: 0 0 calc(25% - 12px);
 }
 
 .vb-doctor-card {
@@ -12153,10 +12153,8 @@ body.menu-open {
   .vb-doctors-row {
     flex-wrap: wrap;
   }
-  .vb-doctors-row--3 .vb-doctor-card {
-    flex: 1 1 calc(50% - 10px);
-  }
-  .vb-doctors-row--2 .vb-doctor-card {
+  .vb-doctors-row--4 .vb-doctor-card,
+  .vb-doctors-row--1 .vb-doctor-card {
     flex: 1 1 calc(50% - 10px);
   }
   .vb-specialists-grid {
@@ -12406,8 +12404,8 @@ body.menu-open {
     width: 130px;
     height: 130px;
   }
-  .vb-doctors-row--3 .vb-doctor-card,
-  .vb-doctors-row--2 .vb-doctor-card {
+  .vb-doctors-row--4 .vb-doctor-card,
+  .vb-doctors-row--1 .vb-doctor-card {
     flex: 1 1 100%;
   }
   .vb-section-title,

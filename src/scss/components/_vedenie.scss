@@ -131,21 +131,21 @@ $vb-banner-bg: linear-gradient(135deg, #eae7f3 0%, #f0e8f5 50%, #fce8d8 100%);
   margin: 0 0 28px;
 }
 
-// ─── Doctors (main, 5 cards 3+2) ──────────────────────────────────────────────
+// ─── Doctors (main, 5 cards 4+1) ──────────────────────────────────────────────
 .vb-doctors-row {
   display: flex;
   gap: 16px;
   margin-bottom: 16px;
   max-width: 820px;
 
-  &--3 {
+  &--4 {
     .vb-doctor-card {
       flex: 1 1 0;
     }
   }
-  &--2 {
+  &--1 {
     .vb-doctor-card {
-      flex: 0 0 calc(33.333% - 7px);
+      flex: 0 0 calc(25% - 12px);
     }
   }
 }
