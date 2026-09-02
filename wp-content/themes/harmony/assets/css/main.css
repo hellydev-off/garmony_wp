@@ -10991,7 +10991,6 @@ body.menu-open {
   display: flex;
   gap: 16px;
   margin-bottom: 16px;
-  max-width: 820px;
 }
 .vb-doctors-row--4 .vb-doctor-card {
   flex: 1 1 0;
