@@ -345,13 +345,13 @@ switch ( $post->post_name ) {
 		break;
 
 	case 'vedenie-beremennosti':
-		// Врачи этого блока определяются наличием заполненной цитаты (поле quote),
-		// а не отдельным флагом — так же, как этот список был curated вручную в исходной вёрстке.
 		$context['vb_doctors'] = Timber::get_posts( [
 			'post_type'      => 'doctor',
 			'posts_per_page' => -1,
+			'orderby'        => 'title',
+			'order'          => 'ASC',
 			'meta_query'     => [
-				[ 'key' => 'quote', 'value' => '', 'compare' => '!=' ],
+				[ 'key' => 'is_gynecologist', 'value' => '1' ],
 			],
 		] );
 		break;
