@@ -345,15 +345,22 @@ switch ( $post->post_name ) {
 		break;
 
 	case 'vedenie-beremennosti':
-		$context['vb_doctors'] = Timber::get_posts( [
+		// Показываем только врачей с реально заполненной цитатой для ИВБ.
+		// meta_query с 'value' => '', 'compare' => '!=' здесь не работает —
+		// WordPress не отбрасывает пустые значения в этом случае и вернёт
+		// вообще всех врачей, поэтому фильтруем в PHP.
+		$vb_all_doctors = Timber::get_posts( [
 			'post_type'      => 'doctor',
 			'posts_per_page' => -1,
 			'orderby'        => 'title',
 			'order'          => 'ASC',
-			'meta_query'     => [
-				[ 'key' => 'is_gynecologist', 'value' => '1' ],
-			],
 		] );
+		$context['vb_doctors'] = array_values( array_filter(
+			iterator_to_array( $vb_all_doctors ),
+			function ( $doctor ) {
+				return trim( (string) $doctor->meta( 'quote' ) ) !== '';
+			}
+		) );
 		break;
 
 	case 'reviews':
