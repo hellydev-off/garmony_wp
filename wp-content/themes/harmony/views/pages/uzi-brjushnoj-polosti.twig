@@ -1,0 +1,50 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}УЗИ брюшной полости — {{ siteName }}{% endblock %}
+
+{% block content %}
+
+<div class="cont-border-bottom">
+  <div class="container" style="padding-bottom: 60px;">
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="{{ site_url }}/">Главная</a> / <a href="{{ site_url }}/uzi/">УЗИ</a> / УЗИ брюшной полости
+    </nav>
+
+    <h1 class="page-title">УЗИ брюшной полости</h1>
+
+    <p class="services-page__intro">Комплексное обследование органов брюшной полости и забрюшинного пространства — печени, желчного пузыря, поджелудочной железы, селезёнки, почек и надпочечников.</p>
+
+    <h2 class="gyno-section-title">Показания</h2>
+    <div class="gyno-reasons__grid" style="margin-bottom: 40px;">
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">1</span>
+        <p>Боли в любых отделах живота или в пояснице</p>
+      </div>
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">2</span>
+        <p>Чувство жжения, тяжести, дискомфорта</p>
+      </div>
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">3</span>
+        <p>Вздутие живота, нарушения стула</p>
+      </div>
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">4</span>
+        <p>Изжога, отрыжка, неприятный привкус во рту</p>
+      </div>
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">5</span>
+        <p>Учащённое мочеиспускание, рези</p>
+      </div>
+    </div>
+
+    <h2 class="gyno-section-title">Подготовка</h2>
+    <p class="services-page__intro" style="max-width: 680px;">За 3 дня до обследования желательно ограничить продукты, вызывающие газообразование — свежие овощи и фрукты, молоко, газированные напитки, сладости, острую и жирную пищу, белый хлеб. Утром в день УЗИ можно принять 8–12 таблеток активированного угля.</p>
+
+  </div>
+</div>
+
+{% include 'partials/contact-cta.twig' %}
+
+{% endblock %}

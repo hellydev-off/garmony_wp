@@ -1,0 +1,46 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}УЗИ щитовидной железы — {{ siteName }}{% endblock %}
+
+{% block content %}
+
+<div class="cont-border-bottom">
+  <div class="container" style="padding-bottom: 60px;">
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="{{ site_url }}/">Главная</a> / <a href="{{ site_url }}/uzi/">УЗИ</a> / УЗИ щитовидной железы
+    </nav>
+
+    <h1 class="page-title">УЗИ щитовидной железы</h1>
+
+    <p class="services-page__intro">Безопасное исследование, которое помогает оценить работу щитовидной железы и выявить нарушения эндокринной системы на ранней стадии.</p>
+
+    <h2 class="gyno-section-title">Что оценивает врач</h2>
+    <div class="gyno-reasons__grid" style="margin-bottom: 40px;">
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">1</span>
+        <p>Расположение железы в пределах анатомической зоны</p>
+      </div>
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">2</span>
+        <p>Контуры органа — чёткость и однородность</p>
+      </div>
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">3</span>
+        <p>Размер и соответствие норме</p>
+      </div>
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">4</span>
+        <p>Структуру ткани, а также размеры и строение регионарных лимфоузлов</p>
+      </div>
+    </div>
+
+    <h2 class="gyno-section-title">Подготовка</h2>
+    <p class="services-page__intro" style="max-width: 680px;">За 2–3 дня до УЗИ желательно исключить алкоголь и препараты, влияющие на артериальное давление, и приходить на исследование натощак.</p>
+
+  </div>
+</div>
+
+{% include 'partials/contact-cta.twig' %}
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}УЗИ молочных желёз — {{ siteName }}{% endblock %}
+
+{% block content %}
+
+<div class="cont-border-bottom">
+  <div class="container" style="padding-bottom: 60px;">
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="{{ site_url }}/">Главная</a> / <a href="{{ site_url }}/uzi/">УЗИ</a> / УЗИ молочных желёз
+    </nav>
+
+    <h1 class="page-title">УЗИ молочных желёз</h1>
+
+    <p class="services-page__intro">Дополнительный метод диагностики заболеваний груди, который дополняет маммографию и помогает точно определить характер и распространённость патологии.</p>
+
+    <h2 class="gyno-section-title">Показания</h2>
+    <div class="gyno-reasons__grid" style="margin-bottom: 40px;">
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">1</span>
+        <p>Изменение размера или формы молочных желёз, асимметрия</p>
+      </div>
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">2</span>
+        <p>Уплотнения, боль или дискомфорт, выделения из сосков</p>
+      </div>
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">3</span>
+        <p>Признаки воспаления, кожные высыпания, покраснение</p>
+      </div>
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">4</span>
+        <p>Увеличение лимфоузлов</p>
+      </div>
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">5</span>
+        <p>Профилактика после 30 лет или при планировании беременности</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% include 'partials/contact-cta.twig' %}
+
+{% endblock %}

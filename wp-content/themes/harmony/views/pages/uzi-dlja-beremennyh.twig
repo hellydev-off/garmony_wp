@@ -1,0 +1,43 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}УЗИ для беременных — {{ siteName }}{% endblock %}
+
+{% block content %}
+
+<div class="cont-border-bottom">
+  <div class="container" style="padding-bottom: 60px;">
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="{{ site_url }}/">Главная</a> / <a href="{{ site_url }}/uzi/">УЗИ</a> / УЗИ для беременных
+    </nav>
+
+    <h1 class="page-title">УЗИ для беременных</h1>
+
+    <p class="services-page__intro">Ультразвуковое исследование во время беременности позволяет подтвердить срок, оценить состояние и развитие плода, вовремя заметить возможные отклонения.</p>
+
+    <h2 class="gyno-section-title">Показания</h2>
+    <div class="gyno-reasons__grid" style="margin-bottom: 40px;">
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">1</span>
+        <p>Подтверждение беременности на раннем сроке, определение её срока</p>
+      </div>
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">2</span>
+        <p>Плановые обследования на 10–12, 20–24 неделях и перед родами</p>
+      </div>
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">3</span>
+        <p>Хронические заболевания, которые могут повлиять на течение беременности</p>
+      </div>
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">4</span>
+        <p>Угроза прерывания беременности, признаки замирания плода или отслойки плаценты</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% include 'partials/contact-cta.twig' %}
+
+{% endblock %}
