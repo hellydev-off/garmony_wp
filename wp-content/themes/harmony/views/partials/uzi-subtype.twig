@@ -1,31 +1,98 @@
 {# ─── Общий шаблон для подстраниц УЗИ (используется через include из views/pages/uzi-*.twig) ─── #}
-<div class="cont-border-bottom">
-  <div class="container" style="padding-bottom: 60px;">
+<div class="gyno-page">
 
-    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-      <a href="{{ site_url }}/">Главная</a> / <a href="{{ site_url }}/uzi/">УЗИ</a> / {{ title }}
-    </nav>
-
-    <h1 class="page-title">{{ title }}</h1>
-
-    <p class="services-page__intro">{{ intro }}</p>
-
-    <h2 class="gyno-section-title">{{ indications_title }}</h2>
-    <div class="gyno-reasons__grid" style="margin-bottom: 40px;">
-      {% for item in indications %}
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">{{ loop.index }}</span>
-        <p>{{ item }}</p>
-      </div>
-      {% endfor %}
+  <div class="cont-border-bottom">
+    <div class="gyno-page-header">
+    <div class="container">
+      <nav class="breadcrumb-nav">
+        <a href="{{ site_url }}/">Главная</a>
+        <span class="breadcrumb-nav__sep">/</span>
+        <a href="{{ site_url }}/uzi/">УЗИ</a>
+        <span class="breadcrumb-nav__sep">/</span>
+        <span>{{ title }}</span>
+      </nav>
+      <h1 class="page-title">{{ title }}</h1>
     </div>
-
-    {% if prep %}
-    <h2 class="gyno-section-title">Подготовка</h2>
-    <p class="services-page__intro" style="max-width: 680px;">{{ prep }}</p>
-    {% endif %}
-
   </div>
+
+  <section class="gyno-intro">
+    <div class="container">
+      <div class="gyno-intro__bg">
+        <nav class="gyno-subnav__inner js-sticky-subnav">
+        <a href="#povod" class="gyno-subnav__link">{{ indications_title }}</a>
+        <a href="#vrachi" class="gyno-subnav__link">Врачи</a>
+        <a href="#otzyvy" class="gyno-subnav__link">Отзывы</a>
+        <a href="#" class="gyno-subnav__link js-open-appointment-modal" data-request-type="Запись на приём">Записаться на приём</a>
+      </nav>
+      <div class="gyno-subnav__placeholder js-sticky-subnav-placeholder"></div>
+       <div class="gyno-intro__inner">
+        <div class="gyno-intro__media">
+          <div class="gyno-placeholder gyno-placeholder--intro">
+            <img src="{{ theme_uri }}/assets/images/gynecology/firstphoto.png" alt="">
+          </div>
+        </div>
+        <div class="gyno-intro__text">
+          <p>{{ intro }}</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  {# ── Показания ────────────────────────────────────────────────────────────────── #}
+  <section class="gyno-reasons" id="povod">
+    <div class="container">
+      <h2 class="gyno-section-title">{{ indications_title }}</h2>
+      <div class="gyno-reasons__grid">
+        {% for item in indications %}
+        <div class="gyno-reason-card">
+          <span class="gyno-reason-card__num">{{ loop.index }}</span>
+          <p>{{ item }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  </div>
+
+  {% if prep %}
+  <section class="gyno-examinations">
+    <div class="container">
+      <h2 class="gyno-section-title">Подготовка</h2>
+      <p>{{ prep }}</p>
+    </div>
+  </section>
+  {% endif %}
+
+  {# ── Врачи ────────────────────────────────────────────────────────────────────── #}
+  <section class="gyno-doctors" id="vrachi">
+    <div class="container">
+      <h2 class="gyno-section-title">Врачи УЗИ клиники «Гармония»:</h2>
+      <div class="doctors-grid">
+
+        {% for doctor in category_doctors %}
+        <div class="s_dr-card" data-doctor-url="{{ doctor.link }}">
+          <div class="s_dr-card__photo{{ doctor.meta('photo') ? '' : ' s_dr-card__photo--placeholder' }}">
+            {% if doctor.meta('photo') %}
+              <img src="{{ doctor.meta('photo').url }}" alt="{{ doctor.title }}">
+            {% else %}
+              <svg viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="40" cy="30" rx="22" ry="24" fill="#BBBBBB" />
+                <path d="M5 95C5 72 75 72 75 95" stroke="#BBBBBB" stroke-width="8" fill="none" stroke-linecap="round" />
+              </svg>
+            {% endif %}
+          </div>
+          <p class="s_dr-card__name">{{ doctor.title }}</p>
+          <p class="s_dr-card__spec gyno-spec-link">{{ doctor.meta('specialization') }}</p>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </section>
+
+  {% include 'partials/reviews-slider.twig' with { title: 'Отзывы клиентов:' } %}
+
 </div>
 
 {% include 'partials/contact-cta.twig' %}

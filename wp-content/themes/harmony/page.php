@@ -280,6 +280,17 @@ switch ( $post->post_name ) {
 		break;
 
 	case 'uzi':
+	case 'uzi-dlja-beremennyh':
+	case 'uzi-brjushnoj-polosti':
+	case 'uzi-malogo-taza':
+	case 'uzi-molochnyh-zhelez':
+	case 'uzi-mjagkih-tkanej':
+	case 'uzi-pochek':
+	case 'uzi-shhitovidki':
+	case 'uzi-sosudov':
+	case 'uzi-v-urologii':
+		// Подстраницы по видам УЗИ показывают тех же врачей УЗИ, что и общая
+		// страница /uzi/ — отдельной таксономии на каждый подвид нет.
 		$context['category_doctors'] = Timber::get_posts( [
 			'post_type'      => 'doctor',
 			'posts_per_page' => -1,
