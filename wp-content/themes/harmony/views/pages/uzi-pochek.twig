@@ -1,46 +1,18 @@
 {% extends 'layouts/base.twig' %}
 
-{% block title %}УЗИ почек — {{ siteName }}{% endblock %}
+{% set title = 'УЗИ почек' %}
+{% set intro = 'УЗИ почек — один из основных методов диагностики патологий мочевыделительной системы, который помогает точно определить наличие конкрементов, их расположение и степень изменений.' %}
+{% set indications_title = 'Показания' %}
+{% set indications = [
+  'Боли в поясничной области — постоянные ноющие или острые приступообразные',
+  'Учащённое мочеиспускание, рези, чувство неполного опорожнения мочевого пузыря',
+  'Боли в подвздошных областях и внизу живота',
+  'Примеси в моче — кровь, гной, песок, помутнение или изменение цвета'
+] %}
+{% set prep = 'Особой подготовки не требуется. Если одновременно с почками обследуется мочевой пузырь, за 2 часа до процедуры нужно выпить около литра жидкости, чтобы он был наполнен.' %}
+
+{% block title %}{{ title }} — {{ siteName }}{% endblock %}
 
 {% block content %}
-
-<div class="cont-border-bottom">
-  <div class="container" style="padding-bottom: 60px;">
-
-    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-      <a href="{{ site_url }}/">Главная</a> / <a href="{{ site_url }}/uzi/">УЗИ</a> / УЗИ почек
-    </nav>
-
-    <h1 class="page-title">УЗИ почек</h1>
-
-    <p class="services-page__intro">УЗИ почек — один из основных методов диагностики патологий мочевыделительной системы, который помогает точно определить наличие конкрементов, их расположение и степень изменений.</p>
-
-    <h2 class="gyno-section-title">Показания</h2>
-    <div class="gyno-reasons__grid" style="margin-bottom: 40px;">
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">1</span>
-        <p>Боли в поясничной области — постоянные ноющие или острые приступообразные</p>
-      </div>
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">2</span>
-        <p>Учащённое мочеиспускание, рези, чувство неполного опорожнения мочевого пузыря</p>
-      </div>
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">3</span>
-        <p>Боли в подвздошных областях и внизу живота</p>
-      </div>
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">4</span>
-        <p>Примеси в моче — кровь, гной, песок, помутнение или изменение цвета</p>
-      </div>
-    </div>
-
-    <h2 class="gyno-section-title">Подготовка</h2>
-    <p class="services-page__intro" style="max-width: 680px;">Особой подготовки не требуется. Если одновременно с почками обследуется мочевой пузырь, за 2 часа до процедуры нужно выпить около литра жидкости, чтобы он был наполнен.</p>
-
-  </div>
-</div>
-
-{% include 'partials/contact-cta.twig' %}
-
+{% include 'partials/uzi-subtype.twig' %}
 {% endblock %}

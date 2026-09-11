@@ -1,42 +1,17 @@
 {% extends 'layouts/base.twig' %}
 
-{% block title %}УЗИ сосудов — {{ siteName }}{% endblock %}
+{% set title = 'УЗИ сосудов' %}
+{% set intro = 'УЗИ сосудов головного мозга, шеи и конечностей помогает вовремя обнаружить патологии, угрожающие жизни и здоровью — оценить проходимость сосудов, давление в них и структуру стенок.' %}
+{% set indications_title = 'Показания' %}
+{% set indications = [
+  'Подозрение на инфаркт, инсульт, ишемическую болезнь сердца',
+  'Варикозное расширение вен, особенно нижних конечностей',
+  'Общая оценка проходимости артерий и вен'
+] %}
+{% set prep = 'Для допплерографии нижних конечностей специальная подготовка не нужна. Перед УЗИ сосудов брюшной полости желательно на 2–3 дня исключить продукты, вызывающие газообразование — капусту, чёрный хлеб, газированные напитки, жирную пищу.' %}
+
+{% block title %}{{ title }} — {{ siteName }}{% endblock %}
 
 {% block content %}
-
-<div class="cont-border-bottom">
-  <div class="container" style="padding-bottom: 60px;">
-
-    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-      <a href="{{ site_url }}/">Главная</a> / <a href="{{ site_url }}/uzi/">УЗИ</a> / УЗИ сосудов
-    </nav>
-
-    <h1 class="page-title">УЗИ сосудов</h1>
-
-    <p class="services-page__intro">УЗИ сосудов головного мозга, шеи и конечностей помогает вовремя обнаружить патологии, угрожающие жизни и здоровью — оценить проходимость сосудов, давление в них и структуру стенок.</p>
-
-    <h2 class="gyno-section-title">Показания</h2>
-    <div class="gyno-reasons__grid" style="margin-bottom: 40px;">
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">1</span>
-        <p>Подозрение на инфаркт, инсульт, ишемическую болезнь сердца</p>
-      </div>
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">2</span>
-        <p>Варикозное расширение вен, особенно нижних конечностей</p>
-      </div>
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">3</span>
-        <p>Общая оценка проходимости артерий и вен</p>
-      </div>
-    </div>
-
-    <h2 class="gyno-section-title">Подготовка</h2>
-    <p class="services-page__intro" style="max-width: 680px;">Для допплерографии нижних конечностей специальная подготовка не нужна. Перед УЗИ сосудов брюшной полости желательно на 2–3 дня исключить продукты, вызывающие газообразование — капусту, чёрный хлеб, газированные напитки, жирную пищу.</p>
-
-  </div>
-</div>
-
-{% include 'partials/contact-cta.twig' %}
-
+{% include 'partials/uzi-subtype.twig' %}
 {% endblock %}

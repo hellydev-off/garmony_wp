@@ -1,46 +1,18 @@
 {% extends 'layouts/base.twig' %}
 
-{% block title %}УЗИ в урологии — {{ siteName }}{% endblock %}
+{% set title = 'УЗИ в урологии' %}
+{% set intro = 'Комплексное обследование органов мочеполовой системы — почек, мочевого пузыря, мошонки, простаты, семенных пузырьков и полового члена. Проводится трансабдоминально или трансректально (для диагностики заболеваний простаты).' %}
+{% set indications_title = 'Показания' %}
+{% set indications = [
+  'Камни, воспаления, кисты почек, нарушения их развития',
+  'Отклонения в спермограмме',
+  'Учащённое и болезненное мочеиспускание',
+  'Опоясывающие боли в животе, переходящие на поясницу'
+] %}
+{% set prep = 'При обследовании мочевого пузыря нужно выпить достаточно жидкости за час до процедуры, чтобы он был наполнен минимум наполовину. Перед ТРУЗИ рекомендована очистительная клизма; противопоказания — геморрой и воспаления в области прямой кишки.' %}
+
+{% block title %}{{ title }} — {{ siteName }}{% endblock %}
 
 {% block content %}
-
-<div class="cont-border-bottom">
-  <div class="container" style="padding-bottom: 60px;">
-
-    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-      <a href="{{ site_url }}/">Главная</a> / <a href="{{ site_url }}/uzi/">УЗИ</a> / УЗИ в урологии
-    </nav>
-
-    <h1 class="page-title">УЗИ в урологии</h1>
-
-    <p class="services-page__intro">Комплексное обследование органов мочеполовой системы — почек, мочевого пузыря, мошонки, простаты, семенных пузырьков и полового члена. Проводится трансабдоминально или трансректально (для диагностики заболеваний простаты).</p>
-
-    <h2 class="gyno-section-title">Показания</h2>
-    <div class="gyno-reasons__grid" style="margin-bottom: 40px;">
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">1</span>
-        <p>Камни, воспаления, кисты почек, нарушения их развития</p>
-      </div>
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">2</span>
-        <p>Отклонения в спермограмме</p>
-      </div>
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">3</span>
-        <p>Учащённое и болезненное мочеиспускание</p>
-      </div>
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">4</span>
-        <p>Опоясывающие боли в животе, переходящие на поясницу</p>
-      </div>
-    </div>
-
-    <h2 class="gyno-section-title">Подготовка</h2>
-    <p class="services-page__intro" style="max-width: 680px;">При обследовании мочевого пузыря нужно выпить достаточно жидкости за час до процедуры, чтобы он был наполнен минимум наполовину. Перед ТРУЗИ рекомендована очистительная клизма; противопоказания — геморрой и воспаления в области прямой кишки.</p>
-
-  </div>
-</div>
-
-{% include 'partials/contact-cta.twig' %}
-
+{% include 'partials/uzi-subtype.twig' %}
 {% endblock %}

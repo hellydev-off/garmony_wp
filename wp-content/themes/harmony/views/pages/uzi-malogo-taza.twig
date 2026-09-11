@@ -1,46 +1,18 @@
 {% extends 'layouts/base.twig' %}
 
-{% block title %}УЗИ малого таза — {{ siteName }}{% endblock %}
+{% set title = 'УЗИ малого таза' %}
+{% set intro = 'Оценка состояния органов малого таза: у женщин — матки, шейки матки, яичников и маточных труб; у мужчин — предстательной железы, семенных пузырьков и мочевого пузыря.' %}
+{% set indications_title = 'Показания' %}
+{% set indications = [
+  'Подозрение на фиброзную ткань, гиперплазию, рубцы, фиброиды матки и шейки матки',
+  'Доброкачественные и злокачественные новообразования',
+  'Оценка состояния предстательной железы и семенных пузырьков у мужчин',
+  'Опухоли мочевого пузыря, камни в почках, заболевания мочевыводящих путей'
+] %}
+{% set prep = 'Приходите в свободной удобной одежде, желательно выдержать лёгкую диету за пару дней до обследования. При трансабдоминальном УЗИ за час до процедуры нужно выпить достаточно воды, чтобы наполнить мочевой пузырь.' %}
+
+{% block title %}{{ title }} — {{ siteName }}{% endblock %}
 
 {% block content %}
-
-<div class="cont-border-bottom">
-  <div class="container" style="padding-bottom: 60px;">
-
-    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-      <a href="{{ site_url }}/">Главная</a> / <a href="{{ site_url }}/uzi/">УЗИ</a> / УЗИ малого таза
-    </nav>
-
-    <h1 class="page-title">УЗИ малого таза</h1>
-
-    <p class="services-page__intro">Оценка состояния органов малого таза: у женщин — матки, шейки матки, яичников и маточных труб; у мужчин — предстательной железы, семенных пузырьков и мочевого пузыря.</p>
-
-    <h2 class="gyno-section-title">Показания</h2>
-    <div class="gyno-reasons__grid" style="margin-bottom: 40px;">
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">1</span>
-        <p>Подозрение на фиброзную ткань, гиперплазию, рубцы, фиброиды матки и шейки матки</p>
-      </div>
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">2</span>
-        <p>Доброкачественные и злокачественные новообразования</p>
-      </div>
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">3</span>
-        <p>Оценка состояния предстательной железы и семенных пузырьков у мужчин</p>
-      </div>
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">4</span>
-        <p>Опухоли мочевого пузыря, камни в почках, заболевания мочевыводящих путей</p>
-      </div>
-    </div>
-
-    <h2 class="gyno-section-title">Подготовка</h2>
-    <p class="services-page__intro" style="max-width: 680px;">Приходите в свободной удобной одежде, желательно выдержать лёгкую диету за пару дней до обследования. При трансабдоминальном УЗИ за час до процедуры нужно выпить достаточно воды, чтобы наполнить мочевой пузырь.</p>
-
-  </div>
-</div>
-
-{% include 'partials/contact-cta.twig' %}
-
+{% include 'partials/uzi-subtype.twig' %}
 {% endblock %}

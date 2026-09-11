@@ -1,50 +1,19 @@
 {% extends 'layouts/base.twig' %}
 
-{% block title %}УЗИ мягких тканей — {{ siteName }}{% endblock %}
+{% set title = 'УЗИ мягких тканей' %}
+{% set intro = 'Диагностика новообразований, воспалений и других патологических процессов в мышцах, коже, слизистых оболочках и подкожной клетчатке.' %}
+{% set indications_title = 'Показания' %}
+{% set indications = [
+  'Новообразования неясного происхождения в толще мягких тканей',
+  'Ушибы и долго не проходящие гематомы',
+  'Флегмоны и абсцессы',
+  'Увеличенные лимфатические узлы',
+  'Хронические воспалительные заболевания мягких тканей, грыжи'
+] %}
+{% set prep = 'Исследование безболезненно и подходит как взрослым, так и детям, а также беременным женщинам.' %}
+
+{% block title %}{{ title }} — {{ siteName }}{% endblock %}
 
 {% block content %}
-
-<div class="cont-border-bottom">
-  <div class="container" style="padding-bottom: 60px;">
-
-    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-      <a href="{{ site_url }}/">Главная</a> / <a href="{{ site_url }}/uzi/">УЗИ</a> / УЗИ мягких тканей
-    </nav>
-
-    <h1 class="page-title">УЗИ мягких тканей</h1>
-
-    <p class="services-page__intro">Диагностика новообразований, воспалений и других патологических процессов в мышцах, коже, слизистых оболочках и подкожной клетчатке.</p>
-
-    <h2 class="gyno-section-title">Показания</h2>
-    <div class="gyno-reasons__grid" style="margin-bottom: 40px;">
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">1</span>
-        <p>Новообразования неясного происхождения в толще мягких тканей</p>
-      </div>
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">2</span>
-        <p>Ушибы и долго не проходящие гематомы</p>
-      </div>
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">3</span>
-        <p>Флегмоны и абсцессы</p>
-      </div>
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">4</span>
-        <p>Увеличенные лимфатические узлы</p>
-      </div>
-      <div class="gyno-reason-card">
-        <span class="gyno-reason-card__num">5</span>
-        <p>Хронические воспалительные заболевания мягких тканей, грыжи</p>
-      </div>
-    </div>
-
-    <h2 class="gyno-section-title">Подготовка</h2>
-    <p class="services-page__intro" style="max-width: 680px;">Исследование безболезненно и подходит как взрослым, так и детям, а также беременным женщинам.</p>
-
-  </div>
-</div>
-
-{% include 'partials/contact-cta.twig' %}
-
+{% include 'partials/uzi-subtype.twig' %}
 {% endblock %}

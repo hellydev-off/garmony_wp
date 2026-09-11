@@ -1,0 +1,31 @@
+{# ─── Общий шаблон для подстраниц УЗИ (используется через include из views/pages/uzi-*.twig) ─── #}
+<div class="cont-border-bottom">
+  <div class="container" style="padding-bottom: 60px;">
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="{{ site_url }}/">Главная</a> / <a href="{{ site_url }}/uzi/">УЗИ</a> / {{ title }}
+    </nav>
+
+    <h1 class="page-title">{{ title }}</h1>
+
+    <p class="services-page__intro">{{ intro }}</p>
+
+    <h2 class="gyno-section-title">{{ indications_title }}</h2>
+    <div class="gyno-reasons__grid" style="margin-bottom: 40px;">
+      {% for item in indications %}
+      <div class="gyno-reason-card">
+        <span class="gyno-reason-card__num">{{ loop.index }}</span>
+        <p>{{ item }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% if prep %}
+    <h2 class="gyno-section-title">Подготовка</h2>
+    <p class="services-page__intro" style="max-width: 680px;">{{ prep }}</p>
+    {% endif %}
+
+  </div>
+</div>
+
+{% include 'partials/contact-cta.twig' %}
