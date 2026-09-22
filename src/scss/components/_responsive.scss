@@ -637,6 +637,14 @@
   .reviews-slider__actions {
     flex-direction: column;
   }
+  .reviews-slider__empty {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  .reviews-slider__empty-illustration {
+    width: 120px;
+  }
   .reviews-slider__btn {
     min-width: 0;
     width: 100%;

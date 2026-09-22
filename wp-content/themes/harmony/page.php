@@ -279,9 +279,19 @@ switch ( $post->post_name ) {
 		] );
 		break;
 
+	case 'uzi-brjushnoj-polosti':
+		// Кураторский список из 3 врачей для этой подстраницы (по макету),
+		// а не общий список всех врачей УЗИ.
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'post__in'       => [ 137, 153, 126 ],
+			'orderby'        => 'post__in',
+			'posts_per_page' => -1,
+		] );
+		break;
+
 	case 'uzi':
 	case 'uzi-dlja-beremennyh':
-	case 'uzi-brjushnoj-polosti':
 	case 'uzi-malogo-taza':
 	case 'uzi-molochnyh-zhelez':
 	case 'uzi-mjagkih-tkanej':

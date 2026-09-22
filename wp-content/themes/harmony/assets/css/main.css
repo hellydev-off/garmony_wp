@@ -10161,6 +10161,9 @@ body.menu-open {
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
+.gyno-reasons__grid--single {
+  grid-template-columns: 1fr;
+}
 
 .gyno-subcats {
   margin-bottom: 80px;
@@ -10190,6 +10193,15 @@ body.menu-open {
   color: #1a1a1a;
   line-height: 1.5;
   padding-top: 8px;
+}
+.gyno-reason-card--check {
+  align-items: center;
+  gap: 16px;
+}
+.gyno-reason-card__check {
+  width: 24px;
+  height: 21px;
+  flex-shrink: 0;
 }
 
 .gyno-care {
@@ -10773,6 +10785,30 @@ body.menu-open {
 .reviews-slider__arrow.swiper-button-disabled {
   opacity: 0.35;
   pointer-events: none;
+}
+.reviews-slider__empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+.reviews-slider__empty-illustration {
+  width: 160px;
+  height: auto;
+  flex-shrink: 0;
+}
+.reviews-slider__empty-text h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+}
+.reviews-slider__empty-text p {
+  font-size: 15px;
+  color: #888;
+  margin: 0;
 }
 .reviews-slider__actions {
   display: flex;
@@ -12462,6 +12498,14 @@ body.menu-open {
   }
   .reviews-slider__actions {
     flex-direction: column;
+  }
+  .reviews-slider__empty {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  .reviews-slider__empty-illustration {
+    width: 120px;
   }
   .reviews-slider__btn {
     min-width: 0;

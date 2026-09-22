@@ -205,6 +205,10 @@ $g-green: #4caf50;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
+
+    &--single {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
@@ -238,6 +242,17 @@ $g-green: #4caf50;
     color: $g-dark;
     line-height: 1.5;
     padding-top: 8px;
+  }
+
+  &--check {
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__check {
+    width: 24px;
+    height: 21px;
+    flex-shrink: 0;
   }
 }
 

@@ -68,6 +68,35 @@ $rs-star: #f5b731;
     }
   }
 
+  &__empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 32px;
+    text-align: left;
+
+    &-illustration {
+      width: 160px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    &-text {
+      h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: $rs-dark;
+        margin: 0 0 8px;
+      }
+      p {
+        font-size: 15px;
+        color: $rs-muted;
+        margin: 0;
+      }
+    }
+  }
+
   &__actions {
     display: flex;
     gap: 16px;

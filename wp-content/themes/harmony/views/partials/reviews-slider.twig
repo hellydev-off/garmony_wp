@@ -1,19 +1,31 @@
 {#
   Переиспользуемый слайдер отзывов.
   Переменные (все необязательные):
-    title      — заголовок секции (default: 'Отзывы об услуге')
-    section_id — id для якорной ссылки (default: 'otzyvy')
-    reviews    — массив объектов { author, rating, date, text }
+    title         — заголовок секции (default: 'Отзывы об услуге')
+    section_id    — id для якорной ссылки (default: 'otzyvy')
+    reviews       — массив объектов { author, rating, date, text }
+    reviews_empty — true, чтобы принудительно показать пустое состояние
+                    («Отзывов пока что нет»), даже если reviews не пуст
 #}
 
 {% set title = title|default('Отзывы об услуге') %}
 {% set section_id = section_id|default('otzyvy') %}
 {% set reviews = reviews|default(latest_reviews) %}
+{% set show_empty = reviews_empty|default(false) or reviews is empty %}
 
 <section class="reviews-slider" id="{{ section_id }}">
   <div class="container">
     <h2 class="reviews-slider__title">{{ title }}</h2>
 
+    {% if show_empty %}
+    <div class="reviews-slider__empty">
+      <img src="{{ theme_uri }}/assets/images/uzi-sub/reviews-empty.png" alt="" class="reviews-slider__empty-illustration">
+      <div class="reviews-slider__empty-text">
+        <h3>Отзывов пока что нет =(</h3>
+        <p>Станьте первым, кто оставит отзыв</p>
+      </div>
+    </div>
+    {% else %}
     <div class="reviews-slider__wrap">
       <button class="reviews-slider__arrow reviews-slider__prev" aria-label="Назад">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -51,6 +63,7 @@
         </svg>
       </button>
     </div>
+    {% endif %}
 
     <div class="reviews-slider__actions">
       <a href="#" class="reviews-slider__btn reviews-slider__btn--primary js-open-review-modal">Добавить отзыв</a>
