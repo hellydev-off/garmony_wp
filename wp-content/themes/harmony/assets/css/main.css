@@ -10790,13 +10790,17 @@ body.menu-open {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 32px;
-  margin-bottom: 32px;
+  margin-bottom: 0;
   text-align: left;
 }
 .reviews-slider__empty-illustration {
-  width: 160px;
+  width: 130px;
   height: auto;
+  flex-shrink: 0;
+}
+.reviews-slider__empty-text {
   flex-shrink: 0;
 }
 .reviews-slider__empty-text h3 {
@@ -10804,11 +10808,22 @@ body.menu-open {
   font-weight: 700;
   color: #1a1a1a;
   margin: 0 0 8px;
+  white-space: nowrap;
 }
 .reviews-slider__empty-text p {
   font-size: 15px;
   color: #888;
   margin: 0;
+  white-space: nowrap;
+}
+.reviews-slider__empty-actions {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.reviews-slider__empty-actions .reviews-slider__btn {
+  min-width: 0;
+  white-space: nowrap;
 }
 .reviews-slider__actions {
   display: flex;
@@ -12506,6 +12521,14 @@ body.menu-open {
   }
   .reviews-slider__empty-illustration {
     width: 120px;
+  }
+  .reviews-slider__empty-text h3,
+  .reviews-slider__empty-text p {
+    white-space: normal;
+  }
+  .reviews-slider__empty-actions {
+    flex-direction: column;
+    width: 100%;
   }
   .reviews-slider__btn {
     min-width: 0;

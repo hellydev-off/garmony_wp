@@ -645,6 +645,14 @@
   .reviews-slider__empty-illustration {
     width: 120px;
   }
+  .reviews-slider__empty-text h3,
+  .reviews-slider__empty-text p {
+    white-space: normal;
+  }
+  .reviews-slider__empty-actions {
+    flex-direction: column;
+    width: 100%;
+  }
   .reviews-slider__btn {
     min-width: 0;
     width: 100%;

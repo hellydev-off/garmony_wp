@@ -72,27 +72,43 @@ $rs-star: #f5b731;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 32px;
-    margin-bottom: 32px;
+    margin-bottom: 0;
     text-align: left;
 
     &-illustration {
-      width: 160px;
+      width: 130px;
       height: auto;
       flex-shrink: 0;
     }
 
     &-text {
+      flex-shrink: 0;
+
       h3 {
         font-size: 22px;
         font-weight: 700;
         color: $rs-dark;
         margin: 0 0 8px;
+        white-space: nowrap;
       }
       p {
         font-size: 15px;
         color: $rs-muted;
         margin: 0;
+        white-space: nowrap;
+      }
+    }
+
+    &-actions {
+      display: flex;
+      gap: 16px;
+      flex-shrink: 0;
+
+      .reviews-slider__btn {
+        min-width: 0;
+        white-space: nowrap;
       }
     }
   }
