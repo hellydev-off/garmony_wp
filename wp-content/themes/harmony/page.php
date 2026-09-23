@@ -300,16 +300,60 @@ switch ( $post->post_name ) {
 		] );
 		break;
 
-	case 'uzi':
-	case 'uzi-malogo-taza':
-	case 'uzi-molochnyh-zhelez':
-	case 'uzi-mjagkih-tkanej':
-	case 'uzi-pochek':
-	case 'uzi-shhitovidki':
-	case 'uzi-sosudov':
 	case 'uzi-v-urologii':
-		// Подстраницы по видам УЗИ показывают тех же врачей УЗИ, что и общая
-		// страница /uzi/ — отдельной таксономии на каждый подвид нет.
+		// Дерстуганов, Федотова, Крупянко, Валенков — по макету.
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'post__in'       => [ 137, 153, 176, 206 ],
+			'orderby'        => 'post__in',
+			'posts_per_page' => -1,
+		] );
+		break;
+
+	case 'uzi-pochek':
+	case 'uzi-mjagkih-tkanej':
+	case 'uzi-shhitovidki':
+		// Дерстуганов, Федотова, Амбарцумян — по макету (одинаковый набор на этих 3 страницах).
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'post__in'       => [ 137, 153, 126 ],
+			'orderby'        => 'post__in',
+			'posts_per_page' => -1,
+		] );
+		break;
+
+	case 'uzi-sosudov':
+		// Дерстуганов, Амбарцумян — по макету.
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'post__in'       => [ 137, 126 ],
+			'orderby'        => 'post__in',
+			'posts_per_page' => -1,
+		] );
+		break;
+
+	case 'uzi-malogo-taza':
+		// Комиссарчик, Соколова, Федотова, Амбарцумян, Дерстуганов — по макету.
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'post__in'       => [ 168, 49, 153, 126, 137 ],
+			'orderby'        => 'post__in',
+			'posts_per_page' => -1,
+		] );
+		break;
+
+	case 'uzi-molochnyh-zhelez':
+		// Дерстуганов, Иванова Юлия, Федотова, Амбарцумян — по макету.
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'post__in'       => [ 137, 162, 153, 126 ],
+			'orderby'        => 'post__in',
+			'posts_per_page' => -1,
+		] );
+		break;
+
+	case 'uzi':
+		// Общая страница /uzi/ — по таксономии, отдельной кураторики нет.
 		$context['category_doctors'] = Timber::get_posts( [
 			'post_type'      => 'doctor',
 			'posts_per_page' => -1,

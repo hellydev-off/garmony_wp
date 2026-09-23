@@ -1,13 +1,18 @@
 {# ─── Общий шаблон для подстраниц УЗИ (используется через include из views/pages/uzi-*.twig) ───
    Обязательные переменные: title, intro, indications_title, indications
    Необязательные (если не заданы — соответствующий блок просто не выводится):
-     hero_image      — url картинки intro-баннера (по умолчанию — общее фото УЗИ)
-     checklist_title, checklist — чек-лист «что обследует УЗИ» (массив строк)
-     prep_items      — «Подготовка» нумерованным списком (массив строк)
-     prep            — «Подготовка» одним абзацем (старый формат, используется если prep_items не задан)
-     prices_title, prices — таблица «Стоимость услуг» (массив {name, price})
+     hero_image        — url картинки intro-баннера (по умолчанию — общее фото УЗИ)
+     indications_nav_label — короткая подпись первого пункта подменю (по умолчанию — indications_title)
+     indications_as_checklist — true, чтобы первый блок рисовался галочками, а не цифрами
+     checklist_title, checklist_nav_label, checklist_single, checklist — доп. чек-лист (массив строк)
+     prep_title, prep_nav_label — заголовок/подпись раздела «Подготовка» (по умолчанию 'Подготовка';
+                        так же используется для разделов вида «Проведение исследования»)
+     prep_items       — «Подготовка» нумерованным списком (массив строк)
+     prep             — «Подготовка» одним абзацем (старый формат, используется если prep_items не задан)
+     prices_title, prices — таблица «Стоимость услуг» (массив {name, price, promo})
+     doctors_title    — заголовок блока врачей (по умолчанию 'Врачи УЗИ клиники «Гармония»:')
      features_title, features — доп. блок текстом (массив абзацев)
-     reviews_empty   — true, чтобы показать пустое состояние в блоке отзывов
+     reviews_empty    — true, чтобы показать пустое состояние в блоке отзывов
 #}
 <div class="gyno-page">
 
@@ -31,7 +36,7 @@
         <nav class="gyno-subnav__inner js-sticky-subnav">
         <a href="#povod" class="gyno-subnav__link">{{ indications_nav_label|default(indications_title) }}</a>
         {% if checklist %}<a href="#oblast" class="gyno-subnav__link">{{ checklist_nav_label|default('Область обследования') }}</a>{% endif %}
-        {% if prep or prep_items %}<a href="#podgotovka" class="gyno-subnav__link">Подготовка</a>{% endif %}
+        {% if prep or prep_items %}<a href="#podgotovka" class="gyno-subnav__link">{{ prep_nav_label|default(prep_title|default('Подготовка')) }}</a>{% endif %}
         {% if prices %}<a href="#stoimost" class="gyno-subnav__link">Стоимость</a>{% endif %}
         <a href="#vrachi" class="gyno-subnav__link">Врачи</a>
         <a href="#otzyvy" class="gyno-subnav__link">Отзывы</a>
@@ -58,8 +63,12 @@
       <h2 class="gyno-section-title">{{ indications_title }}</h2>
       <div class="gyno-reasons__grid">
         {% for item in indications %}
-        <div class="gyno-reason-card">
-          <span class="gyno-reason-card__num">{{ loop.index }}</span>
+        <div class="gyno-reason-card{{ indications_as_checklist ? ' gyno-reason-card--check' : '' }}">
+          {% if indications_as_checklist %}
+            <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="" class="gyno-reason-card__check">
+          {% else %}
+            <span class="gyno-reason-card__num">{{ loop.index }}</span>
+          {% endif %}
           <p>{{ item }}</p>
         </div>
         {% endfor %}
@@ -87,7 +96,7 @@
   {% if prep_items %}
   <section class="gyno-examinations" id="podgotovka">
     <div class="container">
-      <h2 class="gyno-section-title">Подготовка</h2>
+      <h2 class="gyno-section-title">{{ prep_title|default('Подготовка') }}</h2>
       <div class="gyno-reasons__grid gyno-reasons__grid--single">
         {% for item in prep_items %}
         <div class="gyno-reason-card">
@@ -101,7 +110,7 @@
   {% elseif prep %}
   <section class="gyno-examinations" id="podgotovka">
     <div class="container">
-      <h2 class="gyno-section-title">Подготовка</h2>
+      <h2 class="gyno-section-title">{{ prep_title|default('Подготовка') }}</h2>
       <p>{{ prep }}</p>
     </div>
   </section>
