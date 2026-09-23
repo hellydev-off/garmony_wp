@@ -29,8 +29,8 @@
     <div class="container">
       <div class="gyno-intro__bg">
         <nav class="gyno-subnav__inner js-sticky-subnav">
-        <a href="#povod" class="gyno-subnav__link">{{ indications_title }}</a>
-        {% if checklist %}<a href="#oblast" class="gyno-subnav__link">Область обследования</a>{% endif %}
+        <a href="#povod" class="gyno-subnav__link">{{ indications_nav_label|default(indications_title) }}</a>
+        {% if checklist %}<a href="#oblast" class="gyno-subnav__link">{{ checklist_nav_label|default('Область обследования') }}</a>{% endif %}
         {% if prep or prep_items %}<a href="#podgotovka" class="gyno-subnav__link">Подготовка</a>{% endif %}
         {% if prices %}<a href="#stoimost" class="gyno-subnav__link">Стоимость</a>{% endif %}
         <a href="#vrachi" class="gyno-subnav__link">Врачи</a>
@@ -72,7 +72,7 @@
   <section class="gyno-reasons" id="oblast">
     <div class="container">
       <h2 class="gyno-section-title">{{ checklist_title }}</h2>
-      <div class="gyno-reasons__grid">
+      <div class="gyno-reasons__grid{{ checklist_single ? ' gyno-reasons__grid--single' : '' }}">
         {% for item in checklist %}
         <div class="gyno-reason-card gyno-reason-card--check">
           <img src="{{ theme_uri }}/assets/images/gynecology/checkmark.png" alt="" class="gyno-reason-card__check">
@@ -127,8 +127,8 @@
         </thead>
         <tbody class="js-uzi-sub-price-tbody">
           {% for row in prices %}
-          <tr>
-            <td>{{ row.name }}</td>
+          <tr{% if row.promo %} class="gyno-prices__row--promo"{% endif %}>
+            <td>{% if row.promo %}<span class="gyno-prices__badge">Акция</span>{% endif %}{{ row.name }}</td>
             <td>{{ row.price }}</td>
           </tr>
           {% endfor %}

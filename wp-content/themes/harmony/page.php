@@ -290,8 +290,17 @@ switch ( $post->post_name ) {
 		] );
 		break;
 
-	case 'uzi':
 	case 'uzi-dlja-beremennyh':
+		// Кураторский список из 2 врачей для этой подстраницы (по макету).
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'post__in'       => [ 168, 49 ],
+			'orderby'        => 'post__in',
+			'posts_per_page' => -1,
+		] );
+		break;
+
+	case 'uzi':
 	case 'uzi-malogo-taza':
 	case 'uzi-molochnyh-zhelez':
 	case 'uzi-mjagkih-tkanej':
