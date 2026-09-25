@@ -891,3 +891,12 @@ $g-green: #4caf50;
     color: #4a4f72;
   }
 }
+
+// ─── Карточки-«показания» на подстраницах УЗИ — круглее и мягче тень, чем
+// в общем .gyno-reason-card (используется на 25+ других страницах) ────────
+.gyno-page--uzi-sub {
+  .gyno-reason-card {
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.035);
+  }
+}

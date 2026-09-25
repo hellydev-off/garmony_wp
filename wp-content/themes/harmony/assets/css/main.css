@@ -10746,6 +10746,11 @@ body.menu-open {
   color: #4a4f72;
 }
 
+.gyno-page--uzi-sub .gyno-reason-card {
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.035);
+}
+
 .reviews-slider {
   margin-bottom: 60px;
 }
