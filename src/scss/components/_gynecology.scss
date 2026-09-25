@@ -900,3 +900,13 @@ $g-green: #4caf50;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.035);
   }
 }
+
+// ─── Шрифт из макета (Mulish) — только на подстраницах УЗИ ────────────────
+.gyno-page--uzi-sub {
+  font-family: 'Mulish', $font-family-base;
+
+  h1, h2, h3,
+  .gyno-reason-card__num {
+    font-weight: 800;
+  }
+}
