@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;600;700;800&display=swap");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -10755,9 +10755,13 @@ body.menu-open {
 .gyno-page--uzi-sub {
   font-family: "Mulish", "Inter", Arial, sans-serif;
 }
-.gyno-page--uzi-sub h1, .gyno-page--uzi-sub h2, .gyno-page--uzi-sub h3,
-.gyno-page--uzi-sub .gyno-reason-card__num {
+.gyno-page--uzi-sub h1, .gyno-page--uzi-sub h2, .gyno-page--uzi-sub h3 {
   font-weight: 800;
+}
+.gyno-page--uzi-sub .gyno-reason-card__num {
+  font-weight: 200;
+  color: #274878;
+  opacity: 1;
 }
 
 .reviews-slider {

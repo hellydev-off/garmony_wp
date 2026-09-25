@@ -905,8 +905,15 @@ $g-green: #4caf50;
 .gyno-page--uzi-sub {
   font-family: 'Mulish', $font-family-base;
 
-  h1, h2, h3,
-  .gyno-reason-card__num {
+  h1, h2, h3 {
     font-weight: 800;
+  }
+
+  // В макете цифры карточек — Mulish ExtraLight 48px, #274878 сплошным
+  // цветом (не приглушённый через opacity, как в общем .gyno-reason-card__num).
+  .gyno-reason-card__num {
+    font-weight: 200;
+    color: #274878;
+    opacity: 1;
   }
 }
