@@ -10221,6 +10221,10 @@ body.menu-open {
   flex-direction: column;
   gap: 14px;
 }
+.gyno-care__item .gyno-care__icon img {
+  width: 52px;
+  height: auto;
+}
 .gyno-care__item h3 {
   font-size: 17px;
   font-weight: 700;
@@ -10330,6 +10334,9 @@ body.menu-open {
 }
 .gyno-prices__table tbody tr:last-child td {
   border-bottom: none;
+}
+.gyno-prices__row--promo td:first-child {
+  color: #1b5fa8;
 }
 .gyno-prices__row--promo td:first-child .gyno-prices__badge {
   display: inline-block;

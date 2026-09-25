@@ -275,6 +275,11 @@ $g-green: #4caf50;
     flex-direction: column;
     gap: 14px;
 
+    .gyno-care__icon img {
+      width: 52px;
+      height: auto;
+    }
+
     h3 {
       font-size: 17px;
       font-weight: 700;
@@ -403,6 +408,8 @@ $g-green: #4caf50;
   }
 
   &__row--promo td:first-child {
+    color: $g-blue;
+
     .gyno-prices__badge {
       display: inline-block;
       background: $g-navy;
