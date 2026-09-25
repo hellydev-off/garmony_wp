@@ -10740,6 +10740,12 @@ body.menu-open {
   background: #ddd5cb;
 }
 
+.gyno-care#zabota .gyno-section-title,
+.gyno-care#zabota .gyno-care__item h3,
+.gyno-care#zabota .gyno-care__item p {
+  color: #4a4f72;
+}
+
 .reviews-slider {
   margin-bottom: 60px;
 }

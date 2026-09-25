@@ -881,3 +881,13 @@ $g-green: #4caf50;
     background: #ddd5cb;
   }
 }
+
+// ─── "С заботой о вас" на подстраницах УЗИ — свой цвет текста, не трогая
+// общий .gyno-care, используемый на всех остальных страницах специализаций ──
+.gyno-care#zabota {
+  .gyno-section-title,
+  .gyno-care__item h3,
+  .gyno-care__item p {
+    color: #4a4f72;
+  }
+}
