@@ -7787,7 +7787,7 @@ body.menu-open {
 .doctor-featured__photo {
   width: 240px;
   flex-shrink: 0;
-  background: rgb(241.35, 227.7, 214.05);
+  background: transparent;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
@@ -8202,9 +8202,6 @@ body.menu-open {
 
 .key-specialists .section-title {
   margin-bottom: 24px;
-}
-.key-specialists .doctor-featured__photo {
-  background: transparent;
 }
 
 .clinic-legal__inner {
@@ -8913,7 +8910,7 @@ body.menu-open {
   padding: 60px 0;
 }
 .cont-border-bottom--flush-bottom .about-text-section {
-  padding-top: 12px;
+  padding-top: 32px;
 }
 .about-text-section__inner {
   display: flex;
@@ -9132,6 +9129,7 @@ body.menu-open {
   padding: 20px;
   align-items: stretch;
   height: 100%;
+  min-height: 220px;
   border: 2px solid transparent;
   transition: border-color 0.2s ease;
 }

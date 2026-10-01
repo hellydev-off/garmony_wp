@@ -58,7 +58,7 @@ $text-dark: #1a1a1a;
   &__photo {
     width: 240px;
     flex-shrink: 0;
-    background: darken($dr-bg, 6%);
+    background: transparent;
     overflow: hidden;
     display: flex;
     align-items: flex-end;

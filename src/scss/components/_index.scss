@@ -475,7 +475,7 @@ $text-dark: #333333;
   padding: 60px 0;
 
   .cont-border-bottom--flush-bottom & {
-    padding-top: 12px;
+    padding-top: 32px;
   }
 
   &__inner {
@@ -731,6 +731,7 @@ $text-dark: #333333;
   padding: 20px;
   align-items: stretch;
   height: 100%;
+  min-height: 220px;
   border: 2px solid transparent;
   transition: border-color 0.2s ease;
 
