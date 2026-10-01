@@ -9130,7 +9130,7 @@ body.menu-open {
   background: #f9f3ed;
   border-radius: 12px;
   padding: 20px;
-  align-items: flex-start;
+  align-items: stretch;
   height: 100%;
   border: 2px solid transparent;
   transition: border-color 0.2s ease;
