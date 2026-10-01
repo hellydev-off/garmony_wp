@@ -8065,7 +8065,7 @@ body.menu-open {
 .dp-hero__meta-value {
   font-size: 16px;
   font-weight: 700;
-  color: #333333;
+  color: #1b5fa8;
 }
 .dp-hero__reviews {
   font-size: 18px;
@@ -8203,6 +8203,9 @@ body.menu-open {
 .key-specialists .section-title {
   margin-bottom: 24px;
 }
+.key-specialists .doctor-featured__photo {
+  background: transparent;
+}
 
 .clinic-legal__inner {
   display: flex;
@@ -8226,39 +8229,52 @@ body.menu-open {
   padding-top: 8px;
 }
 .clinic-legal__org {
-  font-size: 16px;
+  font-size: 19px;
+  font-weight: 700;
   color: #333333;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   line-height: 1.5;
 }
 .clinic-legal__org strong {
   font-weight: 700;
 }
 .clinic-legal__license {
-  font-size: 13px;
+  font-size: 15px;
   color: #888;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e3ddd2;
 }
 .clinic-legal__row {
   margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e3ddd2;
+}
+.clinic-legal__row:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 .clinic-legal__label {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   color: #333333;
   margin-bottom: 4px;
 }
 .clinic-legal__value {
-  font-size: 15px;
+  font-size: 17px;
   color: #333333;
   margin: 0;
 }
 
+.care-text .section-title {
+  font-size: 42px;
+}
 .care-text__body p {
-  font-size: 15px;
+  font-size: 17px;
   color: #333333;
-  line-height: 1.7;
-  margin-bottom: 12px;
+  line-height: 1.75;
+  margin-bottom: 14px;
 }
 .care-text__gallery {
   margin-top: 40px;
@@ -8566,17 +8582,17 @@ body.menu-open {
 }
 
 .section-link {
-  color: #010102;
+  color: #1b5fa8;
   font-size: 18px;
   font-weight: 700;
   text-decoration: none;
-  border-bottom: 1px dotted #010102;
+  border-bottom: 1px dotted #1b5fa8;
   white-space: nowrap;
   padding-bottom: 1px;
 }
 .section-link:hover, .section-link:focus {
-  color: black;
-  border-bottom-color: black;
+  color: rgb(18.5261538462, 65.1846153846, 115.2738461538);
+  border-bottom-color: rgb(18.5261538462, 65.1846153846, 115.2738461538);
   text-decoration: none;
 }
 
@@ -8896,6 +8912,9 @@ body.menu-open {
 .about-text-section {
   padding: 60px 0;
 }
+.cont-border-bottom--flush-bottom .about-text-section {
+  padding-top: 12px;
+}
 .about-text-section__inner {
   display: flex;
   gap: 60px;
@@ -9125,7 +9144,7 @@ body.menu-open {
   flex-shrink: 0;
   border-radius: 8px;
   overflow: hidden;
-  background: #ddd3c5;
+  background: transparent;
 }
 .new-doctor-card__photo img {
   width: 100%;
@@ -9138,6 +9157,9 @@ body.menu-open {
 }
 .new-doctor-card__info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .new-doctor-card__name {
   font-size: 22px;
@@ -9154,6 +9176,8 @@ body.menu-open {
 }
 .new-doctor-card__link {
   display: inline-block;
+  align-self: flex-start;
+  margin-top: auto;
   border: 2px solid #274878;
   color: #274878;
   padding: 9px 26px;

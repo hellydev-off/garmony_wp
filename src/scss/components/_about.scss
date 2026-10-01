@@ -25,6 +25,10 @@ $text-dark: #333333;
   .section-title {
     margin-bottom: 24px;
   }
+
+  .doctor-featured__photo {
+    background: transparent;
+  }
 }
 
 // ─── Clinic legal ─────────────────────────────────────────────────────────────
@@ -54,9 +58,10 @@ $text-dark: #333333;
   }
 
   &__org {
-    font-size: 16px;
+    font-size: 19px;
+    font-weight: 700;
     color: $text-dark;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     line-height: 1.5;
 
     strong {
@@ -65,24 +70,34 @@ $text-dark: #333333;
   }
 
   &__license {
-    font-size: 13px;
+    font-size: 15px;
     color: #888;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e3ddd2;
   }
 
   &__row {
     margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e3ddd2;
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
   }
 
   &__label {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
     color: $text-dark;
     margin-bottom: 4px;
   }
 
   &__value {
-    font-size: 15px;
+    font-size: 17px;
     color: $text-dark;
     margin: 0;
   }
@@ -90,12 +105,16 @@ $text-dark: #333333;
 
 // ─── Care text ────────────────────────────────────────────────────────────────
 .care-text {
+  .section-title {
+    font-size: 42px;
+  }
+
   &__body {
     p {
-      font-size: 15px;
+      font-size: 17px;
       color: $text-dark;
-      line-height: 1.7;
-      margin-bottom: 12px;
+      line-height: 1.75;
+      margin-bottom: 14px;
     }
   }
 

@@ -10,8 +10,9 @@
             <img src="{{ doctor.meta('photo').url }}" alt="{{ doctor.title }}" />
           {% endif %}
         </div>
+        {% set name_parts = doctor.title|split(' ', 2) %}
         <div class="doctor-featured__info">
-          <p class="doctor-featured__name">{{ doctor.title }}</p>
+          <p class="doctor-featured__name">{{ name_parts[0] }}<br>{{ name_parts[1] }}</p>
           <p class="doctor-featured__role">{{ doctor.meta('specialization') }}</p>
         </div>
       </div>
