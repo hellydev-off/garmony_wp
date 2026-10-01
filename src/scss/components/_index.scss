@@ -730,8 +730,11 @@ $text-dark: #333333;
   border-radius: 12px;
   padding: 20px;
   align-items: stretch;
-  height: 100%;
-  min-height: 220px;
+  // Swiper sets align-items: flex-start on .swiper-wrapper, which blocks
+  // cross-slide flex stretch — so slide height can't equalize via CSS
+  // alone. Fixed height (comfortably above worst-case 2-line name +
+  // 2-line spec content) keeps the Подробнее buttons aligned instead.
+  height: 240px;
   border: 2px solid transparent;
   transition: border-color 0.2s ease;
 
