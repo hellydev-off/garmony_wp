@@ -10823,11 +10823,12 @@ body.menu-open {
 
 .fd-link-card {
   display: block;
-  background: #f9f3ed;
+  background: #fff;
   border-radius: 14px;
   padding: 24px;
   text-decoration: none;
-  border: 2px solid transparent;
+  border: 2px solid #ece6db;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.035);
   transition: border-color 0.2s ease;
 }
 .fd-link-card:hover {
