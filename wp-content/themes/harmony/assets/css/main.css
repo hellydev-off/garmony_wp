@@ -10827,12 +10827,11 @@ body.menu-open {
   border-radius: 14px;
   padding: 24px;
   text-decoration: none;
-  border: 2px solid #ece6db;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.035);
-  transition: border-color 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.2s ease;
 }
 .fd-link-card:hover {
-  border-color: #00467a;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   text-decoration: none;
 }
 .fd-link-card__name {
