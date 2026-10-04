@@ -258,7 +258,8 @@
     grid-template-columns: 1fr;
   }
   .gyno-reasons__grid,
-  .gyno-care__grid {
+  .gyno-care__grid,
+  .fd-links__grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .gyno-steps {
@@ -521,7 +522,8 @@
   .gyno-reasons__grid,
   .gyno-care__grid,
   .gyno-offer__grid,
-  .gyno-steps {
+  .gyno-steps,
+  .fd-links__grid {
     grid-template-columns: 1fr;
   }
 

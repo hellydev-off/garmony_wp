@@ -389,6 +389,40 @@ switch ( $post->post_name ) {
 		] );
 		break;
 
+	case 'ekg':
+		// Осадчий — по макету.
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'post__in'       => [ 190 ],
+			'orderby'        => 'post__in',
+			'posts_per_page' => -1,
+		] );
+		break;
+
+	case 'spirometriya':
+		// Кропачева — по макету.
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'post__in'       => [ 44 ],
+			'orderby'        => 'post__in',
+			'posts_per_page' => -1,
+		] );
+		break;
+
+	case 'urofluometriya':
+		// Акутин, Валенков, Крупянко — по макету.
+		$context['category_doctors'] = Timber::get_posts( [
+			'post_type'      => 'doctor',
+			'post__in'       => [ 124, 206, 176 ],
+			'orderby'        => 'post__in',
+			'posts_per_page' => -1,
+		] );
+		break;
+
+	case 'holterovskoe-monitorirovanie':
+		// Без блока врачей — по макету.
+		break;
+
 	case 'massazh':
 		$context['category_doctors'] = Timber::get_posts( [
 			'post_type'      => 'doctor',

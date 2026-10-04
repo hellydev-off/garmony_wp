@@ -1,7 +1,12 @@
-{# ─── Общий шаблон для подстраниц УЗИ (используется через include из views/pages/uzi-*.twig) ───
-   Обязательные переменные: title, intro, indications_title, indications
+{# ─── Общий шаблон для подстраниц-"карточек услуги" (УЗИ, функциональная диагностика и т.п.) ───
+   Используется через include из views/pages/uzi-*.twig и funkc-diag-*.twig.
+   Обязательные переменные: title, intro
    Необязательные (если не заданы — соответствующий блок просто не выводится):
+     parent_url, parent_label — родительский пункт хлебных крошек (по умолчанию — /uzi/ «УЗИ»)
+     breadcrumb_label  — текст последней крошки, если должен отличаться от title (H1)
      hero_image        — url картинки intro-баннера (по умолчанию — общее фото УЗИ)
+     intro             — один абзац (строка) или массив абзацев; можно использовать HTML-ссылки внутри
+     indications_title, indications — блок «Когда необходимо»; если indications не задан — блок не выводится
      indications_nav_label — короткая подпись первого пункта подменю (по умолчанию — indications_title)
      indications_as_checklist — true, чтобы первый блок рисовался галочками, а не цифрами
      checklist_title, checklist_nav_label, checklist_single, checklist — доп. чек-лист (массив строк)
@@ -10,7 +15,8 @@
      prep_items       — «Подготовка» нумерованным списком (массив строк)
      prep             — «Подготовка» одним абзацем (старый формат, используется если prep_items не задан)
      prices_title, prices — таблица «Стоимость услуг» (массив {name, price, promo})
-     doctors_title    — заголовок блока врачей (по умолчанию 'Врачи УЗИ клиники «Гармония»:')
+     doctors_title    — заголовок блока врачей (по умолчанию 'Врачи УЗИ клиники «Гармония»:'); блок
+                        не выводится, если category_doctors пуст/не задан
      features_title, features — доп. блок текстом (массив абзацев)
      reviews_empty    — true, чтобы показать пустое состояние в блоке отзывов
 #}
@@ -22,9 +28,9 @@
       <nav class="breadcrumb-nav">
         <a href="{{ site_url }}/">Главная</a>
         <span class="breadcrumb-nav__sep">/</span>
-        <a href="{{ site_url }}/uzi/">УЗИ</a>
+        <a href="{{ parent_url|default(site_url ~ '/uzi/') }}">{{ parent_label|default('УЗИ') }}</a>
         <span class="breadcrumb-nav__sep">/</span>
-        <span>{{ title }}</span>
+        <span>{{ breadcrumb_label|default(title) }}</span>
       </nav>
       <h1 class="page-title">{{ title }}</h1>
     </div>
@@ -34,12 +40,12 @@
     <div class="container">
       <div class="gyno-intro__bg">
         <nav class="gyno-subnav__inner js-sticky-subnav">
-        <a href="#povod" class="gyno-subnav__link">{{ indications_nav_label|default(indications_title) }}</a>
+        {% if indications %}<a href="#povod" class="gyno-subnav__link">{{ indications_nav_label|default(indications_title) }}</a>{% endif %}
         <a href="#zabota" class="gyno-subnav__link">С заботой о вас</a>
         {% if checklist %}<a href="#oblast" class="gyno-subnav__link">{{ checklist_nav_label|default('Область обследования') }}</a>{% endif %}
         {% if prep or prep_items %}<a href="#podgotovka" class="gyno-subnav__link">{{ prep_nav_label|default(prep_title|default('Подготовка')) }}</a>{% endif %}
         {% if prices %}<a href="#stoimost" class="gyno-subnav__link">Стоимость</a>{% endif %}
-        <a href="#vrachi" class="gyno-subnav__link">Врачи</a>
+        {% if category_doctors %}<a href="#vrachi" class="gyno-subnav__link">Врачи</a>{% endif %}
         <a href="#otzyvy" class="gyno-subnav__link">Отзывы</a>
         {% if features %}<a href="#osobennosti" class="gyno-subnav__link">Особенности</a>{% endif %}
         <a href="#" class="gyno-subnav__link js-open-appointment-modal" data-request-type="Запись на приём">Записаться на приём</a>
@@ -52,7 +58,11 @@
           </div>
         </div>
         <div class="gyno-intro__text">
-          <p>{{ intro }}</p>
+          {% if intro is iterable %}
+            {% for p in intro %}<p>{{ p|raw }}</p>{% endfor %}
+          {% else %}
+            <p>{{ intro|raw }}</p>
+          {% endif %}
         </div>
       </div>
       </div>
@@ -60,6 +70,7 @@
   </section>
 
   {# ── Показания ────────────────────────────────────────────────────────────────── #}
+  {% if indications %}
   <section class="gyno-reasons" id="povod">
     <div class="container">
       <h2 class="gyno-section-title">{{ indications_title }}</h2>
@@ -71,12 +82,13 @@
           {% else %}
             <span class="gyno-reason-card__num">{{ loop.index }}</span>
           {% endif %}
-          <p>{{ item }}</p>
+          <p>{{ item|raw }}</p>
         </div>
         {% endfor %}
       </div>
     </div>
   </section>
+  {% endif %}
   </div>
 
   {# ── С заботой о вас ─────────────────────────────────────────────────────────── #}
@@ -210,6 +222,7 @@
   {% endif %}
 
   {# ── Врачи ────────────────────────────────────────────────────────────────────── #}
+  {% if category_doctors %}
   <section class="gyno-doctors" id="vrachi">
     <div class="container">
       <h2 class="gyno-section-title">{{ doctors_title|default('Врачи УЗИ клиники «Гармония»:') }}</h2>
@@ -235,6 +248,7 @@
       </div>
     </div>
   </section>
+  {% endif %}
 
   {% include 'partials/reviews-slider.twig' with { title: 'Отзывы клиентов:', reviews_empty: reviews_empty|default(false) } %}
 
