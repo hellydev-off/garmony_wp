@@ -94,7 +94,12 @@
     }
   }
 
+  &__info {
+    display: block;
+  }
+
   &__photo {
+    display: block;
     flex-shrink: 0;
     width: 64px;
     height: 64px;
@@ -112,6 +117,7 @@
   }
 
   &__name {
+    display: block;
     font-size: 15px;
     font-weight: 700;
     color: #333333;
@@ -120,6 +126,7 @@
   }
 
   &__spec {
+    display: block;
     font-size: 13px;
     color: #274878;
     margin: 0;

@@ -7773,7 +7773,11 @@ body.menu-open {
   border-color: #274878;
   text-decoration: none;
 }
+.enc-doctors__info {
+  display: block;
+}
 .enc-doctors__photo {
+  display: block;
   flex-shrink: 0;
   width: 64px;
   height: 64px;
@@ -7791,6 +7795,7 @@ body.menu-open {
   display: block;
 }
 .enc-doctors__name {
+  display: block;
   font-size: 15px;
   font-weight: 700;
   color: #333333;
@@ -7798,6 +7803,7 @@ body.menu-open {
   line-height: 1.3;
 }
 .enc-doctors__spec {
+  display: block;
   font-size: 13px;
   color: #274878;
   margin: 0;
