@@ -7740,6 +7740,34 @@ body.menu-open {
   color: rgb(26.4905660377, 48.9056603774, 81.5094339623);
 }
 
+.enc-related {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e8e2da;
+}
+.enc-related h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0 0 14px;
+}
+.enc-related ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.enc-related a {
+  color: #274878;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.enc-related a:hover {
+  color: rgb(26.4905660377, 48.9056603774, 81.5094339623);
+}
+
 .breadcrumb-nav {
   display: flex;
   align-items: center;
