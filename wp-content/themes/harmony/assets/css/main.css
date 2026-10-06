@@ -7740,6 +7740,70 @@ body.menu-open {
   color: rgb(26.4905660377, 48.9056603774, 81.5094339623);
 }
 
+.enc-doctors {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e8e2da;
+}
+.enc-doctors h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0 0 16px;
+}
+.enc-doctors__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.enc-doctors__card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: calc(50% - 8px);
+  min-width: 260px;
+  background: #f9f3ed;
+  border-radius: 12px;
+  padding: 12px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.enc-doctors__card:hover {
+  border-color: #274878;
+  text-decoration: none;
+}
+.enc-doctors__photo {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ddd3c5;
+}
+.enc-doctors__photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
+  display: block;
+}
+.enc-doctors__name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0 0 4px;
+  line-height: 1.3;
+}
+.enc-doctors__spec {
+  font-size: 13px;
+  color: #274878;
+  margin: 0;
+  line-height: 1.4;
+}
+
 .enc-related {
   margin-top: 32px;
   padding-top: 24px;
