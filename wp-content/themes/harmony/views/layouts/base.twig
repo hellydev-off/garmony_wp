@@ -19,6 +19,9 @@
   {# Стили подключены через wp_enqueue_style() в functions.php #}
   {{ function('wp_head') }}
   {% block head %}{% endblock %}
+
+  {# Виджет онлайн-записи 1C-Bitrix MedAPI — перенесён со старого сайта (garmonia-clinic.ru) #}
+  <script src="https://medapi.1cbit.ru/static/loader/3.0/main.js" id="or-loader" type="module" token="harmony"></script>
 </head>
 <body class="{% block body_class %}{% endblock %}">
 
