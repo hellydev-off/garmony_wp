@@ -91,7 +91,7 @@ add_action( 'init', function () {
 		'menu_icon'    => 'dashicons-book-alt',
 		'supports'     => [ 'title', 'editor', 'thumbnail', 'excerpt' ],
 		'has_archive'  => false,
-		'rewrite'      => [ 'slug' => 'enc' ],
+		'rewrite'      => [ 'slug' => 'encyclopedia' ],
 	] );
 
 	register_taxonomy( 'enc_category', 'enc_article', [
