@@ -655,6 +655,24 @@
     });
   }
 
+  // ─── Cookie consent banner — ported from old site (garmonia-clinic.ru) ──────
+  function initCookieBanner() {
+    var block = document.querySelector('.js-cookies-banner');
+    if (!block) return;
+
+    var hasAgreement = document.cookie.indexOf('_cookiesAgree=true') !== -1;
+    if (hasAgreement) return;
+
+    block.classList.remove('cookies-banner--hidden');
+
+    var button = document.querySelector('.js-accept-cookies');
+    button.addEventListener('click', function (event) {
+      event.preventDefault();
+      document.cookie = '_cookiesAgree=true;path=/;max-age=' + (60 * 60 * 24 * 365);
+      block.classList.add('cookies-banner--hidden');
+    });
+  }
+
   // ─── Sticky quick-nav bar on service-category pages (gynecology, etc.) ──────
   // position: sticky alone only holds within its own (short) parent section,
   // so it scrolls away with that section instead of following the whole page.
@@ -851,6 +869,7 @@
     initScrollTopButton();
     initStickySubnav();
     initAccessibilityToggle();
+    initCookieBanner();
     initDoctorSelects();
     initDoctorsPageFilter();
     initAppointmentForm();

@@ -84,6 +84,17 @@
     </span>
   </a>
 
+  {# Баннер согласия на cookie/Метрику — перенесён со старого сайта (garmonia-clinic.ru) #}
+  <div class="cookies-banner cookies-banner--hidden js-cookies-banner">
+    <div class="cookies-banner__content">
+      <p class="cookies-banner__text">
+        На сайте используются файлы cookie и сервис веб-аналитики Яндекс Метрика для сбора обезличенной статистической информации и улучшения работы сайта.<br>
+        Нажимая кнопку «Принять», вы соглашаетесь на обработку персональных данных с использованием файлов cookie и сервиса Яндекс Метрика в соответствии с <a href="{{ site_url }}/policy/">Политикой обработки персональных данных</a>.
+      </p>
+      <button class="cookies-banner__btn js-accept-cookies" type="button">Принять</button>
+    </div>
+  </div>
+
   {% include 'partials/appointment-modal.twig' %}
   {% include 'partials/review-modal.twig' %}
   {% include 'partials/search-modal.twig' %}
