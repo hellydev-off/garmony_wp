@@ -22,6 +22,37 @@
 
   {# Виджет онлайн-записи 1C-Bitrix MedAPI — перенесён со старого сайта (garmonia-clinic.ru) #}
   <script src="https://medapi.1cbit.ru/static/loader/3.0/main.js" id="or-loader" type="module" token="harmony"></script>
+
+  {# Яндекс.Метрика — тот же счётчик №14114974, что на старом сайте (garmonia-clinic.ru), для непрерывной статистики #}
+  <script type="text/javascript">
+     (function (d, w, c) {
+         (w[c] = w[c] || []).push(function() {
+             try {
+                 w.yaCounter14114974 = new Ya.Metrika({
+                     id:14114974,
+                     clickmap:true,
+                     trackLinks:true,
+                     accurateTrackBounce:true,
+                     webvisor:true
+                 });
+             } catch(e) { }
+         });
+
+         var n = d.getElementsByTagName("script")[0],
+             s = d.createElement("script"),
+             f = function () { n.parentNode.insertBefore(s, n); };
+         s.type = "text/javascript";
+         s.async = true;
+         s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+         if (w.opera == "[object Opera]") {
+             d.addEventListener("DOMContentLoaded", f, false);
+         } else { f(); }
+     })(document, window, "yandex_metrika_callbacks");
+  </script>
+  <noscript>
+     <div><img src="https://mc.yandex.ru/watch/14114974" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
 </head>
 <body class="{% block body_class %}{% endblock %}">
 
