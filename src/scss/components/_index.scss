@@ -1115,8 +1115,8 @@ $text-dark: #333333;
 // ─── Плавающая кнопка обратного звонка (перенесена со старого сайта) ──────────
 .callback-fab {
   position: fixed;
-  left: 24px;
-  bottom: 24px;
+  right: 24px;
+  bottom: 84px;
   width: 56px;
   height: 56px;
   display: flex;
@@ -1172,8 +1172,8 @@ $text-dark: #333333;
 
 @media (max-width: 575px) {
   .callback-fab {
-    left: 16px;
-    bottom: 16px;
+    right: 16px;
+    bottom: 68px;
     width: 48px;
     height: 48px;
   }
