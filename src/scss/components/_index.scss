@@ -487,7 +487,7 @@ $text-dark: #333333;
   &__text {
     flex: 1;
 
-    h2 {
+    &__title {
       font-size: 18px;
       font-weight: 500;
       letter-spacing: 1.5px;
