@@ -20,6 +20,7 @@ Timber::$dirname = [ 'views' ];
 require_once __DIR__ . '/inc/post-types.php';
 require_once __DIR__ . '/inc/acf-fields.php';
 require_once __DIR__ . '/inc/ajax.php';
+require_once __DIR__ . '/inc/redirects.php';
 
 /**
  * Приводит свободный текст поля «Специализация» врача к одной укрупнённой категории
