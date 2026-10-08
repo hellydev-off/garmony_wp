@@ -12,7 +12,8 @@
 function harmony_redirect_map() {
 	return [
 		// ── Общие страницы ──────────────────────────────────────────────────────
-		'dms'                                          => '/dms/',
+		// 'dms' не редиректим: /dms/ — настоящая страница нового сайта, редирект
+		// на саму себя зацикливался (ERR_TOO_MANY_REDIRECTS).
 		'prices'                                       => '/services/',
 		'displasiya-sheyki-matki'                      => '/encyclopedia/displaziya-sheyki-matki/',
 		'trepanobiopsiya'                              => '/trepanobiopsiya-novost/',
@@ -27,7 +28,8 @@ function harmony_redirect_map() {
 		'voprosi'                                      => '/',
 
 		// ── Услуги: /services/... → плоские адреса нового сайта ────────────────
-		'services'                                     => '/services/',
+		// 'services' не редиректим: /services/ — настоящая страница нового сайта,
+		// редирект на саму себя зацикливался (ERR_TOO_MANY_REDIRECTS).
 		'services/uzi'                                 => '/uzi/',
 		'services/uzi/uzi-malogo-taza'                 => '/uzi-malogo-taza/',
 		'services/uzi/uzi-brjushnoj-polosti'           => '/uzi-brjushnoj-polosti/',
