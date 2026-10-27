@@ -28,3 +28,31 @@
     appearance: none;
   }
 }
+
+// ─── Переходы на страницы услуг/специализаций выключены ─────────────────────────
+// Включается опцией harmony_service_links = 0 (см. functions.php): ссылки без href,
+// карточки не реагируют на наведение, подпись «Подробнее» скрыта.
+.service-links-off {
+  .service-card {
+    cursor: default;
+
+    &:hover {
+      transform: none;
+      box-shadow:
+        0 2px 6px rgba(27, 58, 92, 0.05),
+        0 8px 28px rgba(27, 58, 92, 0.09);
+    }
+  }
+
+  .service-card__link {
+    display: none;
+  }
+
+  .header-services-dropdown a:not([href]),
+  .mobile-menu__accordion-panel a:not([href]),
+  .site-footer__services a:not([href]),
+  .spec-group__items a:not([href]) {
+    pointer-events: none;
+    cursor: default;
+  }
+}

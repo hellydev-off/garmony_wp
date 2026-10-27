@@ -23,6 +23,28 @@ require_once __DIR__ . '/inc/ajax.php';
 require_once __DIR__ . '/inc/redirects.php';
 
 /**
+ * Переключатель переходов на страницы услуг и специализаций (карточки на главной
+ * и в «Услуги и цены», меню шапки и подвала, блок «Специализации»).
+ * Выключить: wp option update harmony_service_links 0 — ссылки остаются на месте,
+ * но без href, клик ничего не делает. Включить обратно: ... 1 (по умолчанию включено).
+ */
+function harmony_service_links_enabled(): bool {
+	return get_option( 'harmony_service_links', '1' ) !== '0';
+}
+
+add_filter( 'timber/twig', function ( $twig ) {
+	$twig->addFunction( new \Twig\TwigFunction( 'svc_href', function ( string $path ) {
+		return harmony_service_links_enabled() ? 'href="' . esc_url( home_url( $path ) ) . '"' : '';
+	}, [ 'is_safe' => [ 'html' ] ] ) );
+
+	$twig->addFunction( new \Twig\TwigFunction( 'svc_attr', function ( string $path ) {
+		return harmony_service_links_enabled() ? 'data-service-url="' . esc_url( home_url( $path ) ) . '"' : '';
+	}, [ 'is_safe' => [ 'html' ] ] ) );
+
+	return $twig;
+} );
+
+/**
  * Приводит свободный текст поля «Специализация» врача к одной укрупнённой категории
  * для фильтра на странице «Врачи» (specialization — текст вида «Гинеколог, врач
  * высшей категории», без единого формата, так что для фильтра нужна нормализация).
@@ -104,6 +126,7 @@ add_filter( 'timber/context', function ( $context ) {
 	$context['site_url']     = home_url();
 	$context['siteName']     = get_bloginfo( 'name' );
 	$context['year']         = date( 'Y' );
+	$context['service_links_off'] = ! harmony_service_links_enabled();
 
 	// Дефолтные отзывы для partials/reviews-slider.twig, когда конкретные не переданы явно.
 	$context['latest_reviews'] = Timber::get_posts( [

@@ -12347,6 +12347,24 @@ body.menu-open {
           appearance: none;
 }
 
+.service-links-off .service-card {
+  cursor: default;
+}
+.service-links-off .service-card:hover {
+  transform: none;
+  box-shadow: 0 2px 6px rgba(27, 58, 92, 0.05), 0 8px 28px rgba(27, 58, 92, 0.09);
+}
+.service-links-off .service-card__link {
+  display: none;
+}
+.service-links-off .header-services-dropdown a:not([href]),
+.service-links-off .mobile-menu__accordion-panel a:not([href]),
+.service-links-off .site-footer__services a:not([href]),
+.service-links-off .spec-group__items a:not([href]) {
+  pointer-events: none;
+  cursor: default;
+}
+
 @media (max-width: 1199px) {
   .section-title,
   .page-title,
