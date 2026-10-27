@@ -22,6 +22,15 @@ add_action( 'acf/init', function () {
 				'preview_size'  => 'medium',
 			],
 			[
+				'key'   => 'field_doctor_photo_ivb',
+				'label' => 'Фото для страницы «Ведение беременности»',
+				'name'  => 'photo_ivb',
+				'type'  => 'image',
+				'return_format' => 'array',
+				'preview_size'  => 'medium',
+				'instructions' => 'Необязательно. Если заполнено — на странице «Индивидуальное ведение беременности» показывается это фото (например, с фирменным фоном), а во всех остальных местах — основное «Фото».',
+			],
+			[
 				'key'   => 'field_doctor_specialization',
 				'label' => 'Специализация',
 				'name'  => 'specialization',

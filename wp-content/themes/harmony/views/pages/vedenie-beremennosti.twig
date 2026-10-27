@@ -47,8 +47,9 @@
       <div class="vb-doctor-card" data-doctor-url="{{ doctor.link }}">
         <div class="vb-doctor-card__photo-wrap">
           <div class="vb-doctor-card__placeholder">
-            {% if doctor.meta('photo') %}
-              <img src="{{ doctor.meta('photo').url }}" alt="{{ doctor.title }}">
+            {% set vb_photo = doctor.meta('photo_ivb') ?: doctor.meta('photo') %}
+            {% if vb_photo %}
+              <img src="{{ vb_photo.url }}" alt="{{ doctor.title }}">
             {% endif %}
           </div>
         </div>
