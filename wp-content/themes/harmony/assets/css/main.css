@@ -12360,7 +12360,8 @@ body.menu-open {
 .service-links-off .header-services-dropdown a:not([href]),
 .service-links-off .mobile-menu__accordion-panel a:not([href]),
 .service-links-off .site-footer__services a:not([href]),
-.service-links-off .spec-group__items a:not([href]) {
+.service-links-off .spec-group__items a:not([href]),
+.service-links-off .site-search__item a:not([href]) {
   pointer-events: none;
   cursor: default;
 }

@@ -38,7 +38,9 @@
       ] %}
       {% for service in search_services %}
       <li class="site-search__item" data-title="{{ service.name|lower }}">
-        {% if service.href %}
+        {% if service.href and service_links_off %}
+          <a>
+        {% elseif service.href %}
           <a href="{{ service.href }}">
         {% else %}
           <a href="#" class="js-open-appointment-modal" data-request-type="Вопрос по услуге «{{ service.name }}»">

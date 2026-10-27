@@ -51,7 +51,8 @@
   .header-services-dropdown a:not([href]),
   .mobile-menu__accordion-panel a:not([href]),
   .site-footer__services a:not([href]),
-  .spec-group__items a:not([href]) {
+  .spec-group__items a:not([href]),
+  .site-search__item a:not([href]) {
     pointer-events: none;
     cursor: default;
   }
