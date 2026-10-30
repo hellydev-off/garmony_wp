@@ -18,7 +18,7 @@
     <section class="featured-doctors">
       <div class="container">
         <div class="featured-doctors__grid">
-          {% for doctor in doctors %}
+          {% for doctor in doctors|sort((a, b) => a.menu_order <=> b.menu_order) %}
           {% if doctor.meta('is_featured') %}
           <div class="doctor-featured" data-doctor-url="{{ doctor.link }}">
             <div class="doctor-featured__photo">
